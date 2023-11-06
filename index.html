@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radis Car</title>
+    <style>
+        @font-face {
+            font-family: 'Yekan';
+            src: url('./src/fonts/Yekan.eot');
+            src: url('./src/fonts/Yekan.eot?#iefix') format('embedded-opentype'),
+                url('./src/fonts/Yekan.woff2') format('woff2'),
+                url('./src/fonts/Yekan.woff') format('woff'),
+                url('./src/fonts/Yekan.ttf') format('truetype'),
+                url('./src/fonts/Yekan.svg#Yekan') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="./src/styles/tailwind.css" />
+</head>
+
+<body dir="rtl" class="font-yekan">
+    <header class="shadow-md">
+        <div class="max-w-7xl mx-auto px-3">
+
+            <div class="flex relative justify-between items-center py-6 md:pt-12 md:pb-12">
+                
+                <form class="w-full lg:max-w-md bg-gray-100 p-1 rounded-xl absolute lg:relative -top-20 lg:top-0">
+                    <input id="searchInput" type="text"
+                        class="rounded-xl w-full text-sm leading-7 pt-2 pb-3 pr-4 pl-12 placeholder:text-gray-400 outline-none focus:bg-gray-50 "
+                        placeholder="محصول مورد نظر خود را جستجو کنید..." onkeyup="search(this.value)" />
+                    <button type="button"
+                        class="h-12 w-12 absolute left-1 top-1/2 -translate-y-2/4 flex justify-center items-center">
+                        <img src="./src/images/icons/009-loupe.svg" class="h-5 w-5 " />
+                    </button>
+                    <div id="search_list_wrapper"
+                        class="absolute bg-gray-200 p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 invisible mt-3 transition-all">
+                        <div id="search_list" class="max-h-96 overflow-auto"></div>
+                    </div>
+                </form>
+
+                <a href="#"><img src="./src/images/logo.png" alt="radiscar" class="w-24 sm:w-40" /></a>
+
+                <div class="flex gap-4 items-center">
+                    <a href="#" class="bg-[#f3f3ff] rounded-xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
+                        <img src="./src/images/icons/033-avatar.svg" class="w-5 h-5" />
+                        <span
+                            class="hidden md:block text-blue-600 bg-white rounded-xl px-8 pt-2 pb-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
+                            حساب کاربری
+                        </span>
+                    </a>
+                    <a href="#" class="bg-[#f3f3ff] rounded-xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
+                        <span class="block w-2 h-2 rounded-full bg-blue-600"></span>
+                        <img src="./src/images/icons/022-shopping-cart.svg" class="w-5 h-5" />
+                        <span
+                            class="hidden md:block text-blue-600 bg-white rounded-xl px-8 pt-2 pb-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
+                            سبد خرید
+                        </span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                      <li class="splide__slide">Slide 01</li>
+                      <li class="splide__slide">Slide 02</li>
+                      <li class="splide__slide">Slide 03</li>
+                  </ul>
+            </div>
+          </section>
+
+          
+    </main>
+
+    <script>
+
+        var searchList = document.getElementById('search_list');
+        var searchListWrapper = document.getElementById('search_list_wrapper');
+
+        function search(value) {
+
+            if (value.length > 2) {
+
+                var dummyData = {
+                    items: [
+                        { displayName: "سیستم ترمز" },
+                        { displayName: "سیستم گیربکس" },
+                        { displayName: "سیستم خنک کننده" },
+                        { displayName: "لاستیک" },
+                        { displayName: "واشرجات" }
+                    ]
+                }
+
+                var autocompleteList = dummyData.items;
+
+                var list = '';
+
+                for (var i = 0; i < autocompleteList.length; i++) {
+                    list += '<div data-autocomplete-list="' + autocompleteList[i].displayName + '" class="text-blue-600 bg-white px-2 py-1 my-1 cursor-pointer hover:bg-blue-600 hover:text-white transition-all">' + autocompleteList[i].displayName + '</div>';
+                }
+
+                searchList.innerHTML = list;
+                searchListWrapper.style.opacity = 1;
+                searchListWrapper.style.visibility = 'visible';
+                searchListWrapper.style.marginTop = '2px';
+
+            } else {
+
+                searchListWrapper.style.opacity = 0;
+                searchListWrapper.style.visibility = 'hidden';
+                searchListWrapper.style.marginTop = '';
+
+                searchList.innerHTML = '';
+            }
+
+        }
+        document.addEventListener("click", function (e) {
+
+            const target = e.target.closest("[data-autocomplete-list]");
+
+            if (target) {
+                document.getElementById('searchInput').value = target.getAttribute('data-autocomplete-list');
+            }
+
+            searchListWrapper.style.opacity = 0;
+            searchListWrapper.style.visibility = 'hidden';
+            searchListWrapper.style.marginTop = '';
+
+            searchList.innerHTML = '';
+        });
+
+    </script>
+</body>
+
+</html>
