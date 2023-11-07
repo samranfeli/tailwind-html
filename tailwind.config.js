@@ -7,6 +7,7 @@ module.exports = {
         'yekan': ['Yekan', 'sans-serif']
       },
       fontSize: {
+        xxs: '12px',
         xs: '13px',
         sm: '15px',
       },
@@ -26,6 +27,10 @@ module.exports = {
           800: '#0508ad',
           900: '#04067c',
           950: '#02034a',
+        },
+        neutral:{
+          100:"#f7f7f7",
+          150:"#f2f2f2",
         }
       }
     }
