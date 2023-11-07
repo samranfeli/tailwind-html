@@ -13,6 +13,7 @@ module.exports = {
       },
       borderWidth: {
         3:'3px',
+        12:'12px'
       },
       colors: {
         blue: {
