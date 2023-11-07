@@ -239,8 +239,9 @@
                     <p>
                         تمام حقوق مادی و معنوی این فروشگاه  متعلق به هلدینگ سودبر می باشد.
                     </p>
-                    <a hfef="#" class="text-inherit">
+                    <a hfef="#" onclick="scrollToTop()" class="text-inherit flex gap-3 items-center cursor-pointer text-sm">
                         رفتن به سمت بالا
+                        <img src="./src/images/icons/up-arrow.svg" class="w-11 h-11 border-3 p-3 rounded-full" />
                     </a>
                 </div>
             </div>
@@ -304,6 +305,13 @@
 
             searchList.innerHTML = '';
         });
+
+
+
+        //footer scroll to top:
+        function scrollToTop(){
+            document.getElementsByTagName('body')[0].scrollIntoView({ behavior: "smooth"});
+        }
 
     </script>
 </body>

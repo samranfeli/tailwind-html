@@ -10,6 +10,9 @@ module.exports = {
         xs: '13px',
         sm: '15px',
       },
+      borderWidth: {
+        3:'3px',
+      },
       colors: {
         blue: {
           50: '#f4f4fb',
