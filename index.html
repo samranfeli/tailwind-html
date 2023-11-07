@@ -21,11 +21,11 @@
     <link rel="stylesheet" href="./src/styles/tailwind.css" />
 </head>
 
-<body dir="rtl" class="font-yekan">
-    <header class="shadow-md">
-        <div class="max-w-7xl mx-auto px-3">
+<body dir="rtl" class="font-yekan text-gray-700">
+    <header class="shadow-md text-sm leading-7">
+        <div class="max-w-7xl mx-auto px-3 py-6 md:pt-10 md:pb-9">
 
-            <div class="flex relative justify-between items-center py-6 md:pt-12 md:pb-12">
+            <div class="flex relative justify-between items-center mb-7">
                 
                 <form class="w-full lg:max-w-md bg-gray-100 p-1 rounded-xl absolute lg:relative -top-20 lg:top-0">
                     <input id="searchInput" type="text"
@@ -33,7 +33,7 @@
                         placeholder="محصول مورد نظر خود را جستجو کنید..." onkeyup="search(this.value)" />
                     <button type="button"
                         class="h-12 w-12 absolute left-1 top-1/2 -translate-y-2/4 flex justify-center items-center">
-                        <img src="./src/images/icons/009-loupe.svg" class="h-5 w-5 " />
+                        <img src="./src/images/icons/loupe.svg" class="h-5 w-5 " />
                     </button>
                     <div id="search_list_wrapper"
                         class="absolute bg-gray-200 p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 invisible mt-3 transition-all">
@@ -45,7 +45,7 @@
 
                 <div class="flex gap-4 items-center">
                     <a href="#" class="bg-[#f3f3ff] rounded-xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
-                        <img src="./src/images/icons/033-avatar.svg" class="w-5 h-5" />
+                        <img src="./src/images/icons/avatar.svg" class="w-5 h-5" />
                         <span
                             class="hidden md:block text-blue-600 bg-white rounded-xl px-8 pt-2 pb-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
                             حساب کاربری
@@ -53,7 +53,7 @@
                     </a>
                     <a href="#" class="bg-[#f3f3ff] rounded-xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
                         <span class="block w-2 h-2 rounded-full bg-blue-600"></span>
-                        <img src="./src/images/icons/022-shopping-cart.svg" class="w-5 h-5" />
+                        <img src="./src/images/icons/shopping-cart.svg" class="w-5 h-5" />
                         <span
                             class="hidden md:block text-blue-600 bg-white rounded-xl px-8 pt-2 pb-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
                             سبد خرید
@@ -61,6 +61,46 @@
                     </a>
                 </div>
 
+            </div>
+
+            <div class="flex relative justify-between items-center">
+                <nav class="flex items-center gap-4 font-semibold">
+                    <a href="#" class="pb-1 flex items-center gap-2 ml-4 text-blue-600">
+                        <img src='./src/images/icons/new/category.svg' class="w-6 h-6" /> 
+                        <span class="pb-1">
+                            دسته بندی سریع
+                        </span>
+                    </a>
+                    <a href="#" class="pb-1 hover:text-blue-600 transition-all">صفحه نخست</a>
+                    <span class="h-4 border-r border-gray-200"></span>
+                    <a href="#" class="pb-1 hover:text-blue-600 transition-all">درباره رادیسکار</a>
+                    <span class="h-4 border-r border-gray-200"></span>
+                    <a href="#" class="pb-1 hover:text-blue-600 transition-all">راهنمای خرید</a>
+                    <span class="h-4 border-r border-gray-200"></span>
+                    <a href="#" class="pb-1 hover:text-blue-600 transition-all">پرسشهای متداول</a>
+                    <span class="h-4 border-r border-gray-200"></span>
+                    <a href="#" class="pb-1 hover:text-blue-600 transition-all">تماس با ما</a>
+                </nav>
+
+                <div class="flex gap-3 items-center">
+                    <a href="#" class="flex items-center px-10 gap-6 group">
+                        <img src="./src/images/icons/turbo.svg" class="w-5 h-5" />
+                        <span
+                            class="pb-1 font-semibold group-hover:text-blue-600 transition-all">
+                            درخواست قطعه
+                        </span>
+                    </a>
+
+                    <span class="h-4 border-r border-gray-200"></span>
+
+                    <a href="#" class="flex items-center px-10 gap-4 group">
+                        <img src="./src/images/icons/add.svg" class="w-5 h-5" />
+                        <span
+                        class="pb-1 font-semibold group-hover:text-blue-600 transition-all">
+                            ثبت خودرو
+                        </span>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
