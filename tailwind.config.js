@@ -6,6 +6,10 @@ module.exports = {
       fontFamily: {
         'yekan': ['Yekan', 'sans-serif']
       },
+      fontSize: {
+        xs: '13px',
+        sm: '15px',
+      },
       colors: {
         blue: {
           50: '#f4f4fb',
