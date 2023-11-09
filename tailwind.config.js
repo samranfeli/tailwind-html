@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}", "./index.html"],
   theme: {
     extend: {
+      backgroundImage: {
+        'r': "url('../images/R.png')",
+      },
       fontFamily: {
         'yekan': ['Yekan', 'sans-serif']
       },
