@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'r': "url('../images/R.png')",
+        'city': "url('../images/home/city.png')",
+        'banner': "url('../images/home/banner.png')"
       },
       fontFamily: {
         'yekan': ['Yekan', 'sans-serif']

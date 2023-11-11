@@ -54,10 +54,11 @@
 </head>
 
 <body dir="rtl" class="font-yekan text-neutral-700">
-    <header class="shadow-md text-sm leading-7">
+    <header class="shadow-md text-sm leading-7 relative z-20">
+
         <div class="max-w-7xl mx-auto px-3 py-6 md:pt-10 md:pb-9">
 
-            <div class="flex relative justify-between items-center mb-7">
+            <div class="flex justify-between items-center mb-7">
 
                 <form class="w-full lg:max-w-md bg-gray-100 p-1 rounded-xl absolute lg:relative -top-20 lg:top-0">
                     <input id="searchInput" type="text"
@@ -100,14 +101,14 @@
 
             </div>
 
-            <div class="flex relative justify-between items-center">
+            <div class="flex justify-between items-center">
                 <nav class="md:flex items-center gap-4 font-semibold">
-                    <a href="#" class="pb-1 flex items-center gap-2 ml-4 text-blue-600 block">
+                    <button type="button" id="categories_button" onclick="toggleCategories();" class="pb-1 flex items-center gap-2 ml-4 text-blue-600 block group">
                         <svg class="w-6 h-6 fill-blue-600" viewBox="0 0 48 48"><path d="M42,12v3H30v-3H42z M42,22.5v3H18v-3H42z M42,33v3H6v-3H42z"/></svg>
                         <span class="pb-1">
                             دسته بندی سریع
                         </span>
-                    </a>
+                    </button>
                     <a href="#" class="pb-1 hover:text-blue-600 transition-all block">صفحه نخست</a>
                     <span class="h-4 border-r border-gray-200 hidden md:block"></span>
                     <a href="#" class="pb-1 hover:text-blue-600 transition-all block">درباره رادیسکار</a>
@@ -120,7 +121,7 @@
                 </nav>
 
                 <div class="lg:flex gap-3 items-center">
-                    <a href="#" class="flex items-center px-10 gap-6 group block">
+                    <a href="#" class="flex items-center px-10 gap-4 group block">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600" ><path d="m9 22c-2.479 0-4.873-1.04-6.57-2.854-1.721-1.839-2.576-4.239-2.409-6.759.313-4.703 4.389-8.387 9.279-8.387h11.2c.276 0 .5.224.5.5s-.224.5-.5.5h-11.2c-4.365 0-8.003 3.273-8.281 7.453-.149 2.24.611 4.374 2.142 6.009 1.508 1.613 3.637 2.538 5.839 2.538 4.411 0 8-3.589 8-8 0-.276.224-.5.5-.5s.5.224.5.5c0 4.963-4.037 9-9 9z"/><path d="m20.5 13.5h-6.38c-1.006 0-1.929-.646-2.351-1.646-.107-.255.012-.548.267-.655.254-.105.547.011.655.267.269.638.816 1.034 1.429 1.034h6.38c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m9 17c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-7c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/><path d="m9 16.5c-.276 0-.5-.224-.5-.5v-6c0-.276.224-.5.5-.5s.5.224.5.5v6c0 .276-.224.5-.5.5z"/><path d="m22.5 17h-1c-.827 0-1.5-.673-1.5-1.5v-13c0-.827.673-1.5 1.5-1.5h1c.827 0 1.5.673 1.5 1.5v13c0 .827-.673 1.5-1.5 1.5zm-1-15c-.275 0-.5.225-.5.5v13c0 .275.225.5.5.5h1c.275 0 .5-.225.5-.5v-13c0-.275-.225-.5-.5-.5z"/></svg>
                         <span class="pb-1 font-semibold group-hover:text-blue-600 transition-all">
                             درخواست قطعه
@@ -138,10 +139,312 @@
                 </div>
             </div>
         </div>
+        <div id="categories_menu" class="bg-white shadow-md border-t-2 invisible opacity-0 mt-5 transition-all absolute left-0 right-0 top-full">
+            <div class="max-w-7xl mx-auto px-3">
+                <ul class="relative">
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">روغن و مکمل</a>
+                        <ul class="md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">روغن ماشین </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" >روغن ترمز و گریس</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" >روغن گیربکس</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن موتور</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن هیدرولیک</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> ضدیخ و آب رادیاتور </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > شیشه شوی </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > ضدیخ و ضدجوش </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> مکمل سوخت </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">سیستم ترمز</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> دیسک ترمز </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> لنت ترمز </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سنسور ترمز </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> کالیبر ترمز </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> کفشک ترمز </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">فیلترها</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر هوا </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر کابین </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر روغن </a>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> صافی بنزین </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">لوازم مکانیکی</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> تسمه </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > تسمه دینام </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سوخت رسانی و احتراق </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > پمپ بنزین </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > شمع ماشین </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > کویل </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سیستم خنک کننده موتور </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > ترموستات </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > رادیاتور آب </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > روغن سردکن </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > کمپرسور کولر </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > واتر پمپ </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات موتوری </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > دسته موتور </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> واشر و کاسه نمد </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > اورینگ </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">هدایت و جلوبندی</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات جلوبندی و تعلیق </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > سیبک فرمان </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > طبق </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > کمک فنر </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > گردگیر کمک فنر </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > میل موجگیر </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">گیربکس و کلاچ</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> گیربکس </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > دسته گیربکس </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > روغن گیربکس </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">لوازم بدنه خودرو</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> برف پاک کن </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">رینگ و لاستیک</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> لاستیک </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">اکسسوری و جانبی</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> نظافت داخل </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > اسپری داشبورد </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="group">
+                        <a href="#" class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">برقی و الکتریکی</a>
+                        <ul class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سنسور </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > سنسور اکسیژن </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="basis-1/6">
+                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات برقی </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1" > استارت </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </header>
 
-    <main>
+    <main class="relative z-10">
 
+        <section class="bg-neutral-100 relative">
+            <div class="max-w-6xl mx-auto px-16 sm:px-24">
+                <div class="md:w-1/2 md:pl-16 pt-16">
+                    <div class="bg-neutral-150 p-5 rounded-2xl">
+
+                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
+                            <label class="text-neutral-400 w-28 inline-block px-3"> نوع خودرو </label>
+                            <select class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                                <option>انتخاب کنید</option>
+                                <option value=""> خودرو سواری آلمانی (1000)</option>
+                                <option value=""> خودرو سواری ژاپنی (161)</option>
+                                <option value=""> خودرو سواری کره ای (118)</option>
+                                <option value=""> خودرو سواری ایرانی (37)</option>
+                                <option value=""> خودرو سواری چینی (44)</option>
+                            </select>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                        </div>
+
+                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
+                            <label class="text-neutral-400 w-28 inline-block px-3"> سازنده </label>
+                            <select disabled class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                                <option>انتخاب کنید</option>
+                            </select>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                        </div>
+
+                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
+                            <label class="text-neutral-400 w-28 inline-block px-3"> مدل </label>
+                            <select disabled class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                                <option>انتخاب کنید</option>
+                            </select>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                        </div>
+
+                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
+                            <label class="text-neutral-400 w-28 inline-block px-3"> مشخصات </label>
+                            <select disabled class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                                <option>انتخاب کنید</option>
+                            </select>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                        </div>
+
+                        <button  class="bg-blue-600 text-white rounded-2xl p-3 block w-full cursor-pointer mt-7">
+                            فیلتر محصولات
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-banner bg-cover relative md:absolute left-0 top-0 bottom-0 w-1/2 rounded-br-2xl before:w-full before:h-full before:absolute before:bg-gradient-to-l before:from-neutral-800 before:to-transparent overflow-hidden">
+                    <div class="relative text-white flex flex-col justify-between items-start h-full p-10">
+                        <div></div>
+                        <div class="mb-2">
+                            <h5 class="mb-3 text-3xl">
+                                 فروشگاه لوازم یدکی خودرو!
+                            </h5>
+                            <div class="text-sm mb-6">
+                                 با محصولات رادیسکار، کیفیت را تجربه کنید
+                            </div>
+                        </div>  
+                        <a href="#" class="items-center inline-flex gap-2 text-xs">
+                            <span> مشاهده همه محصولات </span>
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                        </a> 
+                    </div>
+                </div>                
+
+            </div>
+        </section>
+                
         <section class="bg-neutral-100">
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-5 md:py-12">
                 
@@ -224,11 +527,11 @@
 
         <section class="bg-neutral-100">
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
-                <div class="bg-white rounded-2xl px-10 py-12 flex gap-8 justify-between">
+                <div class="bg-white rounded-2xl px-10 py-12 flex items-center flex-col md:flex-row gap-8 justify-between">
                     <h5 class="mb-2 text-xl">
                         مزایای خرید از رادیسکار
                     </h5>
-                    <div class="flex gap-8">
+                    <div class="flex flex-col md:flex-row items-center gap-8">
                         <div class="flex items-center gap-4 font-semibold text-sm">
                             <svg class="w-7 h-7 fill-blue-600" viewBox="0 0 24 24"><path d="m18 24c-.066 0-.132-.013-.194-.039-.238-.101-5.806-2.507-5.806-7.425v-4.179c0-.215.137-.405.34-.474l5.5-1.857c.104-.035.217-.035.32 0l5.5 1.857c.203.068.34.259.34.474v4.179c0 4.918-5.568 7.324-5.806 7.425-.062.026-.128.039-.194.039zm-5-11.283v3.819c0 3.784 4.055 5.958 5 6.413.944-.456 5-2.639 5-6.413v-3.819l-5-1.689z"/><path d="m17.5 19c-.009 0-.019 0-.027-.001-.143-.008-.274-.075-.363-.187l-2-2.5c-.172-.216-.138-.53.078-.703.217-.17.531-.137.703.078l1.65 2.063 3.105-3.104c.195-.195.512-.195.707 0s.195.512 0 .707l-3.5 3.5c-.093.094-.221.147-.353.147z"/><path d="m10 8c-.059 0-.117-.011-.173-.031l-9.5-3.5c-.196-.073-.327-.259-.327-.469s.131-.396.327-.469l9.5-3.5c.111-.041.234-.041.346 0l9.5 3.5c.196.073.327.259.327.469s-.131.396-.327.469l-9.5 3.5c-.056.02-.114.031-.173.031zm-8.054-4 8.054 2.967 8.054-2.967-8.054-2.967z"/><path d="m10 20c-.058 0-.116-.01-.173-.031l-9.5-3.5c-.196-.073-.327-.259-.327-.469v-12c0-.276.224-.5.5-.5s.5.224.5.5v11.651l9.173 3.38c.259.095.392.383.296.642-.074.202-.266.327-.469.327z"/><path d="m19.5 8c-.276 0-.5-.224-.5-.5v-3.5c0-.276.224-.5.5-.5s.5.224.5.5v3.5c0 .276-.224.5-.5.5z"/><path d="m10 11c-.276 0-.5-.224-.5-.5v-3c0-.276.224-.5.5-.5s.5.224.5.5v3c0 .276-.224.5-.5.5z"/></svg>
                             <span>ضمانت اصالت</span>
@@ -439,7 +742,7 @@
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <div class="bg-blue-600 rounded-2xl">
 
-                    <div class="relative -top-1" dir="ltr">
+                    <div class="relative -top-1 overflow-hidden rounded-2xl" dir="ltr">
                         <div class="promotion-splide splide">
                            
                             <div class="splide__track">
@@ -544,21 +847,239 @@
                     </div>
                     
 
-                    <div class="flex justify-between items-center py-5 px-10">
-                        <span>timer</span>
-                        <a href="#" class="bg-white text-blue-600 px-7 py-2 rounded-2xl text-sm">
-                            مشاهده محصولات                            
-                        </a>
+                    <div class="flex justify-between items-center pt-7 pb-8 px-10">
+                        <div class="count-down flex gap-2" data-value="150180"></div>
+                        <a href="#" class="bg-white rounded-xl text-blue-600 items-center px-5 py-2 inline-flex gap-2 text-xs">
+                            <span> مشاهده محصولات </span>
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                        </a>                        
                     </div>
 
 
                 </div>
             </div>
         </section>
-                
+                  
         <section class="bg-neutral-100">
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="flex items-center gap-4">
+                        <h5 class="flex items-center gap-4 text-base lg:text-2xl">
+                            <img src="./src/images/icons/iconx.png" class="w-5 h-5" />
+                            <span class="pb-1">
+                                جدیدترین محصولات
+                            </span>
+                        </h5>
+                        <div>
+                            <a href="#" class="inline-block text-xs px-3 py-1 text-neutral-500 hover:bg-violet-100 hover:text-violet-400 transition-all rounded-2xl">
+                                سیستم ترمز
+                            </a>
+                            <a href="#" class="inline-block text-xs px-3 py-1 text-neutral-500 hover:bg-violet-100 hover:text-violet-400 transition-all rounded-2xl">
+                                قطعات موتور
+                            </a>
+                            <a href="#" class="inline-block text-xs px-3 py-1 text-neutral-500 hover:bg-violet-100 hover:text-violet-400 transition-all rounded-2xl">
+                                لاستیک 
+                            </a>
+                            <a href="#" class="inline-block text-xs px-3 py-1 text-neutral-500 hover:bg-violet-100 hover:text-violet-400 transition-all rounded-2xl">
+                                گیربکس 
+                            </a>
+                            <a href="#" class="inline-block text-xs px-3 py-1 text-neutral-500 hover:bg-violet-100 hover:text-violet-400 transition-all rounded-2xl">
+                                واشر 
+                            </a>
+                            <a href="#" class="inline-block text-xs px-3 py-1 text-neutral-500 hover:bg-violet-100 hover:text-violet-400 transition-all rounded-2xl">
+                                خنک کننده 
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#" class="flex items-center gap-3">
+                        <svg viewBox="0 0 512 512" class="w-4 h-4 fill-neutral-400">
+                            <path d="M480,202.667H196.715c-4.608,0-8.683-2.923-10.133-7.296l-11.605-34.837c-4.373-13.077-16.576-21.867-30.357-21.867H32    c-17.643,0-32,14.357-32,32C0,200,4.288,229.141,12.693,257.259l42.624,142.059c6.827,22.741,27.349,38.016,51.093,38.016h301.355    c22.123,0,42.197-13.909,49.92-34.603l46.165-123.051c5.397-14.443,8.149-29.589,8.149-45.013    C512,217.024,497.643,202.667,480,202.667z M483.861,272.192l-46.165,123.051C433.067,407.659,421.035,416,407.765,416H106.411    c-14.251,0-26.56-9.173-30.635-22.805L33.152,251.136c-7.851-26.133-11.819-53.205-11.819-80.469    C21.333,164.779,26.112,160,32,160h112.619c4.608,0,8.683,2.923,10.112,7.296l11.627,34.837    C170.731,215.211,182.933,224,196.715,224H480c5.867,0,10.667,4.8,10.667,10.688C490.667,247.531,488.384,260.16,483.861,272.192z    "/>
+                            <path d="M416,74.667H96c-29.397,0-53.333,23.936-53.333,53.333v21.333c0,5.888,4.779,10.667,10.667,10.667S64,155.221,64,149.333    V128c0-17.643,14.357-32,32-32h320c17.643,0,32,14.357,32,32v85.333c0,5.888,4.779,10.667,10.667,10.667    s10.667-4.779,10.667-10.667V128C469.333,98.603,445.419,74.667,416,74.667z"/>                                
+                        </svg>
+                        <span class="text-sm text-neutral-400"> مشاهده آرشیو </span>
+                    </a>
+                </div>  
 
+
+                <div class="producrs-splide splide">
+                    <div class="splide__track">
+                        <div class="splide__list">
+
+                            <div class="splide__slide min-h-[360px]">
+                                <div class="p-4 group cursor-pointer rounded-2xl relative bg-white">
+                                    <img 
+                                        src="./src/images/products/disk.png" 
+                                        alt="دیسک ترمز جلو مرسدس بنز" 
+                                        class="block mx-auto h-48 w-full object-contain" 
+                                    />
+                                    <h5 class="mb-3 text-sm">
+                                        دیسک ترمز جلو مرسدس بنز  <bdo dir="ltr" class="text-xs"> SL(R230) </bdo>  <bdo dir="ltr" class="text-xs"> SL(R231) </bdo>  <bdo dir="ltr" class="text-xs"> E(W211) </bdo>                                     
+                                    </h5>
+                                    <div class="flex justify-between gap-3 mb-3">
+                                        <span class="text-blue-600 font-semibold text-sm">
+                                            <span class="price">7466000</span> ت
+                                        </span>
+                                        <div class="flex gap-2 items-center">
+                                            <svg viewBox="0 0 24 24" class="w-3 h-3 fill-amber-500"><path d="m5.224 23.501c-.212 0-.423-.067-.606-.2-.337-.244-.496-.665-.403-1.072l1.608-7.091-5.468-4.827c-.312-.275-.432-.708-.303-1.104.131-.401.473-.674.892-.712l7.22-.656 2.883-6.708c.163-.384.537-.631.953-.631s.79.247.954.63l2.853 6.686 7.249.679c.42.039.762.312.893.712.129.396.01.829-.303 1.104l-5.456 4.789 1.596 7.129c.093.407-.066.828-.403 1.072-.343.247-.779.266-1.14.05l-6.225-3.726-.294-.429.257.429-6.225 3.726c-.166.101-.35.15-.532.15zm6.776-4.881c.184 0 .368.049.532.147l6.225 3.726-1.554-7.133c-.085-.373.041-.76.327-1.012l5.455-4.789-7.238-.725c-.38-.035-.709-.275-.86-.625l-2.853-6.687-2.921 6.686c-.151.352-.48.592-.859.627l-7.22.656 5.436 4.856c.286.252.412.64.327 1.012l-1.608 7.091 6.279-3.684c.164-.097.348-.146.532-.146z"/></svg>
+                                            <span> 3/9 </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="overflow-hidden bg-neutral-100 rounded-2xl text-neutral-600 flex px-3 items-center text-xs gap-2 justify-center h-0 group-hover:h-9 opacity-0 group-hover:opacity-100 transition-all">
+                                        مشاهده جزییات
+                                        <svg class="w-3 h-3 fill-slate-800" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="splide__slide min-h-[360px]">
+                                <div class="p-4 group cursor-pointer rounded-2xl relative bg-white">
+                                    <img 
+                                        src="./src/images/products/disk.png" 
+                                        alt="دیسک ترمز جلو مرسدس بنز" 
+                                        class="block mx-auto h-48 w-full object-contain" 
+                                    />
+                                    <h5 class="mb-3 text-sm">
+                                        دیسک ترمز جلو مرسدس بنز  <bdo dir="ltr" class="text-xs"> SL(R230) </bdo>  <bdo dir="ltr" class="text-xs"> SL(R231) </bdo>  <bdo dir="ltr" class="text-xs"> E(W211) </bdo>                                     
+                                    </h5>
+                                    <div class="flex justify-between gap-3 mb-3">
+                                        <span class="text-blue-600 font-semibold text-sm">
+                                            <span class="price">7466000</span> ت
+                                        </span>
+                                        <div class="flex gap-2 items-center">
+                                            <svg viewBox="0 0 24 24" class="w-3 h-3 fill-amber-500"><path d="m5.224 23.501c-.212 0-.423-.067-.606-.2-.337-.244-.496-.665-.403-1.072l1.608-7.091-5.468-4.827c-.312-.275-.432-.708-.303-1.104.131-.401.473-.674.892-.712l7.22-.656 2.883-6.708c.163-.384.537-.631.953-.631s.79.247.954.63l2.853 6.686 7.249.679c.42.039.762.312.893.712.129.396.01.829-.303 1.104l-5.456 4.789 1.596 7.129c.093.407-.066.828-.403 1.072-.343.247-.779.266-1.14.05l-6.225-3.726-.294-.429.257.429-6.225 3.726c-.166.101-.35.15-.532.15zm6.776-4.881c.184 0 .368.049.532.147l6.225 3.726-1.554-7.133c-.085-.373.041-.76.327-1.012l5.455-4.789-7.238-.725c-.38-.035-.709-.275-.86-.625l-2.853-6.687-2.921 6.686c-.151.352-.48.592-.859.627l-7.22.656 5.436 4.856c.286.252.412.64.327 1.012l-1.608 7.091 6.279-3.684c.164-.097.348-.146.532-.146z"/></svg>
+                                            <span> 3/9 </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="overflow-hidden bg-neutral-100 rounded-2xl text-neutral-600 flex px-3 items-center text-xs gap-2 justify-center h-0 group-hover:h-9 opacity-0 group-hover:opacity-100 transition-all">
+                                        مشاهده جزییات
+                                        <svg class="w-3 h-3 fill-slate-800" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="splide__slide min-h-[360px]">
+                                <div class="p-4 group cursor-pointer rounded-2xl relative bg-white">
+                                    <img 
+                                        src="./src/images/products/disk.png" 
+                                        alt="دیسک ترمز جلو مرسدس بنز" 
+                                        class="block mx-auto h-48 w-full object-contain" 
+                                    />
+                                    <h5 class="mb-3 text-sm">
+                                        دیسک ترمز جلو مرسدس بنز  <bdo dir="ltr" class="text-xs"> SL(R230) </bdo>  <bdo dir="ltr" class="text-xs"> SL(R231) </bdo>  <bdo dir="ltr" class="text-xs"> E(W211) </bdo>                                     
+                                    </h5>
+                                    <div class="flex justify-between gap-3 mb-3">
+                                        <span class="text-blue-600 font-semibold text-sm">
+                                            <span class="price">7466000</span> ت
+                                        </span>
+                                        <div class="flex gap-2 items-center">
+                                            <svg viewBox="0 0 24 24" class="w-3 h-3 fill-amber-500"><path d="m5.224 23.501c-.212 0-.423-.067-.606-.2-.337-.244-.496-.665-.403-1.072l1.608-7.091-5.468-4.827c-.312-.275-.432-.708-.303-1.104.131-.401.473-.674.892-.712l7.22-.656 2.883-6.708c.163-.384.537-.631.953-.631s.79.247.954.63l2.853 6.686 7.249.679c.42.039.762.312.893.712.129.396.01.829-.303 1.104l-5.456 4.789 1.596 7.129c.093.407-.066.828-.403 1.072-.343.247-.779.266-1.14.05l-6.225-3.726-.294-.429.257.429-6.225 3.726c-.166.101-.35.15-.532.15zm6.776-4.881c.184 0 .368.049.532.147l6.225 3.726-1.554-7.133c-.085-.373.041-.76.327-1.012l5.455-4.789-7.238-.725c-.38-.035-.709-.275-.86-.625l-2.853-6.687-2.921 6.686c-.151.352-.48.592-.859.627l-7.22.656 5.436 4.856c.286.252.412.64.327 1.012l-1.608 7.091 6.279-3.684c.164-.097.348-.146.532-.146z"/></svg>
+                                            <span> 3/9 </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="overflow-hidden bg-neutral-100 rounded-2xl text-neutral-600 flex px-3 items-center text-xs gap-2 justify-center h-0 group-hover:h-9 opacity-0 group-hover:opacity-100 transition-all">
+                                        مشاهده جزییات
+                                        <svg class="w-3 h-3 fill-slate-800" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="splide__slide min-h-[360px]">
+                                <div class="p-4 group cursor-pointer rounded-2xl relative bg-white">
+                                    <img 
+                                        src="./src/images/products/disk.png" 
+                                        alt="دیسک ترمز جلو مرسدس بنز" 
+                                        class="block mx-auto h-48 w-full object-contain" 
+                                    />
+                                    <h5 class="mb-3 text-sm">
+                                        دیسک ترمز جلو مرسدس بنز  <bdo dir="ltr" class="text-xs"> SL(R230) </bdo>  <bdo dir="ltr" class="text-xs"> SL(R231) </bdo>  <bdo dir="ltr" class="text-xs"> E(W211) </bdo>                                     
+                                    </h5>
+                                    <div class="flex justify-between gap-3 mb-3">
+                                        <span class="text-blue-600 font-semibold text-sm">
+                                            <span class="price">7466000</span> ت
+                                        </span>
+                                        <div class="flex gap-2 items-center">
+                                            <svg viewBox="0 0 24 24" class="w-3 h-3 fill-amber-500"><path d="m5.224 23.501c-.212 0-.423-.067-.606-.2-.337-.244-.496-.665-.403-1.072l1.608-7.091-5.468-4.827c-.312-.275-.432-.708-.303-1.104.131-.401.473-.674.892-.712l7.22-.656 2.883-6.708c.163-.384.537-.631.953-.631s.79.247.954.63l2.853 6.686 7.249.679c.42.039.762.312.893.712.129.396.01.829-.303 1.104l-5.456 4.789 1.596 7.129c.093.407-.066.828-.403 1.072-.343.247-.779.266-1.14.05l-6.225-3.726-.294-.429.257.429-6.225 3.726c-.166.101-.35.15-.532.15zm6.776-4.881c.184 0 .368.049.532.147l6.225 3.726-1.554-7.133c-.085-.373.041-.76.327-1.012l5.455-4.789-7.238-.725c-.38-.035-.709-.275-.86-.625l-2.853-6.687-2.921 6.686c-.151.352-.48.592-.859.627l-7.22.656 5.436 4.856c.286.252.412.64.327 1.012l-1.608 7.091 6.279-3.684c.164-.097.348-.146.532-.146z"/></svg>
+                                            <span> 3/9 </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="overflow-hidden bg-neutral-100 rounded-2xl text-neutral-600 flex px-3 items-center text-xs gap-2 justify-center h-0 group-hover:h-9 opacity-0 group-hover:opacity-100 transition-all">
+                                        مشاهده جزییات
+                                        <svg class="w-3 h-3 fill-slate-800" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="splide__slide min-h-[360px]">
+                                <div class="p-4 group cursor-pointer rounded-2xl relative bg-white">
+                                    <img 
+                                        src="./src/images/products/disk.png" 
+                                        alt="دیسک ترمز جلو مرسدس بنز" 
+                                        class="block mx-auto h-48 w-full object-contain" 
+                                    />
+                                    <h5 class="mb-3 text-sm">
+                                        دیسک ترمز جلو مرسدس بنز  <bdo dir="ltr" class="text-xs"> SL(R230) </bdo>  <bdo dir="ltr" class="text-xs"> SL(R231) </bdo>  <bdo dir="ltr" class="text-xs"> E(W211) </bdo>                                     
+                                    </h5>
+                                    <div class="flex justify-between gap-3 mb-3">
+                                        <span class="text-blue-600 font-semibold text-sm">
+                                            <span class="price">7466000</span> ت
+                                        </span>
+                                        <div class="flex gap-2 items-center">
+                                            <svg viewBox="0 0 24 24" class="w-3 h-3 fill-amber-500"><path d="m5.224 23.501c-.212 0-.423-.067-.606-.2-.337-.244-.496-.665-.403-1.072l1.608-7.091-5.468-4.827c-.312-.275-.432-.708-.303-1.104.131-.401.473-.674.892-.712l7.22-.656 2.883-6.708c.163-.384.537-.631.953-.631s.79.247.954.63l2.853 6.686 7.249.679c.42.039.762.312.893.712.129.396.01.829-.303 1.104l-5.456 4.789 1.596 7.129c.093.407-.066.828-.403 1.072-.343.247-.779.266-1.14.05l-6.225-3.726-.294-.429.257.429-6.225 3.726c-.166.101-.35.15-.532.15zm6.776-4.881c.184 0 .368.049.532.147l6.225 3.726-1.554-7.133c-.085-.373.041-.76.327-1.012l5.455-4.789-7.238-.725c-.38-.035-.709-.275-.86-.625l-2.853-6.687-2.921 6.686c-.151.352-.48.592-.859.627l-7.22.656 5.436 4.856c.286.252.412.64.327 1.012l-1.608 7.091 6.279-3.684c.164-.097.348-.146.532-.146z"/></svg>
+                                            <span> 3/9 </span>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="overflow-hidden bg-neutral-100 rounded-2xl text-neutral-600 flex px-3 items-center text-xs gap-2 justify-center h-0 group-hover:h-9 opacity-0 group-hover:opacity-100 transition-all">
+                                        مشاهده جزییات
+                                        <svg class="w-3 h-3 fill-slate-800" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>            
+
+                        </div>           
+                    </div>
+
+                    <div class="splide__arrows absolute top-1/2 h-0 -mt-5 -left-12 -right-12 sm:-mt-12 sm:-left-20 sm:-right-20 ">
+                        <button
+                            class="splide__arrow splide__arrow--prev float-right w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white hover:bg-neutral-200 transition-alln cursor-pointer flex items-center justify-center group disabled:bg-white disabled:cursor-no-drop"
+                            type="button"
+                            aria-label="Previous slide"
+                            aria-controls="splide01-track"
+                        >
+                            <svg class="w-4 h-4 fill-slate-800 group-disabled:fill-slate-300" viewBox="0 0 490.651 490.651"><path d="M370.2,237.787L135.533,3.12c-4.16-4.16-10.923-4.16-15.083,0c-4.16,4.16-4.16,10.923,0,15.083l227.136,227.115    L120.451,472.453c-4.16,4.16-4.16,10.923,0,15.083c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.115L370.2,252.869    C374.36,248.709,374.36,241.947,370.2,237.787z"/></svg>
+                        </button>
+                        <button
+                            class="splide__arrow splide__arrow--next float-left w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white hover:bg-neutral-200 transition-alln cursor-pointer flex items-center justify-center group disabled:bg-white disabled:cursor-no-drop"
+                            type="button"
+                            aria-label="Next slide"
+                            aria-controls="splide01-track"
+                        >
+                            <svg class="w-4 h-4 fill-slate-800 group-disabled:fill-slate-300" viewBox="0 0 490.651 490.651" class="block fill-gray-500"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z" /></svg>
+                        </button>                        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-neutral-100">
+            <div class="max-w-6xl mx-auto px-16 sm:px-24 pb-10">
+                <div class="rounded-2xl bg-[#2d31f8] bg-city bg-no-repeat bg-contain bg-bottom py-5 flex justify-between items-center relative before:w-full before:h-full before:absolute before:bg-gradient-to-l before:from-violet-500/75 before:to-transparent overflow-hidden">
+                    <div class="flex items-start gap-5 relative text-white py-12 px-14">
+                        <img src="./src/images/icons/iconx.png" class="w-5 h-5 opacity-40 mt-8" />
+                        <div class="mb-2">
+                            <h5 class="mb-3 text-3xl"> با رادیسکار، یه خرید حرفه ای </h5>
+                            <div class="text-sm mb-6"> بزرگترین فروشگاه لوازم یدکی ایران </div>
+                            <button type="buttom" class="bg-white rounded-xl text-blue-600 items-center px-5 py-2 inline-flex gap-2 text-xs" >
+                                 <span> ثبت درخواست قطعه </span>
+                                 <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                            </button>
+
+                        </div>
+                    </div>
+                    <img src="./src/images/home/car-side.png" alt="" class="h-44 relative" />
+                </div>
+            </div>
+        </div>
+
+
+        <section class="bg-neutral-100">
+            <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <h5 class="flex items-center gap-4 mb-8 text-base lg:text-2xl">
                     <img src="./src/images/icons/iconx.png" class="w-5 h-5" />
                     <span class="pb-1">
@@ -671,9 +1192,6 @@
                         </button>                        
                     </div>
                 </div>
-
-
-               
             </div>
         </section>
 
@@ -1027,6 +1545,31 @@
 
     <script>
 
+        //toggleCategories
+        var categoriesMenu = document.getElementById('categories_menu');
+        var categoriesBtn = document.getElementById('categories_button');
+        function toggleCategories(){
+            if (categoriesMenu.classList.contains('opacity-0')){
+                categoriesMenu.classList.add('opacity-100','visible','mt-0');
+                categoriesMenu.classList.remove('opacity-0','invisible','mt-5');
+            }else{
+                categoriesMenu.classList.add('opacity-0','invisible','mt-5');
+                categoriesMenu.classList.remove('opacity-100','visible','mt-0');
+            }
+        }
+
+        document.addEventListener('click', event => {
+            const isClickOutsideCategoriesBtn = !categoriesBtn.contains(event.target);
+            const isClickOutsideCategoriesMenu = !categoriesMenu.contains(event.target);
+            if (isClickOutsideCategoriesBtn && isClickOutsideCategoriesMenu) {
+                categoriesMenu.classList.add('opacity-0','invisible','mt-5');
+                categoriesMenu.classList.remove('opacity-100','visible','mt-0');
+            }
+        })
+
+
+
+
         var searchList = document.getElementById('search_list');
         var searchListWrapper = document.getElementById('search_list_wrapper');
 
@@ -1086,7 +1629,68 @@
         //footer scroll to top:
         function scrollToTop() {
             document.getElementsByTagName('body')[0].scrollIntoView({ behavior: "smooth" });
-        }       
+        }        
+
+
+        function numberWithCommas(x) {
+            x = x.toString();
+            var pattern = /(-?\d+)(\d{3})/;
+            while (pattern.test(x))
+                x = x.replace(pattern, "$1,$2");
+            return x;
+        }
+
+        document.querySelectorAll('.price').forEach(element => {
+            var value = element.innerHTML;
+            element.innerHTML = numberWithCommas(value);
+        });
+
+
+
+        //count-down        
+        function countDown(t) {
+
+            var minute = 60;
+            var hour = 60*minute;
+            var day = 24*hour;
+
+            var number = t; 
+            var days = Math.floor(number/day);
+            number = number%day;
+            var hours = Math.floor(number/hour);
+            number = number%hour;
+            var minutes = Math.floor(number/minute);
+            var seconds = number%minute;
+            
+            function createTimeItem(value, unit){
+                function padNumber(n){
+                    if (!n){
+                        return "00";
+                    }
+                    return n.toString().padStart(2, '0');
+                }
+                return('<span class="bg-blue-800/25 text-white rounded-lg  py-1 px-2 block"><span class="w-6 inline-block text-center font-semibold align-middle"> '+ padNumber(value) +' </span> <span class="text-xs inline-block align-middle"> ' + unit + ' </span></span>')
+            }
+
+            return (createTimeItem(days,'روز') + createTimeItem(hours,'ساعت') + createTimeItem(minutes,'دقیقه') + createTimeItem(seconds,'ثانیه'));
+        }
+        
+        document.querySelectorAll('.count-down').forEach(element => {
+
+            var value = +element.getAttribute('data-value');   
+
+            var timer = setInterval(()=>{
+                value--;
+
+                element.innerHTML = countDown(value)
+
+                if(value < 1){
+                    clearInterval(timer);
+                }
+            },1000);
+
+        });
+
 
     </script>
 
@@ -1118,6 +1722,29 @@
             });
             promotionSplide.mount();
 
+
+            
+            var producrsSplide = new Splide('.producrs-splide', {
+                pagination:false,
+                perPage: 4,
+                breakpoints: {
+                        600: {
+                            perPage: 1,
+                        },
+                        900: {
+                            perPage: 2,
+                        },
+                        1200: {
+                            perPage: 3,
+                        },
+                },
+                direction: 'rtl',
+                perMove: 1,
+                gap:'1.5rem'
+            });
+            producrsSplide.mount();
+
+            
             
             var topBrandsSplide = new Splide('.top-brands-splide', {
                 pagination:false,
