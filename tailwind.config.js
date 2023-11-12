@@ -9,7 +9,8 @@ module.exports = {
         'banner': "url('../images/home/banner.png')"
       },
       fontFamily: {
-        'yekan': ['Yekan', 'sans-serif']
+        'yekan': ['Yekan', 'sans-serif'],
+        'modam': ['Modam', 'sans-serif']
       },
       fontSize: {
         xxs: '12px',
