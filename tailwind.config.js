@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'r': "url('../images/R.png')",
+        'r2': "url('../images/R2.png')",
         'city': "url('../images/home/city.png')",
         'banner': "url('../images/home/banner.png')"
       },
@@ -15,11 +16,16 @@ module.exports = {
       fontSize: {
         xxs: '12px',
         xs: '13px',
-        sm: '15px',
+        sm: '14px',
+        '2xl': '22px'
       },
       borderWidth: {
         3:'3px',
         12:'12px'
+      },
+      height:{
+        .75: '3px',
+        18: '4.5rem'
       },
       colors: {
         blue: {
@@ -38,6 +44,7 @@ module.exports = {
         neutral:{
           100:"#f7f7f7",
           150:"#f2f2f2",
+          200:'#efefef'
         }
       }
     }

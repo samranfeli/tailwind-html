@@ -96,15 +96,15 @@
 </head>
 
 <body dir="rtl" class="font-yekan text-neutral-700">
-    <header class="shadow-md text-sm leading-7 relative z-20">
+    <header class="shadow-sm text-sm leading-7 relative z-20">
 
-        <div class="max-w-7xl mx-auto px-3 py-6 md:pt-10 md:pb-9">
+        <div class="max-w-7xl mx-auto px-3 py-6 md:py-10">
 
             <div class="flex justify-between items-center mb-7">
 
                 <form class="w-full lg:max-w-md bg-gray-100 p-1 rounded-xl absolute lg:relative -top-20 lg:top-0">
                     <input id="searchInput" type="text"
-                        class="rounded-xl w-full text-sm leading-7 pt-2 pb-3 pr-4 pl-12 placeholder:text-gray-400 outline-none focus:bg-gray-50 "
+                        class="rounded-xl w-full text-sm leading-7 py-3 pr-4 pl-12 placeholder:text-gray-400 outline-none focus:bg-gray-50 "
                         placeholder="محصول مورد نظر خود را جستجو کنید..." onkeyup="search(this.value)" />
                     <button type="button"
                         class="h-12 w-12 absolute left-1 top-1/2 -translate-y-2/4 flex justify-center items-center">
@@ -122,7 +122,7 @@
                     <a href="#" class="bg-[#f3f3ff] rounded-xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
                         <svg viewBox="0 0 512 512" class="w-5 h-5 fill-blue-600"><path d="M421.184,384.96l-81.728-20.437l-6.955-27.819c21.867-21.653,36.843-51.371,41.28-81.899    c12.117-3.392,21.504-13.803,23.125-26.837l5.333-42.667c1.131-9.003-1.643-18.091-7.616-24.939    c-3.499-4.011-7.915-7.04-12.8-8.896l1.963-40.171l7.979-8c12.011-12.779,21.973-34.688,1.152-66.475    C376.917,12.395,349.739,0,312.107,0c-14.827,0-49.024,0-80.853,21.376C140.373,23.275,128,65.493,128,106.667    c0,9.579,2.325,31.147,3.861,44.16c-5.483,1.728-10.475,4.928-14.357,9.323c-6.059,6.891-8.896,16.043-7.765,25.131l5.333,42.667    c1.749,13.931,12.331,24.853,25.664,27.456c4.416,29.333,18.624,58.112,39.232,79.403l-7.424,29.717L90.816,384.96    C37.333,398.336,0,446.165,0,501.333C0,507.221,4.779,512,10.667,512h490.667c5.888,0,10.667-4.821,10.667-10.709    C512,446.165,474.667,398.336,421.184,384.96z M21.888,490.667c4.373-40.725,33.621-74.88,74.112-85.013l87.915-21.973    c3.819-0.96,6.805-3.947,7.787-7.765l10.453-41.835c0.96-3.755-0.235-7.723-3.051-10.368    c-21.547-20.203-35.797-49.835-38.144-79.232c-0.448-5.547-5.077-9.813-10.645-9.813h-3.477c-5.376,0-9.92-4.011-10.581-9.344    l-5.333-42.667c-0.384-3.093,0.533-6.059,2.581-8.384c2.048-2.325,4.885-3.605,8-3.605h2.197c3.072,0,5.995-1.323,8-3.605    c2.027-2.304,2.965-5.355,2.581-8.384c-1.365-10.944-4.949-41.579-4.949-52.011c0-33.28,6.528-63.211,85.44-64    c2.176-0.021,4.331-0.725,6.101-1.984c23.808-17.045,49.365-19.349,71.232-19.349c29.995,0,51.157,9.152,62.955,27.179    c14.165,21.653,8.064,32.853,1.387,39.957l-10.667,10.667c-1.877,1.877-2.987,4.373-3.115,7.019l-2.581,53.397    c-0.128,2.901,0.917,5.717,2.901,7.829s4.736,3.328,7.637,3.349c3.093,0.021,5.909,1.323,7.936,3.648    c2.027,2.304,2.923,5.227,2.539,8.277l-5.333,42.667c-0.661,5.333-5.227,9.344-11.627,9.344c-5.568,0-10.197,4.267-10.645,9.813    c-2.411,30.336-17.344,60.544-39.979,80.832c-2.944,2.624-4.181,6.677-3.221,10.517l10.027,40.085    c0.96,3.819,3.947,6.805,7.744,7.765L416,405.653c40.469,10.133,69.717,44.267,74.091,85.013H21.888z"/></svg>
                         <span
-                            class="hidden md:block text-blue-600 bg-white rounded-xl px-8 pt-2 pb-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
+                            class="hidden md:block text-blue-600 bg-white rounded-xl px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
                             حساب کاربری
                         </span>
                     </a>
@@ -135,7 +135,7 @@
                             <path d="M488,78.272c-2.027-2.283-4.928-3.605-8-3.605H96c-5.888,0-10.667,4.779-10.667,10.667S90.112,96,96,96h371.925    l-15.168,121.301c-2.005,15.979-15.659,28.032-31.765,28.032H128c-5.888,0-10.667,4.779-10.667,10.667    c0,5.888,4.779,10.667,10.667,10.667h292.992c26.837,0,49.6-20.075,52.928-46.72l16.661-133.291    C490.965,83.626,490.027,80.554,488,78.272z"/>
                         </svg>
                         <span
-                            class="hidden md:block text-blue-600 bg-white rounded-xl px-8 pt-2 pb-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
+                            class="hidden md:block text-blue-600 bg-white rounded-xl px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
                             سبد خرید
                         </span>
                     </a>
@@ -145,27 +145,31 @@
 
             <div class="flex justify-between items-center">
                 <nav class="md:flex items-center gap-4 font-semibold">
-                    <button type="button" id="categories_button" onclick="toggleCategories();" class="pb-1 flex items-center gap-2 ml-4 text-blue-600 block group">
-                        <svg class="w-6 h-6 fill-blue-600" viewBox="0 0 48 48"><path d="M42,12v3H30v-3H42z M42,22.5v3H18v-3H42z M42,33v3H6v-3H42z"/></svg>
-                        <span class="pb-1">
+                    <button type="button" id="categories_button" onclick="toggleCategories();" class="flex items-center gap-3 ml-4 text-blue-600 block group">
+                        <div class="flex flex-col justify-between w-6 gap-0.5">
+                            <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
+                            <span class="bg-current h-0.75 w-2/3 opacity-40"></span>
+                            <span class="bg-current h-0.75 opacity-20"></span>
+                        </div>
+                        <span>
                             دسته بندی سریع
                         </span>
                     </button>
-                    <a href="#" class="pb-1 hover:text-blue-600 transition-all block">صفحه نخست</a>
+                    <a href="#" class="hover:text-blue-600 transition-all block">صفحه نخست</a>
                     <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="pb-1 hover:text-blue-600 transition-all block">درباره رادیسکار</a>
+                    <a href="#" class="hover:text-blue-600 transition-all block">درباره رادیسکار</a>
                     <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="pb-1 hover:text-blue-600 transition-all block">راهنمای خرید</a>
+                    <a href="#" class="hover:text-blue-600 transition-all block">راهنمای خرید</a>
                     <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="pb-1 hover:text-blue-600 transition-all block">پرسشهای متداول</a>
+                    <a href="#" class="hover:text-blue-600 transition-all block">پرسشهای متداول</a>
                     <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="pb-1 hover:text-blue-600 transition-all block">تماس با ما</a>
+                    <a href="#" class="hover:text-blue-600 transition-all block">تماس با ما</a>
                 </nav>
 
                 <div class="lg:flex gap-3 items-center">
                     <a href="#" class="flex items-center px-10 gap-4 group block">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600" ><path d="m9 22c-2.479 0-4.873-1.04-6.57-2.854-1.721-1.839-2.576-4.239-2.409-6.759.313-4.703 4.389-8.387 9.279-8.387h11.2c.276 0 .5.224.5.5s-.224.5-.5.5h-11.2c-4.365 0-8.003 3.273-8.281 7.453-.149 2.24.611 4.374 2.142 6.009 1.508 1.613 3.637 2.538 5.839 2.538 4.411 0 8-3.589 8-8 0-.276.224-.5.5-.5s.5.224.5.5c0 4.963-4.037 9-9 9z"/><path d="m20.5 13.5h-6.38c-1.006 0-1.929-.646-2.351-1.646-.107-.255.012-.548.267-.655.254-.105.547.011.655.267.269.638.816 1.034 1.429 1.034h6.38c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m9 17c-2.206 0-4-1.794-4-4s1.794-4 4-4 4 1.794 4 4-1.794 4-4 4zm0-7c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/><path d="m9 16.5c-.276 0-.5-.224-.5-.5v-6c0-.276.224-.5.5-.5s.5.224.5.5v6c0 .276-.224.5-.5.5z"/><path d="m22.5 17h-1c-.827 0-1.5-.673-1.5-1.5v-13c0-.827.673-1.5 1.5-1.5h1c.827 0 1.5.673 1.5 1.5v13c0 .827-.673 1.5-1.5 1.5zm-1-15c-.275 0-.5.225-.5.5v13c0 .275.225.5.5.5h1c.275 0 .5-.225.5-.5v-13c0-.275-.225-.5-.5-.5z"/></svg>
-                        <span class="pb-1 font-semibold group-hover:text-blue-600 transition-all">
+                        <span class="font-semibold group-hover:text-blue-600 transition-all">
                             درخواست قطعه
                         </span>
                     </a>
@@ -174,14 +178,14 @@
 
                     <a href="#" class="flex items-center px-10 gap-4 group block">
                         <svg viewBox="0 0 24 24"  class="w-5 h-5 fill-blue-600" ><path d="m12 24c-6.617 0-12-5.383-12-12s5.383-12 12-12 12 5.383 12 12-5.383 12-12 12zm0-23c-6.065 0-11 4.935-11 11s4.935 11 11 11 11-4.935 11-11-4.935-11-11-11z"/></g><g><path d="m17.5 12.5h-11c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h11c.276 0 .5.224.5.5s-.224.5-.5.5z"/></g><g><path d="m12 18c-.276 0-.5-.224-.5-.5v-11c0-.276.224-.5.5-.5s.5.224.5.5v11c0 .276-.224.5-.5.5z"/></svg>
-                        <span class="pb-1 font-semibold group-hover:text-blue-600 transition-all">
+                        <span class="font-semibold group-hover:text-blue-600 transition-all">
                             ثبت خودرو
                         </span>
                     </a>
                 </div>
             </div>
         </div>
-        <div id="categories_menu" class="bg-white shadow-md border-t-2 invisible opacity-0 mt-5 transition-all absolute left-0 right-0 top-full">
+        <div id="categories_menu" class="bg-white shadow-sm border-t-2 invisible opacity-0 mt-5 transition-all absolute left-0 right-0 top-full">
             <div class="max-w-7xl mx-auto px-3">
                 <ul class="relative">
                     <li class="group">
@@ -421,11 +425,11 @@
         <section class="bg-neutral-100 relative">
             <div class="max-w-6xl mx-auto px-16 sm:px-24">
                 <div class="md:w-1/2 md:pl-16 pt-16">
-                    <div class="bg-neutral-150 p-5 rounded-2xl">
+                    <div class="bg-neutral-200 p-6 rounded-2xl">
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
-                            <label class="text-neutral-400 w-28 inline-block px-3"> نوع خودرو </label>
-                            <select class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                            <label class="text-neutral-400 w-32 inline-block px-3"> نوع خودرو </label>
+                            <select class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                                 <option value=""> خودرو سواری آلمانی (1000)</option>
                                 <option value=""> خودرو سواری ژاپنی (161)</option>
@@ -433,51 +437,58 @@
                                 <option value=""> خودرو سواری ایرانی (37)</option>
                                 <option value=""> خودرو سواری چینی (44)</option>
                             </select>
-                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
                         </div>
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
-                            <label class="text-neutral-400 w-28 inline-block px-3"> سازنده </label>
-                            <select disabled class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                            <label class="text-neutral-400 w-32 inline-block px-3"> سازنده </label>
+                            <select disabled class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                             </select>
-                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
                         </div>
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
-                            <label class="text-neutral-400 w-28 inline-block px-3"> مدل </label>
-                            <select disabled class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                            <label class="text-neutral-400 w-32 inline-block px-3"> مدل </label>
+                            <select disabled class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                             </select>
-                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
                         </div>
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-xl">
-                            <label class="text-neutral-400 w-28 inline-block px-3"> مشخصات </label>
-                            <select disabled class="disabled:text-neutral-300 block h-14 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
+                            <label class="text-neutral-400 w-32 inline-block px-3"> مشخصات </label>
+                            <select disabled class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                             </select>
-                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
+                            <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"/></svg>
                         </div>
 
-                        <button  class="bg-blue-600 text-white rounded-2xl p-3 block w-full cursor-pointer mt-7">
+                        <button  class="bg-blue-600 text-white rounded-xl p-3 h-18 block w-full cursor-pointer mt-7">
                             فیلتر محصولات
                         </button>
                     </div>
                 </div>
 
                 <div class="bg-banner bg-cover relative md:absolute left-0 top-0 bottom-0 w-1/2 rounded-br-2xl before:w-full before:h-full before:absolute before:bg-gradient-to-l before:from-neutral-800 before:to-transparent overflow-hidden">
-                    <div class="relative text-white flex flex-col justify-between items-start h-full p-10">
+                    <div class="relative text-white flex flex-col justify-between items-start h-full p-20">
                         <div></div>
                         <div class="mb-2">
-                            <h5 class="mb-3 text-3xl">
+
+                            <div class="flex flex-col justify-between w-4 gap-1 mb-5">
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                <span class="bg-current h-0.75 opacity-40"></span>
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            </div>
+
+                            <h5 class="mb-3 text-4xl font-modam">
                                  فروشگاه لوازم یدکی خودرو!
                             </h5>
-                            <div class="text-sm mb-6">
+                            <div class="text-sm mb-6 text-neutral-400">
                                  با محصولات رادیسکار، کیفیت را تجربه کنید
                             </div>
                         </div>  
-                        <a href="#" class="items-center inline-flex gap-2 text-xs">
+                        <a href="#" class="items-center inline-flex gap-2 text-xs text-neutral-400">
                             <span> مشاهده همه محصولات </span>
                             <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
                         </a> 
@@ -492,10 +503,14 @@
                 
                 <div class="category-splide splide">
                     
-                    <div class="flex justify-between items-center mb-8">
+                    <div class="flex justify-between items-center mb-12">
                         <h5 class="flex items-center gap-4 text-base lg:text-2xl">
-                            <img src="./src/images/icons/heading-icon.png" class="w-5 h-5" />
-                            <span class="pb-1">
+                            <div class="flex flex-col justify-between w-4 gap-1">
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                <span class="bg-current h-0.75 opacity-40"></span>
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            </div>
+                            <span class="font-modam">
                                 دسته بندی خودرویی قطعات
                             </span>
                         </h5>
@@ -505,11 +520,11 @@
                     <div class="splide__track">
                         <div class="splide__list">
                             <a href="#" class="splide__slide bg-white rounded-xl relative flex items-center justify-between py-8 cursor-pointer">
-                                <img src="./src/images/brands/bmv-car.png" alt="BMW" class="h-20 lg:h-36 my-2" />
-                                <div class="px-5 lg:px-10">
+                                <img src="./src/images/brands/bmv-car.png" alt="BMW" class="h-20 lg:h-32 my-2" />
+                                <div class="px-4 lg:px-8">
                                     <img src="./src/images/brands/bmw-logo.png" alt="BMW" class="w-14 h-14 mb-4 block" />
                                     <h5 class="flex justify-between items-center gap-4 mb-2">
-                                        <span class="pb-1 font-semibold">لوازم یدکی بی ام دبلیو</span>
+                                        <span class="font-semibold text-sm">لوازم یدکی بی ام دبلیو</span>
                                         <svg viewBox="0 0 490.651 490.651" class="w-4 h-4 fill-neutral-400"><path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"/></svg>
                                     </h5>
                                     <span
@@ -519,11 +534,11 @@
                                 </div>
                             </a>
                             <a href="#" class="splide__slide bg-white rounded-xl relative flex items-center justify-between py-8 cursor-pointer">
-                                <img src="./src/images/brands/benz-car.png" alt="BMW" class="h-20 lg:h-36 my-2" />
-                                <div class="px-5 lg:px-10">
+                                <img src="./src/images/brands/benz-car.png" alt="BMW" class="h-20 lg:h-32 my-2" />
+                                <div class="px-4 lg:px-8">
                                     <img src="./src/images/brands/benz-logo.png" alt="BMW" class="w-14 h-14 mb-4 block" />
                                     <h5 class="flex justify-between items-center gap-4 mb-2">
-                                        <span class="pb-1 font-semibold">لوازم یدکی مرسدس بنز</span>
+                                        <span class="font-semibold text-sm">لوازم یدکی مرسدس بنز</span>
                                         <svg viewBox="0 0 490.651 490.651" class="w-4 h-4 fill-neutral-400"><path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"/></svg>
                                     </h5>
                                     <span
@@ -533,11 +548,11 @@
                                 </div>
                             </a>
                             <a href="#" class="splide__slide bg-white rounded-xl relative flex items-center justify-between py-8 cursor-pointer">
-                                <img src="./src/images/brands/bmv-car.png" alt="BMW" class="h-20 lg:h-36 my-2" />
-                                <div class="px-5 lg:px-10">
+                                <img src="./src/images/brands/bmv-car.png" alt="BMW" class="h-20 lg:h-32 my-2" />
+                                <div class="px-4 lg:px-8">
                                     <img src="./src/images/brands/bmw-logo.png" alt="BMW" class="w-14 h-14 mb-4 block" />
                                     <h5 class="flex justify-between items-center gap-4 mb-2">
-                                        <span class="pb-1 font-semibold">لوازم یدکی بی ام دبلیو</span>
+                                        <span class="font-semibold text-sm">لوازم یدکی بی ام دبلیو</span>
                                         <svg viewBox="0 0 490.651 490.651" class="w-4 h-4 fill-neutral-400"><path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"/></svg>
                                     </h5>
                                     <span
@@ -547,11 +562,11 @@
                                 </div>
                             </a>
                             <a href="#" class="splide__slide bg-white rounded-xl relative flex items-center justify-between py-8 cursor-pointer">
-                                <img src="./src/images/brands/benz-car.png" alt="BMW" class="h-20 lg:h-36 my-2" />
-                                <div class="px-5 lg:px-10">
+                                <img src="./src/images/brands/benz-car.png" alt="BMW" class="h-20 lg:h-32 my-2" />
+                                <div class="px-4 lg:px-8">
                                     <img src="./src/images/brands/benz-logo.png" alt="BMW" class="w-14 h-14 mb-4 block" />
                                     <h5 class="flex justify-between items-center gap-4 mb-2">
-                                        <span class="pb-1 font-semibold">لوازم یدکی مرسدس بنز</span>
+                                        <span class="font-semibold text-sm">لوازم یدکی مرسدس بنز</span>
                                         <svg viewBox="0 0 490.651 490.651" class="w-4 h-4 fill-neutral-400"><path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"/></svg>
                                     </h5>
                                     <span
@@ -569,8 +584,8 @@
 
         <section class="bg-neutral-100">
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
-                <div class="bg-white rounded-2xl px-10 py-12 flex items-center flex-col md:flex-row gap-8 justify-between">
-                    <h5 class="mb-2 text-xl">
+                <div class="bg-white md:bg-r2 md:bg-contain md:bg-[center_right_60px] md:bg-no-repeat rounded-2xl px-10 py-12 flex items-center flex-col md:flex-row gap-8 justify-between">
+                    <h5 class="mb-2 text-2xl font-modam">
                         مزایای خرید از رادیسکار
                     </h5>
                     <div class="flex flex-col md:flex-row items-center gap-8">
@@ -781,123 +796,87 @@
 
 
         <section class="bg-neutral-100">
-            <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
-                <div class="bg-blue-600 rounded-2xl">
-
-                    <div class="relative -top-1 overflow-hidden rounded-2xl" dir="ltr">
-                        <div class="promotion-splide splide">
-                           
-                            <div class="splide__track">
-                                <div class="splide__list">
-
-                                    <a href="#" class="splide__slide block" dir="rtl">
-                                        <div class="bg-white rounded-2xl flex">
-                                            <div class=" px-10 py-14 basis-1/2 shrink-0">
-                                                <span class="inline-block bg-indigo-50 px-8 py-2 rounded-3xl text-xs text-blue-600 mb-4">
-                                                    پیشنهاد شگفت انگیز هفته
-                                                </span>
-                                                <h4 class="font-semibold mb-3">
-                                                    لاستیک سایز 
-                                                    <bdo dir="ltr" class="mx-1"> 40R18/225 </bdo>
-                                                    برند Continental مدل Contact3 
-                                                    <br/>
-                                                    دو حلقه وارداتی امارات
-                        
-                                                </h4>
-                                                <div>
-                                                    <span class="ml-4 line-through text-neutral-400 text-sm">
-                                                        &nbsp;&nbsp;
-                                                        <span class="price">9200000</span>
-                                                        &nbsp;&nbsp;
-                                                    </span>
-                                                    <span class="font-semibold text-blue-600">
-                                                        <span class="price">7900000</span> تومان
-                                                    </span>
-                                                </div>
-                                                
-                                            </div>
-                                            <img src="./src/images/home/tire.png" class="h-46 block self-end mr-10" />
+            <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6" dir="ltr">
+                <div class="promotion-splide splide">                
+                    <div class="splide__track">
+                        <div class="splide__list">
+                
+                            <div class="splide__slide" dir="rtl">
+                                <a href="#" class="bg-white relative z-10 rounded-2xl flex">
+                                    <div class=" px-10 py-14 basis-1/2 shrink-0">
+                                        <span class="inline-block bg-violet-50 px-8 py-3 rounded-3xl text-lg text-blue-600 mb-4 font-modam">
+                                            پیشنهاد شگفت انگیز هفته
+                                        </span>
+                                        <h4 class="font-semibold mb-3">
+                                            لاستیک سایز 
+                                            <bdo dir="ltr" class="mx-1"> 40R18/225 </bdo>
+                                            برند Continental مدل Contact3 
+                                            <br/>
+                                            دو حلقه وارداتی امارات
+                
+                                        </h4>
+                                        <div>
+                                            <span class="ml-4 line-through text-neutral-400 text-sm">
+                                                &nbsp;&nbsp;
+                                                <span class="price">9200000</span>
+                                                &nbsp;&nbsp;
+                                            </span>
+                                            <span class="font-semibold text-blue-600">
+                                                <span class="price">7900000</span> تومان
+                                            </span>
                                         </div>
-                                    </a>
-                                    <a href="#" class="splide__slide block" dir="rtl">
-                                        <div class="bg-white rounded-2xl flex">
-                                            <div class=" px-10 py-14 basis-1/2 shrink-0">
-                                                <span class="inline-block bg-indigo-50 px-8 py-2 rounded-3xl text-xs text-blue-600 mb-4">
-                                                    پیشنهاد شگفت انگیز هفته
-                                                </span>
-                                                <h4 class="font-semibold mb-3">
-                                                    لاستیک سایز 
-                                                    <bdo dir="ltr" class="mx-1"> 40R18/225 </bdo>
-                                                    برند Continental مدل Contact3 
-                                                    <br/>
-                                                    دو حلقه وارداتی امارات
-                        
-                                                </h4>
-                                                <div>
-                                                    <span class="ml-4 line-through text-neutral-400 text-sm">
-                                                        &nbsp;&nbsp;
-                                                        <span class="price">9200000</span>
-                                                        &nbsp;&nbsp;
-                                                    </span>
-                                                    <span class="font-semibold text-blue-600">
-                                                        <span class="price">7900000</span> تومان
-                                                    </span>
-                                                </div>
-                                                
-                                            </div>
-                                            <img src="./src/images/home/tire.png" class="h-46 block self-end mr-10" />
-                                        </div>
-                                    </a>
-                                    <a href="#" class="splide__slide block" dir="rtl">
-                                        <div class="bg-white rounded-2xl flex">
-                                            <div class=" px-10 py-14 basis-1/2 shrink-0">
-                                                <span class="inline-block bg-indigo-50 px-8 py-2 rounded-3xl text-xs text-blue-600 mb-4">
-                                                    پیشنهاد شگفت انگیز هفته
-                                                </span>
-                                                <h4 class="font-semibold mb-3">
-                                                    لاستیک سایز 
-                                                    <bdo dir="ltr" class="mx-1"> 40R18/225 </bdo>
-                                                    برند Continental مدل Contact3 
-                                                    <br/>
-                                                    دو حلقه وارداتی امارات
-                        
-                                                </h4>
-                                                <div>
-                                                    <span class="ml-4 line-through text-neutral-400 text-sm">
-                                                        &nbsp;&nbsp;
-                                                        <span class="price">9200000</span>
-                                                        &nbsp;&nbsp;
-                                                    </span>
-                                                    <span class="font-semibold text-blue-600">
-                                                        <span class="price">7900000</span> تومان
-                                                    </span>
-                                                </div>
-                                                
-                                            </div>
-                                            <img src="./src/images/home/tire.png" class="h-46 block self-end mr-10" />
-                                        </div>
-                                    </a>
- 
-                                
-
-
+                                        
+                                    </div>
+                                    <img src="./src/images/home/tire.png" class="h-52 block self-end mr-4" />
+                                </a>    
+                                <div class="flex justify-between relative z-0 -mt-6 bg-blue-600 rounded-2xl items-center pt-14 pb-8 px-10">
+                                    <div class="count-down flex gap-2" data-timer="15800"></div>
+                                    <a href="#" class="bg-white rounded-xl text-blue-600 items-center px-5 py-2 inline-flex gap-2 text-xs">
+                                        <span> مشاهده محصولات </span>
+                                        <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>                        
                                 </div>
                             </div>
-                            <ul class="splide__pagination flex absolute flex-col gap-1 top-1/2 left-12 leading-3"></ul>
-
+                            <div class="splide__slide" dir="rtl">
+                                <a href="#" class="bg-white relative z-10 rounded-2xl flex">
+                                    <div class=" px-10 py-14 basis-1/2 shrink-0">
+                                        <span class="inline-block bg-violet-50 px-8 py-3 rounded-3xl text-lg text-blue-600 mb-4 font-modam">
+                                            پیشنهاد شگفت انگیز هفته
+                                        </span>
+                                        <h4 class="font-semibold mb-3">
+                                            لاستیک سایز 
+                                            <bdo dir="ltr" class="mx-1"> 40R18/225 </bdo>
+                                            برند Continental مدل Contact3 
+                                            <br/>
+                                            دو حلقه وارداتی امارات
+                
+                                        </h4>
+                                        <div>
+                                            <span class="ml-4 line-through text-neutral-400 text-sm">
+                                                &nbsp;&nbsp;
+                                                <span class="price">9200000</span>
+                                                &nbsp;&nbsp;
+                                            </span>
+                                            <span class="font-semibold text-blue-600">
+                                                <span class="price">7900000</span> تومان
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                    <img src="./src/images/home/tire.png" class="h-52 block self-end mr-4" />
+                                </a>    
+                                <div class="flex justify-between relative z-0 -mt-6 bg-blue-600 rounded-2xl items-center pt-14 pb-8 px-10">
+                                    <div class="count-down flex gap-2" data-timer="150180"></div>
+                                    <a href="#" class="bg-white rounded-xl text-blue-600 items-center px-5 py-2 inline-flex gap-2 text-xs">
+                                        <span> مشاهده محصولات </span>
+                                        <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
+                                    </a>                        
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
-                    
-
-                    <div class="flex justify-between items-center pt-7 pb-8 px-10">
-                        <div class="count-down flex gap-2" data-value="150180"></div>
-                        <a href="#" class="bg-white rounded-xl text-blue-600 items-center px-5 py-2 inline-flex gap-2 text-xs">
-                            <span> مشاهده محصولات </span>
-                            <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651"> <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path></svg>
-                        </a>                        
-                    </div>
-
-
+                    <ul class="splide__pagination flex absolute flex-col gap-1 top-1/2 -mt-14 left-12 leading-3"></ul>
                 </div>
             </div>
         </section>
@@ -907,8 +886,12 @@
                 <div class="flex justify-between items-center mb-8">
                     <div class="flex items-center gap-4">
                         <h5 class="flex items-center gap-4 text-base lg:text-2xl">
-                            <img src="./src/images/icons/heading-icon.png" class="w-5 h-5" />
-                            <span class="pb-1">
+                            <div class="flex flex-col justify-between w-4 gap-1">
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                <span class="bg-current h-0.75 opacity-40"></span>
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            </div>
+                            <span class="font-modam">
                                 جدیدترین محصولات
                             </span>
                         </h5>
@@ -1105,7 +1088,11 @@
             <div class="max-w-6xl mx-auto px-16 sm:px-24 pb-10">
                 <div class="rounded-2xl bg-[#2d31f8] bg-city bg-no-repeat bg-contain bg-bottom py-5 flex justify-between items-center relative before:w-full before:h-full before:absolute before:bg-gradient-to-l before:from-violet-500/75 before:to-transparent overflow-hidden">
                     <div class="flex items-start gap-5 relative text-white py-12 px-14">
-                        <img src="./src/images/icons/heading-icon.png" class="w-5 h-5 opacity-40 mt-8" />
+                        <div class="flex flex-col justify-between w-4 gap-1 mt-7">
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            <span class="bg-current h-0.75 opacity-40"></span>
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                        </div>
                         <div class="mb-2">
                             <h5 class="mb-3 text-3xl"> با رادیسکار، یه خرید حرفه ای </h5>
                             <div class="text-sm mb-6"> بزرگترین فروشگاه لوازم یدکی ایران </div>
@@ -1125,8 +1112,12 @@
         <section class="bg-neutral-100">
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <h5 class="flex items-center gap-4 mb-8 text-base lg:text-2xl">
-                    <img src="./src/images/icons/heading-icon.png" class="w-5 h-5" />
-                    <span class="pb-1">
+                    <div class="flex flex-col justify-between w-4 gap-1">
+                        <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                        <span class="bg-current h-0.75 opacity-40"></span>
+                        <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                    </div>
+                    <span class="font-modam">
                         برترین برند محصولات
                     </span>
                 </h5>
@@ -1244,10 +1235,14 @@
                 <div class="flex flex-col md:flex-row gap-2">
 
                     <div
-                        class="mt-8 bg-blue-600 bg-contain bg-[center_left_65px] bg-no-repeat bg-r rounded-xl flex items-center gap-6 relative flex-auto text-white py-12 px-6">
-                        <img src="./src/images/icons/heading-icon.png" class="w-5 h-5 opacity-40" />
+                        class="mt-8 bg-blue-600 md:bg-contain md:bg-[center_left_65px] md:bg-no-repeat md:bg-r rounded-xl flex items-center gap-6 relative flex-auto text-white py-12 px-6">
+                        <div class="flex flex-col justify-between w-4 gap-1">
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            <span class="bg-current h-0.75 opacity-40"></span>
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                        </div>
                         <div class="mb-2">
-                            <h5 class="mb-2 text-2xl"> هزاران کیلومتر در حرکت </h5>
+                            <h5 class="mb-2 text-2xl font-modam"> هزاران کیلومتر در حرکت </h5>
                             <p class="text-sm"> با محصولات اصلی بوش </p>
                         </div>
                         <img src="./src/images/home/wire.png" alt="wite"
@@ -1256,9 +1251,13 @@
 
                     <div
                         class="mt-8 bg-stone-700 rounded-xl flex items-center gap-6 relative flex-auto text-white py-12 px-6">
-                        <img src="./src/images/icons/heading-icon.png" class="w-5 h-5 opacity-40" />
+                        <div class="flex flex-col justify-between w-4 gap-1">
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            <span class="bg-current h-0.75 opacity-40"></span>
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                        </div>
                         <div class="mb-2">
-                            <h5 class="mb-2 text-2xl"> سرعت در مسیر درست </h5>
+                            <h5 class="mb-2 text-2xl font-modam"> سرعت در مسیر درست </h5>
                             <p class="text-sm"> با روغن موتورهای تکستار </p>
                         </div>
                         <img src="./src/images/home/disc.png" alt="wite"
@@ -1273,8 +1272,12 @@
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6 md:pb-20">
                 <div class="flex justify-between items-center mb-8">
                     <h5 class="flex items-center gap-4 text-base lg:text-2xl">
-                        <img src="./src/images/icons/heading-icon.png" class="w-5 h-5" />
-                        <span class="pb-1">
+                        <div class="flex flex-col justify-between w-4 gap-1">
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            <span class="bg-current h-0.75 opacity-40"></span>
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                        </div>
+                        <span class="font-modam">
                             مجله خبری رادیسکار
                         </span>
                     </h5>
@@ -1293,7 +1296,7 @@
                             <div class="splide__slide text-right block bg-white rounded-2xl p-4 group cursor-pointer">
                                 <div class="relative mb-4">
                                     <img src="./src/images/blogs/blog-1.png" class="w-full rounded-2xl" />
-                                    <span class="absolute pt-1 pb-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
+                                    <span class="absolute py-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
                                         خودرو
                                     </span>
                                 </div>
@@ -1311,7 +1314,7 @@
                             <div class="splide__slide text-right block bg-white rounded-2xl p-4 group cursor-pointer">
                                 <div class="relative mb-4">
                                     <img src="./src/images/blogs/blog-2.png" class="w-full rounded-2xl" />
-                                    <span class="absolute pt-1 pb-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
+                                    <span class="absolute py-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
                                         خودرو
                                     </span>
                                 </div>
@@ -1329,7 +1332,7 @@
                             <div class="splide__slide text-right block bg-white rounded-2xl p-4 group cursor-pointer">
                                 <div class="relative mb-4">
                                     <img src="./src/images/blogs/blog-3.png" class="w-full rounded-2xl" />
-                                    <span class="absolute pt-1 pb-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
+                                    <span class="absolute py-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
                                         خودرو
                                     </span>
                                 </div>
@@ -1347,7 +1350,7 @@
                             <div class="splide__slide text-right block bg-white rounded-2xl p-4 group cursor-pointer">
                                 <div class="relative mb-4">
                                     <img src="./src/images/blogs/blog-2.png" class="w-full rounded-2xl" />
-                                    <span class="absolute pt-1 pb-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
+                                    <span class="absolute py-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
                                         خودرو
                                     </span>
                                 </div>
@@ -1365,7 +1368,7 @@
                             <div class="splide__slide text-right block bg-white rounded-2xl p-4 group cursor-pointer">
                                 <div class="relative mb-4">
                                     <img src="./src/images/blogs/blog-2.png" class="w-full rounded-2xl" />
-                                    <span class="absolute pt-1 pb-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
+                                    <span class="absolute py-2 px-3 rounded bg-stone-500/50 text-white text-sm bottom-5 right-5 inline-block">
                                         خودرو
                                     </span>
                                 </div>
@@ -1414,8 +1417,12 @@
                 <div class="gap-4 flex items-center justify-between flex-col md:flex-row">
 
                     <h5 class="flex items-center justify-center gap-4 text-base lg:text-2xl">
-                        <img src="./src/images/icons/heading-icon.png" class="w-5 h-5" />
-                        <span class="pb-1">
+                        <div class="flex flex-col justify-between w-4 gap-1">
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            <span class="bg-current h-0.75 opacity-40"></span>
+                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                        </div>
+                        <span class="font-modam">
                             رادیسکار را در شبکه های اجتماعی دنبال کنید
                         </span>
                     </h5>
@@ -1455,17 +1462,17 @@
 
                     <div class="flex gap-4 items-center mb-3">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600"><path d="m12 24c-.118 0-.236-.042-.331-.125-.354-.313-8.669-7.731-8.669-14.875 0-4.963 4.038-9 9-9s9 4.037 9 9c0 7.144-8.315 14.562-8.669 14.875-.095.083-.213.125-.331.125zm0-23c-4.411 0-8 3.589-8 8 0 5.918 6.451 12.358 8 13.819 1.549-1.461 8-7.901 8-13.819 0-4.411-3.589-8-8-8z"/><path d="m12 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"/></svg>
-                        <span class="pb-1 font-semibold">
+                        <span class="font-semibold">
                             تهران، شریعتی، بالاتر از دستگردی، نبش کوچه جم، پلاک 2
                         </span>
                     </div>
 
                     <div class="flex gap-4 items-center mb-3">
                         <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5"><path d="m12 21c-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5zm0-14c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"/><path d="m21.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.551-.999-2.898-2.485-3.352-.265-.08-.413-.36-.333-.624.081-.263.363-.414.624-.332 1.911.582 3.194 2.314 3.194 4.308v4c0 .276-.224.5-.5.5z"/><path d="m2.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.994 1.283-3.726 3.194-4.308.264-.083.543.068.624.332.08.264-.068.544-.333.624-1.486.454-2.485 1.801-2.485 3.352v4c0 .276-.224.5-.5.5z"/><path d="m13.5 7c-.276 0-.5-.224-.5-.5v-3c0-.276.224-.5.5-.5s.5.224.5.5v3c0 .276-.224.5-.5.5z"/><path d="m10.5 7c-.276 0-.5-.224-.5-.5v-3c0-.276.224-.5.5-.5s.5.224.5.5v3c0 .276-.224.5-.5.5z"/><path d="m23.5 24h-23c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h23c.276 0 .5.224.5.5s-.224.5-.5.5z"/><path d="m16.5 4h-9c-.827 0-1.5-.673-1.5-1.5v-1c0-.827.673-1.5 1.5-1.5h9c.827 0 1.5.673 1.5 1.5v1c0 .827-.673 1.5-1.5 1.5zm-9-3c-.275 0-.5.224-.5.5v1c0 .276.225.5.5.5h9c.275 0 .5-.224.5-.5v-1c0-.276-.225-.5-.5-.5z"/><path d="m21 5c-.276 0-.5-.224-.5-.5v-.5c0-.827-.673-1.5-1.5-1.5h-1.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h1.5c1.379 0 2.5 1.122 2.5 2.5v.5c0 .276-.224.5-.5.5z"/><path d="m3 5c-.276 0-.5-.224-.5-.5v-.5c0-1.378 1.121-2.5 2.5-2.5h1.5c.276 0 .5.224.5.5s-.224.5-.5.5h-1.5c-.827 0-1.5.673-1.5 1.5v.5c0 .276-.224.5-.5.5z"/><path d="m23.5 8h-5c-.276 0-.5-.224-.5-.5v-1c0-1.378 1.121-2.5 2.5-2.5h1c1.379 0 2.5 1.122 2.5 2.5v1c0 .276-.224.5-.5.5zm-4.5-1h4v-.5c0-.827-.673-1.5-1.5-1.5h-1c-.827 0-1.5.673-1.5 1.5z"/><path d="m5.5 8h-5c-.276 0-.5-.224-.5-.5v-1c0-1.378 1.121-2.5 2.5-2.5h1c1.379 0 2.5 1.122 2.5 2.5v1c0 .276-.224.5-.5.5zm-4.5-1h4v-.5c0-.827-.673-1.5-1.5-1.5h-1c-.827 0-1.5.673-1.5 1.5z"/><circle cx="12" cy="9.25" r=".75"/><circle cx="12" cy="17.75" r=".75"/><circle cx="16.25" cy="13.5" r=".75"/><circle cx="7.75" cy="13.5" r=".75"/><ellipse cx="15.005" cy="10.495" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -3.026 13.684)"/><ellipse cx="8.995" cy="16.505" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -9.036 11.195)"/><ellipse cx="15.005" cy="16.505" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -7.276 15.445)"/><ellipse cx="8.995" cy="10.495" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -4.786 9.434)"/></svg>
-                        <span class="pb-1 font-semibold" dir="ltr">
+                        <span class="font-semibold" dir="ltr">
                             021 - 22264310
                         </span>
-                        <span class="pb-1 text-neutral-400">
+                        <span class="text-neutral-400">
                             شنبه تا چهارشنبه 9 الی 17
                         </span>
                     </div>
@@ -1481,8 +1488,12 @@
                 <div class="basis-7/12 grow-1">
                     <div class="md:flex gap-8 text-sm pb-4">
                         <div class="basis-7/12 grow-0">
-                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10">
-                                <img src="./src/images/icons/heading-icon.png" alt="" class="w-4 h-4" />
+                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam">
+                                <div class="flex flex-col justify-between w-4 gap-1">
+                                    <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                    <span class="bg-current h-0.75 opacity-40"></span>
+                                    <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                </div>
                                 <span>لینک های کاربردی</span>
                             </h6>
                             <div class="md:flex gap-8">
@@ -1524,8 +1535,12 @@
                             </div>
                         </div>
                         <div class="basis-5/12 grow-0">
-                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10">
-                                <img src="./src/images/icons/heading-icon.png" alt="" class="w-4 h-4" />
+                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam">
+                                <div class="flex flex-col justify-between w-4 gap-1">
+                                    <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                    <span class="bg-current h-0.75 opacity-40"></span>
+                                    <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                </div>
                                 <span> محصولات </span>
                             </h6>
                             <nav>
@@ -1721,7 +1736,7 @@
         
         document.querySelectorAll('.count-down').forEach(element => {
 
-            var value = +element.getAttribute('data-value');   
+            var value = +element.getAttribute('data-timer');   
 
             var timer = setInterval(()=>{
                 value--;
@@ -1761,7 +1776,7 @@
             var promotionSplide = new Splide('.promotion-splide', {
                 direction: 'ttb',
                 arrows:false,
-                height   : '250px',
+                height   : '370px',
                 wheel    : true
             });
             promotionSplide.mount();
