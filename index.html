@@ -95,8 +95,8 @@
     <link rel="stylesheet" href="./src/styles/tailwind.css" />
 </head>
 
-<body dir="rtl" class="font-yekan text-neutral-700">
-    <header class="shadow-sm text-sm leading-7 relative z-20">
+<body dir="rtl" class="font-yekan text-neutral-700 bg-neutral-100">
+    <header class="bg-white shadow-sm text-sm leading-7 relative z-20">
 
         <div class="max-w-7xl mx-auto px-3 py-6 md:py-10">
 
@@ -111,8 +111,8 @@
                         <svg class="h-5 w-5 fill-neutral-400 hover:fill-blue-600" viewBox="0 0 512.005 512.005"><path d="M508.885,493.784L353.109,338.008c32.341-35.925,52.224-83.285,52.224-135.339c0-111.744-90.923-202.667-202.667-202.667    S0,90.925,0,202.669s90.923,202.667,202.667,202.667c52.053,0,99.413-19.883,135.339-52.245l155.776,155.776    c2.091,2.091,4.821,3.136,7.552,3.136c2.731,0,5.461-1.045,7.552-3.115C513.045,504.707,513.045,497.965,508.885,493.784z     M202.667,384.003c-99.989,0-181.333-81.344-181.333-181.333S102.677,21.336,202.667,21.336S384,102.68,384,202.669    S302.656,384.003,202.667,384.003z"/></svg>
                     </button>
                     <div id="search_list_wrapper"
-                        class="absolute bg-gray-200 p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 invisible mt-3 transition-all">
-                        <div id="search_list" class="max-h-96 overflow-auto"></div>
+                        class="absolute bg-white p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 z-10 invisible mt-3 transition-all">
+                        <div id="search_list" class="max-h-96 overflow-auto leading-4"></div>
                     </div>
                 </form>
 
@@ -144,26 +144,41 @@
             </div>
 
             <div class="flex justify-between items-center">
-                <nav class="md:flex items-center gap-4 font-semibold">
-                    <button type="button" id="categories_button" onclick="toggleCategories();" class="flex items-center gap-3 ml-4 text-blue-600 block group">
-                        <div class="flex flex-col justify-between w-6 gap-0.5">
-                            <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
-                            <span class="bg-current h-0.75 w-2/3 opacity-40"></span>
-                            <span class="bg-current h-0.75 opacity-20"></span>
-                        </div>
-                        <span>
-                            دسته بندی سریع
-                        </span>
-                    </button>
-                    <a href="#" class="hover:text-blue-600 transition-all block">صفحه نخست</a>
-                    <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="hover:text-blue-600 transition-all block">درباره رادیسکار</a>
-                    <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="hover:text-blue-600 transition-all block">راهنمای خرید</a>
-                    <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="hover:text-blue-600 transition-all block">پرسشهای متداول</a>
-                    <span class="h-4 border-r border-gray-200 hidden md:block"></span>
-                    <a href="#" class="hover:text-blue-600 transition-all block">تماس با ما</a>
+                <nav class="font-semibold">
+                    <ul class="md:flex items-center gap-4">
+                        <li>
+                            <button type="button" id="categories_button" onclick="toggleCategories();" class="flex items-center gap-3 ml-4 text-blue-600 block group">
+                                <div class="flex flex-col justify-between w-6 gap-0.5">
+                                    <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
+                                    <span class="bg-current h-0.75 w-2/3 opacity-40"></span>
+                                    <span class="bg-current h-0.75 opacity-20"></span>
+                                </div>
+                                <span>
+                                    دسته بندی سریع
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="#" class="hover:text-blue-600 transition-all block">صفحه نخست</a>
+                        </li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li>
+                            <a href="#" class="hover:text-blue-600 transition-all block">درباره رادیسکار</a>
+                        </li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li>
+                            <a href="#" class="hover:text-blue-600 transition-all block">راهنمای خرید</a>
+                        </li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li>
+                            <a href="#" class="hover:text-blue-600 transition-all block">پرسشهای متداول</a>
+                        </li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li>
+                            <a href="#" class="hover:text-blue-600 transition-all block">تماس با ما</a>
+                        </li>
+                    </ul>
+                    
                 </nav>
 
                 <div class="lg:flex gap-3 items-center">
@@ -422,7 +437,7 @@
 
     <main class="relative z-10">
 
-        <section class="bg-neutral-100 relative">
+        <section class="relative">
             <div class="max-w-6xl mx-auto px-16 sm:px-24">
                 <div class="md:w-1/2 md:pl-16 pt-16">
                     <div class="bg-neutral-200 p-6 rounded-2xl">
@@ -498,7 +513,7 @@
             </div>
         </section>
                 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-5 md:py-12">
                 
                 <div class="category-splide splide">
@@ -582,7 +597,7 @@
             </div>
         </section>
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <div class="bg-white md:bg-r2 md:bg-contain md:bg-[center_right_60px] md:bg-no-repeat rounded-2xl px-10 py-12 flex items-center flex-col md:flex-row gap-8 justify-between">
                     <h5 class="mb-2 text-2xl font-modam">
@@ -618,7 +633,7 @@
             </div>
         </section>
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
                     <a href="#"
@@ -795,7 +810,7 @@
         </section>
 
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6" dir="ltr">
                 <div class="promotion-splide splide">                
                     <div class="splide__track">
@@ -881,7 +896,7 @@
             </div>
         </section>
                   
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <div class="flex justify-between items-center mb-8">
                     <div class="flex items-center gap-4">
@@ -1084,7 +1099,7 @@
             </div>
         </section>
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 pb-10">
                 <div class="rounded-2xl bg-[#2d31f8] bg-city bg-no-repeat bg-contain bg-bottom py-5 flex justify-between items-center relative before:w-full before:h-full before:absolute before:bg-gradient-to-l before:from-violet-500/75 before:to-transparent overflow-hidden">
                     <div class="flex items-start gap-5 relative text-white py-12 px-14">
@@ -1109,7 +1124,7 @@
         </div>
 
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <h5 class="flex items-center gap-4 mb-8 text-base lg:text-2xl">
                     <div class="flex flex-col justify-between w-4 gap-1">
@@ -1230,7 +1245,7 @@
             </div>
         </section>
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-5 md:py-12">
                 <div class="flex flex-col md:flex-row gap-2">
 
@@ -1268,7 +1283,7 @@
             </div>
         </section>
 
-        <section class="bg-neutral-100">
+        <section>
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6 md:pb-20">
                 <div class="flex justify-between items-center mb-8">
                     <h5 class="flex items-center gap-4 text-base lg:text-2xl">
@@ -1636,22 +1651,137 @@
 
             if (value.length > 2) {
 
-                var dummyData = {
-                    items: [
-                        { displayName: "سیستم ترمز" },
-                        { displayName: "سیستم گیربکس" },
-                        { displayName: "سیستم خنک کننده" },
-                        { displayName: "لاستیک" },
-                        { displayName: "واشرجات" }
-                    ]
-                }
+                var autocompleteList = [
+                    {
+                        value: "tax_product_cat",
+                        type: "headline"
+                    },
+                    {
+                        term_id: "9668",
+                        taxonomy: "product_cat",
+                        value: "لنت ترمز",
+                        url: "https://www.radiscar.com/pcat/brake-system/brake-pad/",
+                        image_src: "",
+                        breadcrumbs: "سیستم ترمز",
+                        count: "270",
+                        type: "taxonomy",
+                        score: 21.333333333333332
+                    },
+                    {
+                        term_id: "9669",
+                        taxonomy: "product_cat",
+                        value: "دیسک ترمز",
+                        url: "https://www.radiscar.com/pcat/brake-system/brake-disc/",
+                        image_src: "",
+                        breadcrumbs: "سیستم ترمز",
+                        count: "92",
+                        type: "taxonomy",
+                        score: 19.753086419753085
+                    },
+                    {
+                        term_id: "9719",
+                        taxonomy: "product_cat",
+                        value: "کفشک ترمز",
+                        url: "https://www.radiscar.com/pcat/brake-system/brake-shoes/",
+                        image_src: "",
+                        breadcrumbs: "سیستم ترمز",
+                        count: "8",
+                        type: "taxonomy",
+                        score: 19.753086419753085
+                    },
+                    {
+                        value: "product",
+                        type: "headline"
+                    },
+                    {
+                        post_id: "19744",
+                        value: "لنت ترمز جلو 323 برند Textar کد 2127702",
+                        url: "https://www.radiscar.com/product/2127702/",
+                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/2127702F-1-64x64.jpg?v=1678562207\">",
+                        price: "",
+                        desc: "",
+                        sku: "2127702",
+                        on_sale: false,
+                        featured: false,
+                        type: "product"
+                    },
+                    {
+                        post_id: "19995",
+                        value: "روغن ترمز Dot4،250cc برند Textar کد 95002100",
+                        url: "https://www.radiscar.com/product/95002100/",
+                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/95002100-1-64x64.jpg?v=1679229437\">",
+                        price: "",
+                        desc: "",
+                        sku: "95002100",
+                        on_sale: false,
+                        featured: false,
+                        type: "product"
+                    },
+                    {
+                        post_id: "19851",
+                        value: "روغن ترمز Dot4LV،500cc برند Textar کد 95006100",
+                        url: "https://www.radiscar.com/product/95006100/",
+                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/95006100-64x64.jpg?v=1678613001\">",
+                        price: "",
+                        desc: "",
+                        sku: "95006100",
+                        on_sale: false,
+                        featured: false,
+                        type: "product"
+                    },
+                    {
+                        post_id: "19808",
+                        value: "لنت ترمز جلو پژو 206 برند Textar کد 2359701",
+                        url: "https://www.radiscar.com/product/2359701/",
+                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/2359701-1-64x64.jpg?v=1678599454\">",
+                        price: "",
+                        desc: "",
+                        sku: "2359701",
+                        on_sale: false,
+                        featured: false,
+                        type: "product"
+                    },
+                    {
+                        total: 381,
+                        type: "more_products"
+                    }
+                ];
 
-                var autocompleteList = dummyData.items;
 
                 var list = '';
 
                 for (var i = 0; i < autocompleteList.length; i++) {
-                    list += '<div data-autocomplete-list="' + autocompleteList[i].displayName + '" class="text-blue-600 bg-white px-2 py-1 my-1 cursor-pointer hover:bg-blue-600 hover:text-white transition-all">' + autocompleteList[i].displayName + '</div>';
+                    
+                    var item = autocompleteList[i];
+
+                    switch(item.type){
+                        
+
+                        case "headline":
+                            var title = item.value;
+                
+                            if (item.value === 'tax_product_cat'){
+                                title = 'دسته ها'
+                            }
+                            if (item.value === 'product'){
+                                title = 'محصولات'
+                            }
+
+                            list += '<div class="pt-3 pb-1 border-b border-neutral-200 text-neutral-400" >'+ title +'</div>';
+                            break;
+
+                        case "taxonomy":
+                            list += '<a href="'+ item.url +'" class="p-2 pr-6 text-sm text-blue-600 hover:bg-neutral-100 cursor-pointer block" ><div>'+ item.value + '</div><div class="text-xs text-neutral-400"> در ' + item.breadcrumbs +'</div></a>';
+                            break;
+                        case "product":
+                            list += '<a href="'+ item.url +'" class="p-2 text-sm text-blue-600 hover:bg-neutral-100 cursor-pointer flex items-center gap-3" >'+item.thumb_html+'<span>'+item.value+'</span></a>';
+                            break;
+
+                        default:
+                            continue;
+
+                    }
+
                 }
 
                 searchList.innerHTML = list;
