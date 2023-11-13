@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}", "./index.html"],
+  content: ["./src/**/*.{html,js}", "./*.html"],
   theme: {
     extend: {
       backgroundImage: {
@@ -21,11 +21,17 @@ module.exports = {
       },
       borderWidth: {
         3:'3px',
+        6:'6px',
         12:'12px'
       },
       height:{
         .75: '3px',
-        18: '4.5rem'
+        4.5:'1.125rem',
+        18: '4.5rem',
+        100: '25rem'
+      },
+      maxHeight: {
+        '100': '25rem',
       },
       colors: {
         blue: {

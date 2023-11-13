@@ -112,7 +112,7 @@
                     </button>
                     <div id="search_list_wrapper"
                         class="absolute bg-white p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 z-10 invisible mt-3 transition-all">
-                        <div id="search_list" class="max-h-96 overflow-auto leading-4"></div>
+                        <div id="search_list" class="max-h-100 overflow-auto leading-4"></div>
                     </div>
                 </form>
 
@@ -952,8 +952,8 @@
                                         alt="دیسک ترمز جلو مرسدس بنز" 
                                         class="block mx-auto h-48 w-full object-contain p-3" 
                                     />
-                                    <h5 class="mb-3 text-sm">
-                                        دیسک ترمز جلو مرسدس بنز  <bdo dir="ltr" class="text-xs"> SL(R230) </bdo>  <bdo dir="ltr" class="text-xs"> SL(R231) </bdo>  <bdo dir="ltr" class="text-xs"> E(W211) </bdo>                                     
+                                    <h5 class="mb-3 text-xs">
+                                        دیسک ترمز جلو مرسدس بنز SL(R230) SL(R231) E(W211)                                 
                                     </h5>
                                     <div class="flex justify-between gap-3 mb-3">
                                         <span class="text-blue-600 font-semibold text-sm">
@@ -970,7 +970,6 @@
                                     </a>
                                 </div>
                             </div>                             
-
                             <div class="splide__slide min-h-[360px]">
                                 <div class="p-4 group cursor-pointer rounded-2xl relative bg-white">
                                     <img 
@@ -978,7 +977,7 @@
                                         alt="فيلتر کابين مرسدس بنز C(W204) E(W212) برند MANN " 
                                         class="block mx-auto h-48 w-full object-contain p-3" 
                                     />
-                                    <h5 class="mb-3 text-sm">
+                                    <h5 class="mb-3 text-xs">
                                         فيلتر کابين مرسدس بنز C(W204) E(W212) برند MANN 
                                     </h5>
                                     <div class="flex justify-between gap-3 mb-3">
@@ -1003,7 +1002,7 @@
                                         alt="کوئل مرسدس بنز موتور MO112 برند Bosch" 
                                         class="block mx-auto h-48 w-full object-contain p-3" 
                                     />
-                                    <h5 class="mb-3 text-sm">
+                                    <h5 class="mb-3 text-xs">
                                         کوئل مرسدس بنز موتور MO112 برند Bosch
                                     </h5>
                                     <div class="flex justify-between gap-3 mb-3">
@@ -1028,7 +1027,7 @@
                                         alt=" روغن سرد کن بی ام و سری -3-5-X3-X1 برند Mahle " 
                                         class="block mx-auto h-48 w-full object-contain p-3" 
                                     />
-                                    <h5 class="mb-3 text-sm">
+                                    <h5 class="mb-3 text-xs">
                                         روغن سرد کن بی ام و سری -3-5-X3-X1 برند Mahle 
                                     </h5>
                                     <div class="flex justify-between gap-3 mb-3">
@@ -1053,7 +1052,7 @@
                                         alt="فيلتر کابين مرسدس بنز C(W204) E(W212) برند MANN " 
                                         class="block mx-auto h-48 w-full object-contain p-3" 
                                     />
-                                    <h5 class="mb-3 text-sm">
+                                    <h5 class="mb-3 text-xs">
                                         فيلتر کابين مرسدس بنز C(W204) E(W212) برند MANN 
                                     </h5>
                                     <div class="flex justify-between gap-3 mb-3">
@@ -1776,6 +1775,9 @@
                         case "product":
                             list += '<a href="'+ item.url +'" class="p-2 text-sm text-blue-600 hover:bg-neutral-100 cursor-pointer flex items-center gap-3" >'+item.thumb_html+'<span>'+item.value+'</span></a>';
                             break;
+                        case "more_products":
+                        list += '<a href="/?s='+ value +'&post_type=product&dgwt_wcas=1" class="border-t border-neutral-200 p-2 pt-3 text-sm text-blue-600 cursor-pointer flex items-center gap-3" >مشاهده همه محصولات </a>';
+
 
                         default:
                             continue;
@@ -1891,6 +1893,7 @@
                 arrows:false,
                 perMove: 1,
                 focus:false,
+                type: 'loop',
                 perPage: 2,
                 breakpoints: {
                     800: {
@@ -1905,6 +1908,7 @@
             
             var promotionSplide = new Splide('.promotion-splide', {
                 direction: 'ttb',
+                type: 'loop',
                 arrows:false,
                 height   : '370px',
                 wheel    : true
@@ -1916,6 +1920,7 @@
             var producrsSplide = new Splide('.producrs-splide', {
                 pagination:false,
                 perPage: 4,
+                type: 'loop',
                 breakpoints: {
                         600: {
                             perPage: 1,
@@ -1937,6 +1942,7 @@
             
             var topBrandsSplide = new Splide('.top-brands-splide', {
                 pagination:false,
+                type: 'loop',
                 perPage: 4,
                 breakpoints: {
                         600: {
@@ -1959,6 +1965,7 @@
             var newsSplide = new Splide('.news-splide', {
                 pagination:false,
                 perPage: 3,
+                type: 'loop',
                 breakpoints: {
                         600: {
                             perPage: 1,
