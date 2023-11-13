@@ -95,7 +95,7 @@
     <link rel="stylesheet" href="./src/styles/tailwind.css" />
 </head>
 
-<body dir="rtl" class="font-yekan text-neutral-700 bg-neutral-100">
+<body dir="rtl" class="font-yekan text-neutral-600 bg-neutral-100">
     <header class="bg-white shadow-sm text-sm leading-7 relative z-20">
 
         <div class="max-w-7xl mx-auto px-3 py-6 md:py-10">
@@ -610,8 +610,55 @@
                         </div>
                     </div>
                     <div class="col-span-4">
-                        <div class="bg-white mb-2">
-                            filter
+                        <div class="flex justify-between items-center mb-8">
+                            <div class="flex items-center gap-3">
+                                <label class="font-bold text">فیلترها</label>
+                                <div id="active_filters" class="flex gap-3 items-center">
+                                    <span class="bg-neutral-200 text-neutral-500 text-xs px-3 h-11 rounded-xl flex gap-2 items-center">
+                                        <button type="button">
+                                            <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                                        </button>
+                                        واشرجات
+                                    </span>
+                                    <span class="bg-neutral-200 text-neutral-500 text-xs px-3 h-11 rounded-xl flex gap-2 items-center">
+                                        <button type="button">
+                                            <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                                        </button>
+                                        تکستار
+                                    </span>
+                                    <span class="bg-neutral-200 text-neutral-500 text-xs px-3 h-11 rounded-xl flex gap-2 items-center">
+                                        <button type="button">
+                                            <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                                        </button>
+                                        از 2 میلیون تا 10 میلیون تومان
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="flex gap-3">
+                                <div class="flex items-center gap-4">
+                                    <span class="grow-0 w-18 font-bold">
+                                        مرتب سازی
+                                    </span>
+                                    <div class="relative w-36 leading-7">
+                                        <select class="block h-11 w-full text-neutral-500 text-xs px-3 appearance-none rounded-xl outline-0 cursor-pointer bg-neutral-200">
+                                            <option value=""> جدیدترین ها</option>
+                                            <option value=""> گرانترین ها </option>
+                                        </select>
+                                        <svg viewBox="0 0 490.656 490.656" class="pointer-events-none fill-neutral-500 w-2.5 h-2.5 absolute top-1/2 -translate-y-1/2 left-4"><path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path></svg>
+                                    </div>
+                                </div> 
+
+                                <button type="button">
+                                    <svg viewBox="0 -960 960 960" class="w-7 h-7 fill-blue-500" ><path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h600q24 0 42 18t18 42v600q0 24-18 42t-42 18H180Zm0-60h160v-160H180v160Zm220 0h160v-160H400v160Zm220 0h160v-160H620v160ZM180-400h160v-160H180v160Zm220 0h160v-160H400v160Zm220 0h160v-160H620v160ZM180-620h160v-160H180v160Zm220 0h160v-160H400v160Zm220 0h160v-160H620v160Z"/></svg>
+                                </button>
+                                <button type="button">
+                                    <svg viewBox="0 -960 960 960" class="w-7 h-7 fill-neutral-400" ><path d="M350-220h470v-137H350v137ZM140-603h150v-137H140v137Zm0 187h150v-127H140v127Zm0 196h150v-137H140v137Zm210-196h470v-127H350v127Zm0-187h470v-137H350v137ZM140-160q-24 0-42-18t-18-42v-520q0-24 18-42t42-18h680q24 0 42 18t18 42v520q0 24-18 42t-42 18H140Z"/></svg>
+                                </button>
+
+                              
+
+                            </div>
                         </div>
                         <div class="grid grid-cols-4 gap-2 mb-4">
                             <a href="#" class="p-4 group cursor-pointer rounded-2xl relative bg-white shadow-sm hover:shadow-md transition-all">
