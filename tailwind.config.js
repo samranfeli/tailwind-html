@@ -21,8 +21,12 @@ module.exports = {
       },
       borderWidth: {
         3:'3px',
+        5:'5px',
         6:'6px',
         12:'12px'
+      },
+      borderRadius: {
+        '4xl': '2rem'
       },
       boxShadow: {
         'light': '0 0 20px 0 rgba(0, 0, 0, 0.07)',
