@@ -14,7 +14,7 @@ module.exports = {
         'modam': ['Modam', 'sans-serif']
       },
       fontSize: {
-        xxs: '12px',
+        '2xs': '12px',
         xs: '13px',
         sm: '14px',
         '2xl': '22px'
@@ -26,7 +26,10 @@ module.exports = {
         12:'12px'
       },
       borderRadius: {
-        '4xl': '2rem'
+        "lg":'10px',
+        '2xl': '15px',
+        '3xl': '20px',
+        '4xl': '30px'
       },
       boxShadow: {
         'light': '0 0 20px 0 rgba(0, 0, 0, 0.07)',
@@ -40,9 +43,12 @@ module.exports = {
       maxHeight: {
         '100': '25rem',
       },
+      maxWidth: {
+        '2xs': '12rem',
+      },
       colors: {
         blue: {
-          50: '#f4f4fb',
+          50: '#f2f2fa',
           100: '#e6e7fe',
           200: '#cecefd',
           300: '#b5b6fd',
@@ -57,7 +63,9 @@ module.exports = {
         neutral:{
           100:"#f7f7f7",
           150:"#f2f2f2",
-          200:'#efefef'
+          200:'#efefef',
+          300:'#e6e6e6',
+          350:'#dadada'
         }
       }
     }
