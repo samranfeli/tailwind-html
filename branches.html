@@ -182,7 +182,7 @@
                 </nav>
 
                 <div class="lg:flex gap-3 items-center">
-                    <a href="#" class="flex items-center px-10 gap-4 group block">
+                    <button type="button" class="flex items-center px-10 gap-4 group block" onclick="openOrderModal();">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600">
                             <path
                                 d="m9 22c-2.479 0-4.873-1.04-6.57-2.854-1.721-1.839-2.576-4.239-2.409-6.759.313-4.703 4.389-8.387 9.279-8.387h11.2c.276 0 .5.224.5.5s-.224.5-.5.5h-11.2c-4.365 0-8.003 3.273-8.281 7.453-.149 2.24.611 4.374 2.142 6.009 1.508 1.613 3.637 2.538 5.839 2.538 4.411 0 8-3.589 8-8 0-.276.224-.5.5-.5s.5.224.5.5c0 4.963-4.037 9-9 9z" />
@@ -198,7 +198,7 @@
                         <span class="font-semibold group-hover:text-blue-600 transition-all">
                             درخواست قطعه
                         </span>
-                    </a>
+                    </button>
 
                     <span class="h-4 border-r border-gray-200 hidden md:block"></span>
 
@@ -222,318 +222,241 @@
                 </div>
             </div>
         </div>
+
         <div id="categories_menu"
             class="bg-white shadow-sm border-t-2 invisible opacity-0 mt-5 transition-all absolute left-0 right-0 top-full">
-            <div class="max-w-7xl mx-auto px-3">
-                <ul class="relative">
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">روغن
-                            و مکمل</a>
-                        <ul
-                            class="md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4 border-r border-neutral-200 bg-white">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">روغن
-                                    ماشین </a>
+            <div class="max-w-7xl mx-auto px-3 leading-4">
+
+                <ul class="gap-8 columns-5 pt-4 pb-8">
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> روغن ترمز </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> روغن ماشین </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                            ترمز و گریس</a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > روغن ترمز و گریس </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                            گیربکس</a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > روغن گیربکس </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                            موتور</a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > روغن موتور </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                            هیدرولیک</a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > روغن هیدرولیک </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> ضدیخ
-                                    و آب رادیاتور </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> ضدیخ و آب رادیاتور </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            شیشه شوی </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > شیشه شوی </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            ضدیخ و ضدجوش </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > ضدیخ و ضدجوش </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> مکمل
-                                    سوخت </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> مکمل سوخت </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">سیستم
-                            ترمز</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> دیسک
-                                    ترمز </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> سیستم ترمز </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> دیسک ترمز </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> لنت
-                                    ترمز </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> لنت ترمز </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سنسور
-                                    ترمز </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> سنسور ترمز </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">
-                                    کالیبر ترمز </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> کالیبر ترمز </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> کفشک
-                                    ترمز </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> کفشک ترمز </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">فیلترها</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر
-                                    هوا </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> فیلترها </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> فیلتر هوا </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر
-                                    کابین </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> فیلتر کابین </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر
-                                    روغن </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> فیلتر روغن </a>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> صافی
-                                    بنزین </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> صافی بنزین </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">لوازم
-                            مکانیکی</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> تسمه
-                                </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> لوازم مکانیکی </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> تسمه </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            تسمه دینام </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > تسمه دینام </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سوخت
-                                    رسانی و احتراق </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> سوخت رسانی و احتراق </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> پمپ
-                                            بنزین </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > پمپ بنزین </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> شمع
-                                            ماشین </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > شمع ماشین </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            کویل </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > کویل </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سیستم
-                                    خنک کننده موتور </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> سیستم خنک کننده موتور </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            ترموستات </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > ترموستات </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            رادیاتور آب </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > رادیاتور آب </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            روغن سردکن </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > روغن سردکن </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            کمپرسور کولر </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > کمپرسور کولر </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            واتر پمپ </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > واتر پمپ </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات
-                                    موتوری </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> قطعات موتوری </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            دسته موتور </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > دسته موتور </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> واشر
-                                    و کاسه نمد </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> واشر و کاسه نمد </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            اورینگ </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > اورینگ </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">هدایت
-                            و جلوبندی</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات
-                                    جلوبندی و تعلیق </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> هدایت و جلوبندی </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> قطعات جلوبندی و تعلیق </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            سیبک فرمان </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > سیبک فرمان </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> طبق
-                                        </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > طبق </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> کمک
-                                            فنر </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > کمک فنر </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            گردگیر کمک فنر </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > گردگیر کمک فنر </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> میل
-                                            موجگیر </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > میل موجگیر </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">گیربکس
-                            و کلاچ</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">
-                                    گیربکس </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> گیربکس و کلاچ </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> گیربکس </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            دسته گیربکس </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > دسته گیربکس </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            روغن گیربکس </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > روغن گیربکس </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">لوازم
-                            بدنه خودرو</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> برف
-                                    پاک کن </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> لوازم بدنه خودرو </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> برف پاک کن </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">رینگ
-                            و لاستیک</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">
-                                    لاستیک </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> رینگ و لاستیک </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> لاستیک </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">اکسسوری
-                            و جانبی</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> نظافت
-                                    داخل </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> اکسسوری و جانبی </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> نظافت داخل </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            اسپری داشبورد </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > اسپری داشبورد </a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li class="group">
-                        <a href="#"
-                            class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">برقی
-                            و الکتریکی</a>
-                        <ul
-                            class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سنسور
-                                </a>
+                    <li class="break-inside-avoid">
+                        <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> برقی و الکتریکی </a>
+                        <ul class="mb-10">
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> سنسور </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            سنسور اکسیژن </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > سنسور اکسیژن </a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="basis-1/6">
-                                <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات
-                                    برقی </a>
+                            <li>
+                                <a href="#" class="block text-neutral-700 hover:text-blue-600 px-2 font-semibold border-r-3 border-rose-500 text-sm mb-3 mt-4"> قطعات برقی </a>
                                 <ul>
                                     <li>
-                                        <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                            استارت </a>
+                                        <a href="#" class="block text-neutral-500 hover:text-blue-600 text-sm mb-3" > استارت </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>                            
                         </ul>
                     </li>
                 </ul>
+
             </div>
         </div>
     </header>
@@ -990,6 +913,57 @@
 
     </footer>
 
+    <!-- modal html -->
+    <div class="fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center z-30 opacity-0 invisible transition-all" id="order_modal">
+        <div onclick="closeOrderModal();" class="absolute left-0 right-0 top-0 bottom-0 bg-black/75 backdrop-blur"></div>
+        <div class="relative max-w-4xl mx-auto bg-white rounded-xl w-full">
+            <h2 class="font-bold p-5 bg-neutral-100 rounded-t-xl text-xl">
+                ثبت درخواست قطعه
+            </h2>
+            <form class="p-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label for="fname" class="block mb-1" >نام:</label>
+                    <input class="h-10 bg-neutral-150 w-full rounded outline-none px-3" type="text" id="fname" name="fname">
+                </div>
+                <div>
+                    <label for="lname" class="block mb-1" >نام خانوادگی:</label>
+                    <input class="h-10 bg-neutral-150 w-full rounded outline-none px-3" type="text" id="lname" name="lname">
+                </div>
+                <div>
+                    <label for="partName" class="block mb-1" >نام قطعه:</label>
+                    <input class="h-10 bg-neutral-150 w-full rounded outline-none px-3" type="text" id="partName" name="partName">
+                </div>
+                <div>
+                    <label for="producer" class="block mb-1" >سازنده قطعه:</label>
+                    <select class="h-10 bg-neutral-150 w-full rounded outline-none px-3">
+                        <option> انتخاب </option>
+                        <option> چینی </option>
+                        <option> فرانسوی </option>
+                    </select>
+                </div>
+                
+                <div class="sm:col-span-2">
+                    <label for="description" class="block mb-1" >توضیحات :</label>
+                    <textarea
+                        rows="3"
+                        id="description"
+                        class="bg-neutral-150 w-full py-4 rounded outline-none px-3"
+                    ></textarea>
+                </div>
+
+                <div class="sm:col-span-2 text-left">
+                    <input 
+                        type="submit" 
+                        value="ثبت"
+                        class="inline-block w-full sm:w-52 bg-blue-600 text-white h-10 rounded cursor-pointer"
+                    />
+                </div>
+                
+
+              </form> 
+        </div>
+    </div>
+
     <!-- layout scripts -->
     <script>
 
@@ -1207,6 +1181,23 @@
             var value = element.innerHTML;
             element.innerHTML = numberWithCommas(value);
         });
+
+
+
+        //display order modal:
+        function closeOrderModal(){
+            var modal = document.getElementById("order_modal");
+            modal.style.opacity = 0;
+            modal.style.visibility = 'hidden';
+
+        }
+
+        function openOrderModal(){
+            var modal = document.getElementById("order_modal");
+            modal.style.opacity = 1;
+            modal.style.visibility = 'visible';
+        }
+
 
     </script>
 
