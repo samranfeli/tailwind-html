@@ -40,6 +40,9 @@ module.exports = {
         18: '4.5rem',
         100: '25rem'
       },
+      width:{
+        'screen/2':'50vw'
+      },
       maxHeight: {
         '100': '25rem',
       },

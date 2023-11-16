@@ -564,6 +564,7 @@
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
                             <label class="text-neutral-400 w-32 inline-block px-3"> نوع خودرو </label>
                             <select
+                                onchange="changeCountry();"
                                 class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                                 <option value=""> خودرو سواری آلمانی (1000)</option>
@@ -581,7 +582,10 @@
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
                             <label class="text-neutral-400 w-32 inline-block px-3"> سازنده </label>
-                            <select disabled
+                            <select 
+                                onchange="changeProducer()"
+                                id="producer_select"
+                                disabled
                                 class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                             </select>
@@ -594,7 +598,10 @@
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
                             <label class="text-neutral-400 w-32 inline-block px-3"> مدل </label>
-                            <select disabled
+                            <select 
+                                onchange="changeModel();"
+                                disabled
+                                id="model_select"
                                 class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                             </select>
@@ -607,7 +614,9 @@
 
                         <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
                             <label class="text-neutral-400 w-32 inline-block px-3"> مشخصات </label>
-                            <select disabled
+                            <select 
+                                disabled
+                                id="details_select"
                                 class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
                                 <option>انتخاب کنید</option>
                             </select>
@@ -636,7 +645,7 @@
                                 <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                             </div>
 
-                            <h5 class="mb-3 text-4xl font-modam">
+                            <h5 class="mb-3 text-4xl font-modam font-bold">
                                 فروشگاه لوازم یدکی خودرو!
                             </h5>
                             <div class="text-sm mb-6 text-neutral-400">
@@ -765,7 +774,7 @@
             <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
                 <div
                     class="bg-white md:bg-r2 md:bg-contain md:bg-[center_right_60px] md:bg-no-repeat rounded-3xl px-10 py-12 flex items-center flex-col md:flex-row gap-8 justify-between">
-                    <h5 class="mb-2 text-2xl font-modam">
+                    <h5 class="mb-2 text-2xl font-modam font-bold">
                         مزایای خرید از رادیسکار
                     </h5>
                     <div class="flex flex-col md:flex-row items-center gap-8">
@@ -1215,7 +1224,7 @@
                                 <span class="bg-current h-0.75 opacity-40"></span>
                                 <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                             </div>
-                            <span class="font-modam">
+                            <span class="font-modam font-bold">
                                 جدیدترین محصولات
                             </span>
                         </h5>
@@ -1458,10 +1467,10 @@
                             <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                         </div>
                         <div class="mb-2">
-                            <h5 class="mb-3 text-3xl"> با رادیسکار، یه خرید حرفه ای </h5>
+                            <h5 class="mb-3 text-3xl font-bold font-modam"> با رادیسکار، یه خرید حرفه ای </h5>
                             <div class="text-sm mb-6"> بزرگترین فروشگاه لوازم یدکی ایران </div>
                             <button type="buttom"
-                                class="bg-white rounded-xl text-blue-600 items-center px-5 py-2 inline-flex gap-2 text-xs">
+                                class="bg-white rounded-xl text-blue-600 items-center px-6 py-3 inline-flex gap-3 text-xs">
                                 <span> ثبت درخواست قطعه </span>
                                 <svg class="w-3 h-3 fill-current" viewBox="0 0 490.651 490.651">
                                     <path
@@ -1480,16 +1489,28 @@
 
             <section>
                 <div class="max-w-6xl mx-auto px-16 sm:px-24 py-3 md:py-6">
-                    <h5 class="flex items-center gap-4 mb-8 text-base lg:text-2xl">
-                        <div class="flex flex-col justify-between w-4 gap-1">
-                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
-                            <span class="bg-current h-0.75 opacity-40"></span>
-                            <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
-                        </div>
-                        <span class="font-modam">
-                            برترین برند محصولات
-                        </span>
-                    </h5>
+                    <div class="flex justify-between items-center mb-8">
+                        <h5 class="flex items-center gap-4 text-base lg:text-2xl">
+                            <div class="flex flex-col justify-between w-4 gap-1">
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                                <span class="bg-current h-0.75 opacity-40"></span>
+                                <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
+                            </div>
+                            <span class="font-modam font-bold">
+                                برترین برند محصولات
+                            </span>
+                        </h5>
+                        <a href="#" class="flex items-center gap-3">
+                            <svg viewBox="0 0 512 512" class="w-4 h-4 fill-neutral-400">
+                                <path
+                                    d="M480,202.667H196.715c-4.608,0-8.683-2.923-10.133-7.296l-11.605-34.837c-4.373-13.077-16.576-21.867-30.357-21.867H32    c-17.643,0-32,14.357-32,32C0,200,4.288,229.141,12.693,257.259l42.624,142.059c6.827,22.741,27.349,38.016,51.093,38.016h301.355    c22.123,0,42.197-13.909,49.92-34.603l46.165-123.051c5.397-14.443,8.149-29.589,8.149-45.013    C512,217.024,497.643,202.667,480,202.667z M483.861,272.192l-46.165,123.051C433.067,407.659,421.035,416,407.765,416H106.411    c-14.251,0-26.56-9.173-30.635-22.805L33.152,251.136c-7.851-26.133-11.819-53.205-11.819-80.469    C21.333,164.779,26.112,160,32,160h112.619c4.608,0,8.683,2.923,10.112,7.296l11.627,34.837    C170.731,215.211,182.933,224,196.715,224H480c5.867,0,10.667,4.8,10.667,10.688C490.667,247.531,488.384,260.16,483.861,272.192z    " />
+                                <path
+                                    d="M416,74.667H96c-29.397,0-53.333,23.936-53.333,53.333v21.333c0,5.888,4.779,10.667,10.667,10.667S64,155.221,64,149.333    V128c0-17.643,14.357-32,32-32h320c17.643,0,32,14.357,32,32v85.333c0,5.888,4.779,10.667,10.667,10.667    s10.667-4.779,10.667-10.667V128C469.333,98.603,445.419,74.667,416,74.667z" />
+                            </svg>
+                            <span class="mb-1 text-sm text-neutral-400"> مشاهده آرشیو </span>
+                        </a>
+                    </div>
+
                     <div class="top-brands-splide splide">
                         <div class="splide__track">
                             <div class="splide__list">
@@ -1622,8 +1643,8 @@
                                 <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                             </div>
                             <div class="mb-2">
-                                <h5 class="mb-2 text-2xl font-modam"> هزاران کیلومتر در حرکت </h5>
-                                <p class="text-sm"> با محصولات اصلی بوش </p>
+                                <h5 class="mb-2 text-2xl font-modam font-bold"> هزاران کیلومتر در حرکت </h5>
+                                <p class="text-sm font-light"> با محصولات اصلی بوش </p>
                             </div>
                             <img src="./src/images/home/wire.png" alt="wite"
                                 class="absolute h-48 left-0 bottom-0 rounded-bl-xl" />
@@ -1637,8 +1658,8 @@
                                 <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                             </div>
                             <div class="mb-2">
-                                <h5 class="mb-2 text-2xl font-modam"> سرعت در مسیر درست </h5>
-                                <p class="text-sm"> با روغن موتورهای تکستار </p>
+                                <h5 class="mb-2 text-2xl font-modam font-bold"> سرعت در مسیر درست </h5>
+                                <p class="text-sm font-light"> با روغن موتورهای تکستار </p>
                             </div>
                             <img src="./src/images/home/disc.png" alt="wite"
                                 class="absolute h-48 left-4 bottom-0 rounded-bl-xl" />
@@ -1657,7 +1678,7 @@
                                 <span class="bg-current h-0.75 opacity-40"></span>
                                 <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                             </div>
-                            <span class="font-modam">
+                            <span class="font-modam font-bold">
                                 مجله خبری رادیسکار
                             </span>
                         </h5>
@@ -2002,7 +2023,7 @@
                             <span class="bg-current h-0.75 opacity-40"></span>
                             <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                         </div>
-                        <span class="font-modam">
+                        <span class="font-modam font-bold">
                             رادیسکار را در شبکه های اجتماعی دنبال کنید
                         </span>
                     </h5>
@@ -2098,42 +2119,8 @@
                     </div>
 
                     <div class="flex gap-4 items-center">
-                        <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5">
-                            <path
-                                d="m12 21c-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5zm0-14c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z" />
-                            <path
-                                d="m21.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.551-.999-2.898-2.485-3.352-.265-.08-.413-.36-.333-.624.081-.263.363-.414.624-.332 1.911.582 3.194 2.314 3.194 4.308v4c0 .276-.224.5-.5.5z" />
-                            <path
-                                d="m2.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.994 1.283-3.726 3.194-4.308.264-.083.543.068.624.332.08.264-.068.544-.333.624-1.486.454-2.485 1.801-2.485 3.352v4c0 .276-.224.5-.5.5z" />
-                            <path
-                                d="m13.5 7c-.276 0-.5-.224-.5-.5v-3c0-.276.224-.5.5-.5s.5.224.5.5v3c0 .276-.224.5-.5.5z" />
-                            <path
-                                d="m10.5 7c-.276 0-.5-.224-.5-.5v-3c0-.276.224-.5.5-.5s.5.224.5.5v3c0 .276-.224.5-.5.5z" />
-                            <path
-                                d="m23.5 24h-23c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h23c.276 0 .5.224.5.5s-.224.5-.5.5z" />
-                            <path
-                                d="m16.5 4h-9c-.827 0-1.5-.673-1.5-1.5v-1c0-.827.673-1.5 1.5-1.5h9c.827 0 1.5.673 1.5 1.5v1c0 .827-.673 1.5-1.5 1.5zm-9-3c-.275 0-.5.224-.5.5v1c0 .276.225.5.5.5h9c.275 0 .5-.224.5-.5v-1c0-.276-.225-.5-.5-.5z" />
-                            <path
-                                d="m21 5c-.276 0-.5-.224-.5-.5v-.5c0-.827-.673-1.5-1.5-1.5h-1.5c-.276 0-.5-.224-.5-.5s.224-.5.5-.5h1.5c1.379 0 2.5 1.122 2.5 2.5v.5c0 .276-.224.5-.5.5z" />
-                            <path
-                                d="m3 5c-.276 0-.5-.224-.5-.5v-.5c0-1.378 1.121-2.5 2.5-2.5h1.5c.276 0 .5.224.5.5s-.224.5-.5.5h-1.5c-.827 0-1.5.673-1.5 1.5v.5c0 .276-.224.5-.5.5z" />
-                            <path
-                                d="m23.5 8h-5c-.276 0-.5-.224-.5-.5v-1c0-1.378 1.121-2.5 2.5-2.5h1c1.379 0 2.5 1.122 2.5 2.5v1c0 .276-.224.5-.5.5zm-4.5-1h4v-.5c0-.827-.673-1.5-1.5-1.5h-1c-.827 0-1.5.673-1.5 1.5z" />
-                            <path
-                                d="m5.5 8h-5c-.276 0-.5-.224-.5-.5v-1c0-1.378 1.121-2.5 2.5-2.5h1c1.379 0 2.5 1.122 2.5 2.5v1c0 .276-.224.5-.5.5zm-4.5-1h4v-.5c0-.827-.673-1.5-1.5-1.5h-1c-.827 0-1.5.673-1.5 1.5z" />
-                            <circle cx="12" cy="9.25" r=".75" />
-                            <circle cx="12" cy="17.75" r=".75" />
-                            <circle cx="16.25" cy="13.5" r=".75" />
-                            <circle cx="7.75" cy="13.5" r=".75" />
-                            <ellipse cx="15.005" cy="10.495" rx=".75" ry=".75"
-                                transform="matrix(.707 -.707 .707 .707 -3.026 13.684)" />
-                            <ellipse cx="8.995" cy="16.505" rx=".75" ry=".75"
-                                transform="matrix(.707 -.707 .707 .707 -9.036 11.195)" />
-                            <ellipse cx="15.005" cy="16.505" rx=".75" ry=".75"
-                                transform="matrix(.707 -.707 .707 .707 -7.276 15.445)" />
-                            <ellipse cx="8.995" cy="10.495" rx=".75" ry=".75"
-                                transform="matrix(.707 -.707 .707 .707 -4.786 9.434)" />
-                        </svg>
+                        <img src="./src/images/icons/mail.png" class="w-5 h-5" />
+                        
                         <span class="font-semibold font-sans" dir="ltr">
                             Support @ Radiscar.com
                         </span>
@@ -2143,7 +2130,7 @@
                 <div class="basis-7/12 grow-1">
                     <div class="md:flex gap-8 text-sm pb-4">
                         <div class="basis-7/12 grow-0">
-                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam">
+                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam font-bold">
                                 <div class="flex flex-col justify-between w-4 gap-1">
                                     <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                                     <span class="bg-current h-0.75 opacity-40"></span>
@@ -2190,7 +2177,7 @@
                             </div>
                         </div>
                         <div class="basis-5/12 grow-0">
-                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam">
+                            <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam font-bold">
                                 <div class="flex flex-col justify-between w-4 gap-1">
                                     <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                                     <span class="bg-current h-0.75 opacity-40"></span>
@@ -2224,11 +2211,11 @@
                         </a>
                         <a href="#"
                             class="block bg-neutral-100 hover:bg-neutral-200 transition-all rounded-xl w-20 h-20 md:w-28 md:h-28 flex justify-center items-center">
-                            <img src="./src/images/e-shop.png" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
+                            <img src="./src/images/resaneh.png" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
                         </a>
                         <a href="#"
                             class="block bg-neutral-100 hover:bg-neutral-200 transition-all rounded-xl w-20 h-20 md:w-28 md:h-28 flex justify-center items-center">
-                            <img src="./src/images/resaneh.png" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
+                            <img src="./src/images/e-shop.png" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
                         </a>
                         <a href="#"
                             class="block bg-neutral-100 hover:bg-neutral-200 transition-all rounded-xl w-20 h-20 md:w-28 md:h-28 flex justify-center items-center">
@@ -2626,6 +2613,75 @@
             newsSplide.mount();
 
         });
+    </script>
+
+    <script>
+
+
+        function changeCountry(e) {
+
+            const xhttp = new XMLHttpRequest();
+            var select = document.getElementById('producer_select');
+
+            select.innerHTML = '<option>در حال بارگذاری ... </option>';
+            select.removeAttribute('disabled');
+
+            xhttp.onload = function() {
+                console.log(this.responseText);
+
+
+                select.innerHTML = '<option>انتخاب کنید</option><option value=""> تویوتا (109)</option><option value=""> هیوندا (60)</option><option value=""> نیسان (53)</option><option value=""> مزدا (230)</option><option value=""> لکسوس (14)</option>';
+                select.removeAttribute('disabled');
+
+            }
+
+            xhttp.open("GET", "https://api.ganjoor.net/api/ganjoor/poets");
+            xhttp.send();
+        }
+
+        function changeProducer(e) {
+
+            const xhttp = new XMLHttpRequest();
+            var select = document.getElementById('model_select');
+
+            select.innerHTML = '<option>در حال بارگذاری ... </option>';
+            select.removeAttribute('disabled');
+
+            xhttp.onload = function() {
+                console.log(this.responseText);
+
+
+                select.innerHTML = '<option>انتخاب کنید</option><option value=""> تویوتا (109)</option><option value=""> هیوندا (60)</option><option value=""> نیسان (53)</option><option value=""> مزدا (230)</option><option value=""> لکسوس (14)</option>';
+                select.removeAttribute('disabled');
+
+            }
+
+            xhttp.open("GET", "https://api.ganjoor.net/api/ganjoor/poets");
+            xhttp.send();
+        }
+
+        function changeModel(e) {
+
+            const xhttp = new XMLHttpRequest();
+            var select = document.getElementById('details_select');
+
+            select.innerHTML = '<option>در حال بارگذاری ... </option>';
+            select.removeAttribute('disabled');
+
+            xhttp.onload = function() {
+                console.log(this.responseText);
+
+
+                select.innerHTML = '<option>انتخاب کنید</option><option value=""> تویوتا (109)</option><option value=""> هیوندا (60)</option><option value=""> نیسان (53)</option><option value=""> مزدا (230)</option><option value=""> لکسوس (14)</option>';
+                select.removeAttribute('disabled');
+
+            }
+
+            xhttp.open("GET", "https://api.ganjoor.net/api/ganjoor/poets");
+            xhttp.send();
+        }
+
+
     </script>
 
 </body>
