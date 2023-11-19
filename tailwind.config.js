@@ -9,9 +9,15 @@ module.exports = {
         'city': "url('../images/home/city.png')",
         'banner': "url('../images/home/banner.png')"
       },
+      backgroundSize: {
+        '1000': '1000px'
+      },
       fontFamily: {
         'yekan': ['Yekan', 'sans-serif'],
         'modam': ['Modam', 'sans-serif']
+      },
+      spacing: {
+        '18': '4.5rem',
       },
       fontSize: {
         '2xs': '12px',
