@@ -84,71 +84,99 @@
     <link rel="stylesheet" href="./src/styles/tailwind.css" />
 </head>
 
-<body dir="rtl" class="font-yekan text-neutral-600 bg-neutral-100">
+<body dir="rtl" class="font-yekan text-neutral-600 bg-neutral-100" id="body">
     <header class="bg-white shadow-sm text-sm leading-7 relative z-20">
 
-        <div class="max-w-7xl mx-auto px-3 py-6 md:py-10">
+        <div class="max-w-7xl mx-auto px-5 py-5 xl:py-10">
 
-            <div class="flex justify-between items-center mb-7">
+            <div class="grid grid-cols-4 xl:grid-cols-7 gap-5 xl:mb-7">
 
-                <form class="w-full lg:max-w-md bg-gray-100 p-1 rounded-2xl absolute lg:relative -top-20 lg:top-0">
-                    <input id="searchInput" type="text"
-                        class="rounded-xl w-full text-sm leading-7 py-3 pr-4 pl-12 placeholder:text-gray-400 outline-none focus:bg-gray-50 "
-                        placeholder="محصول مورد نظر خود را جستجو کنید..." onkeyup="search(this.value)" />
-                    <button type="button"
-                        class="h-12 w-12 absolute left-1 top-1/2 -translate-y-2/4 flex justify-center items-center">
-                        <svg class="h-5 w-5 fill-neutral-400 hover:fill-blue-600" viewBox="0 0 512.005 512.005">
-                            <path
-                                d="M508.885,493.784L353.109,338.008c32.341-35.925,52.224-83.285,52.224-135.339c0-111.744-90.923-202.667-202.667-202.667    S0,90.925,0,202.669s90.923,202.667,202.667,202.667c52.053,0,99.413-19.883,135.339-52.245l155.776,155.776    c2.091,2.091,4.821,3.136,7.552,3.136c2.731,0,5.461-1.045,7.552-3.115C513.045,504.707,513.045,497.965,508.885,493.784z     M202.667,384.003c-99.989,0-181.333-81.344-181.333-181.333S102.677,21.336,202.667,21.336S384,102.68,384,202.669    S302.656,384.003,202.667,384.003z" />
-                        </svg>
+                <div class="col-span-1 flex items-center xl:hidden">
+                    <button type="button" class="flex items-center justify-center bg-[#f3f3ff] text-blue-600 rounded-2xl w-14 h-14" onclick="openMobileMenu();">
+                        <div class="flex flex-col justify-between w-6 gap-0.5">
+                            <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
+                            <span class="bg-current h-0.75 w-2/3 opacity-40"></span>
+                            <span class="bg-current h-0.75 opacity-20"></span>
+                        </div>
                     </button>
-                    <div id="search_list_wrapper"
-                        class="absolute bg-white p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 z-10 invisible mt-3 transition-all">
-                        <div id="search_list" class="max-h-100 overflow-auto leading-4"></div>
+                </div>
+
+                <a href="#" class="flex items-center justify-center col-span-2 xl:row-start-1 xl:row-span-1 xl:col-start-4 xl:col-span-1"><img src="./src/images/logo.png" alt="radiscar" class="inline-block w-32 sm:w-40" /></a>
+
+                <div class="col-span-1 xl:row-start-1 xl:row-span-1 xl:col-start-5 xl:col-span-3 text-left">
+                    <div class="inline-block xl:flex xl:gap-4 xl:items-center xl:justify-end text-right">
+                        <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 xl:p-1 xl:pr-4 hidden xl:flex items-center gap-4">
+                            <svg viewBox="0 0 512 512" class="w-5 h-5 fill-blue-600">
+                                <path
+                                    d="M421.184,384.96l-81.728-20.437l-6.955-27.819c21.867-21.653,36.843-51.371,41.28-81.899    c12.117-3.392,21.504-13.803,23.125-26.837l5.333-42.667c1.131-9.003-1.643-18.091-7.616-24.939    c-3.499-4.011-7.915-7.04-12.8-8.896l1.963-40.171l7.979-8c12.011-12.779,21.973-34.688,1.152-66.475    C376.917,12.395,349.739,0,312.107,0c-14.827,0-49.024,0-80.853,21.376C140.373,23.275,128,65.493,128,106.667    c0,9.579,2.325,31.147,3.861,44.16c-5.483,1.728-10.475,4.928-14.357,9.323c-6.059,6.891-8.896,16.043-7.765,25.131l5.333,42.667    c1.749,13.931,12.331,24.853,25.664,27.456c4.416,29.333,18.624,58.112,39.232,79.403l-7.424,29.717L90.816,384.96    C37.333,398.336,0,446.165,0,501.333C0,507.221,4.779,512,10.667,512h490.667c5.888,0,10.667-4.821,10.667-10.709    C512,446.165,474.667,398.336,421.184,384.96z M21.888,490.667c4.373-40.725,33.621-74.88,74.112-85.013l87.915-21.973    c3.819-0.96,6.805-3.947,7.787-7.765l10.453-41.835c0.96-3.755-0.235-7.723-3.051-10.368    c-21.547-20.203-35.797-49.835-38.144-79.232c-0.448-5.547-5.077-9.813-10.645-9.813h-3.477c-5.376,0-9.92-4.011-10.581-9.344    l-5.333-42.667c-0.384-3.093,0.533-6.059,2.581-8.384c2.048-2.325,4.885-3.605,8-3.605h2.197c3.072,0,5.995-1.323,8-3.605    c2.027-2.304,2.965-5.355,2.581-8.384c-1.365-10.944-4.949-41.579-4.949-52.011c0-33.28,6.528-63.211,85.44-64    c2.176-0.021,4.331-0.725,6.101-1.984c23.808-17.045,49.365-19.349,71.232-19.349c29.995,0,51.157,9.152,62.955,27.179    c14.165,21.653,8.064,32.853,1.387,39.957l-10.667,10.667c-1.877,1.877-2.987,4.373-3.115,7.019l-2.581,53.397    c-0.128,2.901,0.917,5.717,2.901,7.829s4.736,3.328,7.637,3.349c3.093,0.021,5.909,1.323,7.936,3.648    c2.027,2.304,2.923,5.227,2.539,8.277l-5.333,42.667c-0.661,5.333-5.227,9.344-11.627,9.344c-5.568,0-10.197,4.267-10.645,9.813    c-2.411,30.336-17.344,60.544-39.979,80.832c-2.944,2.624-4.181,6.677-3.221,10.517l10.027,40.085    c0.96,3.819,3.947,6.805,7.744,7.765L416,405.653c40.469,10.133,69.717,44.267,74.091,85.013H21.888z" />
+                            </svg>
+                            <span
+                                class="hidden xl:block text-blue-600 bg-white rounded-2xl px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
+                                حساب کاربری
+                            </span>
+                        </a>
+                        <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 xl:p-1 xl:pr-4 flex items-center justify-center gap-4 h-14 w-14 xl:h-auto xl:w-auto">
+                            <span class="hidden xl:block w-2 h-2 rounded-full bg-blue-600"></span>
+                            <svg viewBox="0 0 490.666 490.666" class="w-6 h-6  xl:w-5 xl:h-5 fill-blue-600">
+                                <path
+                                    d="M394.667,373.333c-29.397,0-53.333,23.936-53.333,53.333S365.269,480,394.667,480S448,456.064,448,426.666    S424.064,373.333,394.667,373.333z M394.667,458.666c-17.643,0-32-14.357-32-32c0-17.643,14.357-32,32-32    c17.643,0,32,14.357,32,32C426.667,444.309,412.309,458.666,394.667,458.666z" />
+                                <path
+                                    d="M181.333,373.333c-29.397,0-53.333,23.936-53.333,53.333S151.936,480,181.333,480s53.333-23.936,53.333-53.333    S210.731,373.333,181.333,373.333z M181.333,458.666c-17.643,0-32-14.357-32-32c0-17.643,14.357-32,32-32s32,14.357,32,32    C213.333,444.309,198.976,458.666,181.333,458.666z" />
+                                <path
+                                    d="M437.333,330.666H191.125c-25.323,0-47.317-18.027-52.288-42.88L85.12,19.242c-1.003-4.992-5.376-8.576-10.453-8.576h-64    C4.779,10.666,0,15.445,0,21.333S4.779,32,10.667,32H65.92l51.989,259.989c6.955,34.773,37.76,60.011,73.216,60.011h246.208    c5.888,0,10.667-4.779,10.667-10.667C448,335.445,443.221,330.666,437.333,330.666z" />
+                                <path
+                                    d="M488,78.272c-2.027-2.283-4.928-3.605-8-3.605H96c-5.888,0-10.667,4.779-10.667,10.667S90.112,96,96,96h371.925    l-15.168,121.301c-2.005,15.979-15.659,28.032-31.765,28.032H128c-5.888,0-10.667,4.779-10.667,10.667    c0,5.888,4.779,10.667,10.667,10.667h292.992c26.837,0,49.6-20.075,52.928-46.72l16.661-133.291    C490.965,83.626,490.027,80.554,488,78.272z" />
+                            </svg>
+                            <span
+                                class="hidden xl:block text-blue-600 bg-white rounded-2xl px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
+                                سبد خرید
+                            </span>
+                        </a>
                     </div>
-                </form>
+                </div>
 
-                <a href="#"><img src="./src/images/logo.png" alt="radiscar" class="w-24 sm:w-40" /></a>
 
-                <div class="flex gap-4 items-center">
-                    <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
-                        <svg viewBox="0 0 512 512" class="w-5 h-5 fill-blue-600">
-                            <path
-                                d="M421.184,384.96l-81.728-20.437l-6.955-27.819c21.867-21.653,36.843-51.371,41.28-81.899    c12.117-3.392,21.504-13.803,23.125-26.837l5.333-42.667c1.131-9.003-1.643-18.091-7.616-24.939    c-3.499-4.011-7.915-7.04-12.8-8.896l1.963-40.171l7.979-8c12.011-12.779,21.973-34.688,1.152-66.475    C376.917,12.395,349.739,0,312.107,0c-14.827,0-49.024,0-80.853,21.376C140.373,23.275,128,65.493,128,106.667    c0,9.579,2.325,31.147,3.861,44.16c-5.483,1.728-10.475,4.928-14.357,9.323c-6.059,6.891-8.896,16.043-7.765,25.131l5.333,42.667    c1.749,13.931,12.331,24.853,25.664,27.456c4.416,29.333,18.624,58.112,39.232,79.403l-7.424,29.717L90.816,384.96    C37.333,398.336,0,446.165,0,501.333C0,507.221,4.779,512,10.667,512h490.667c5.888,0,10.667-4.821,10.667-10.709    C512,446.165,474.667,398.336,421.184,384.96z M21.888,490.667c4.373-40.725,33.621-74.88,74.112-85.013l87.915-21.973    c3.819-0.96,6.805-3.947,7.787-7.765l10.453-41.835c0.96-3.755-0.235-7.723-3.051-10.368    c-21.547-20.203-35.797-49.835-38.144-79.232c-0.448-5.547-5.077-9.813-10.645-9.813h-3.477c-5.376,0-9.92-4.011-10.581-9.344    l-5.333-42.667c-0.384-3.093,0.533-6.059,2.581-8.384c2.048-2.325,4.885-3.605,8-3.605h2.197c3.072,0,5.995-1.323,8-3.605    c2.027-2.304,2.965-5.355,2.581-8.384c-1.365-10.944-4.949-41.579-4.949-52.011c0-33.28,6.528-63.211,85.44-64    c2.176-0.021,4.331-0.725,6.101-1.984c23.808-17.045,49.365-19.349,71.232-19.349c29.995,0,51.157,9.152,62.955,27.179    c14.165,21.653,8.064,32.853,1.387,39.957l-10.667,10.667c-1.877,1.877-2.987,4.373-3.115,7.019l-2.581,53.397    c-0.128,2.901,0.917,5.717,2.901,7.829s4.736,3.328,7.637,3.349c3.093,0.021,5.909,1.323,7.936,3.648    c2.027,2.304,2.923,5.227,2.539,8.277l-5.333,42.667c-0.661,5.333-5.227,9.344-11.627,9.344c-5.568,0-10.197,4.267-10.645,9.813    c-2.411,30.336-17.344,60.544-39.979,80.832c-2.944,2.624-4.181,6.677-3.221,10.517l10.027,40.085    c0.96,3.819,3.947,6.805,7.744,7.765L416,405.653c40.469,10.133,69.717,44.267,74.091,85.013H21.888z" />
-                        </svg>
-                        <span
-                            class="hidden md:block text-blue-600 bg-white rounded-2xl px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
-                            حساب کاربری
-                        </span>
-                    </a>
-                    <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 md:p-1 md:pr-4 flex items-center gap-4">
-                        <span class="block w-2 h-2 rounded-full bg-blue-600"></span>
-                        <svg viewBox="0 0 490.666 490.666" class="w-5 h-5 fill-blue-600">
-                            <path
-                                d="M394.667,373.333c-29.397,0-53.333,23.936-53.333,53.333S365.269,480,394.667,480S448,456.064,448,426.666    S424.064,373.333,394.667,373.333z M394.667,458.666c-17.643,0-32-14.357-32-32c0-17.643,14.357-32,32-32    c17.643,0,32,14.357,32,32C426.667,444.309,412.309,458.666,394.667,458.666z" />
-                            <path
-                                d="M181.333,373.333c-29.397,0-53.333,23.936-53.333,53.333S151.936,480,181.333,480s53.333-23.936,53.333-53.333    S210.731,373.333,181.333,373.333z M181.333,458.666c-17.643,0-32-14.357-32-32c0-17.643,14.357-32,32-32s32,14.357,32,32    C213.333,444.309,198.976,458.666,181.333,458.666z" />
-                            <path
-                                d="M437.333,330.666H191.125c-25.323,0-47.317-18.027-52.288-42.88L85.12,19.242c-1.003-4.992-5.376-8.576-10.453-8.576h-64    C4.779,10.666,0,15.445,0,21.333S4.779,32,10.667,32H65.92l51.989,259.989c6.955,34.773,37.76,60.011,73.216,60.011h246.208    c5.888,0,10.667-4.779,10.667-10.667C448,335.445,443.221,330.666,437.333,330.666z" />
-                            <path
-                                d="M488,78.272c-2.027-2.283-4.928-3.605-8-3.605H96c-5.888,0-10.667,4.779-10.667,10.667S90.112,96,96,96h371.925    l-15.168,121.301c-2.005,15.979-15.659,28.032-31.765,28.032H128c-5.888,0-10.667,4.779-10.667,10.667    c0,5.888,4.779,10.667,10.667,10.667h292.992c26.837,0,49.6-20.075,52.928-46.72l16.661-133.291    C490.965,83.626,490.027,80.554,488,78.272z" />
-                        </svg>
-                        <span
-                            class="hidden md:block text-blue-600 bg-white rounded-2xl px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all">
-                            سبد خرید
-                        </span>
-                    </a>
+                <div class="col-span-4 xl:row-start-1 xl:row-span-1 xl:col-start-1 xl:col-span-3 xl:pl-20">
+                    <form class="w-full bg-gray-100 p-1 rounded-2xl relative">
+                        <input id="searchInput" type="text"
+                            class="rounded-xl w-full text-sm leading-7 py-3 pr-4 pl-12 placeholder:text-gray-400 outline-none focus:bg-gray-50 "
+                            placeholder="محصول مورد نظر خود را جستجو کنید..." onkeyup="search(this.value)" />
+                        <button type="button"
+                            class="h-12 w-12 absolute left-1 top-1/2 -translate-y-2/4 flex justify-center items-center">
+                            <svg class="h-5 w-5 fill-neutral-400 hover:fill-blue-600" viewBox="0 0 512.005 512.005">
+                                <path
+                                    d="M508.885,493.784L353.109,338.008c32.341-35.925,52.224-83.285,52.224-135.339c0-111.744-90.923-202.667-202.667-202.667    S0,90.925,0,202.669s90.923,202.667,202.667,202.667c52.053,0,99.413-19.883,135.339-52.245l155.776,155.776    c2.091,2.091,4.821,3.136,7.552,3.136c2.731,0,5.461-1.045,7.552-3.115C513.045,504.707,513.045,497.965,508.885,493.784z     M202.667,384.003c-99.989,0-181.333-81.344-181.333-181.333S102.677,21.336,202.667,21.336S384,102.68,384,202.669    S302.656,384.003,202.667,384.003z" />
+                            </svg>
+                        </button>
+                        <div id="search_list_wrapper"
+                            class="absolute bg-white p-3 shadow-md top-full left-0 right-0 rounded-xl opacity-0 z-10 invisible mt-3 transition-all">
+                            <div id="search_list" class="max-h-100 overflow-auto leading-4"></div>
+                        </div>
+                    </form>
                 </div>
 
             </div>
 
-            <div class="flex justify-between items-center">
+            <span id="mobile_menu_overlay" class=" bg-black/75 backdrop-blur fixed left-0 right-0 top-0 bottom-0 block xl:hidden opacity-0 invisible transition-all duration-100" onclick="closeMobileMenu();"></span>
+            <div 
+                id="mobile_menu" 
+                class="xl:flex justify-between items-center fixed xl:relative overflow-auto bg-white top-0 right-24 left-0 bottom-0 shadow-md xl:h-auto xl:bottom-auto xl:shadow-none xl:right-0 -translate-x-full transition-all duration-200 ease-in-out xl:-translate-x-0"
+            >
                 <nav class="font-semibold">
-                    <ul class="md:flex items-center gap-4">
+                    <ul class="xl:flex items-center gap-4">
+                        <li class="xl:hidden text-left">
+                            <button type="button" class="p-2" onclick="closeMobileMenu();">
+                                <svg viewBox="0 -960 960 960" class="inline-block w-7 h-7 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                            </button>
+                        </li>
                         <li>
-                            <button type="button" id="categories_button" onclick="toggleCategories();"
-                                class="flex items-center gap-3 ml-4 text-blue-600 block group">
-                                <div class="flex flex-col justify-between w-6 gap-0.5">
+                            <button 
+                                type="button" 
+                                id="categories_button" 
+                                onclick="toggleCategories();"
+                                class="flex items-center gap-3 hover:text-blue-600 xl:text-blue-600 block group px-5 py-2 xl:p-0 block w-full xl:ml-4"
+                            >
+                                <div class="hidden xl:flex flex-col justify-between w-6 gap-0.5">
                                     <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
                                     <span class="bg-current h-0.75 w-2/3 opacity-40"></span>
                                     <span class="bg-current h-0.75 opacity-20"></span>
@@ -157,33 +185,34 @@
                                     دسته بندی سریع
                                 </span>
                             </button>
+
                         </li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block">صفحه نخست</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 xl:p-0">صفحه نخست</a>
                         </li>
-                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block">درباره رادیسکار</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 xl:p-0">درباره رادیسکار</a>
                         </li>
-                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block">راهنمای خرید</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 xl:p-0">راهنمای خرید</a>
                         </li>
-                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block">پرسشهای متداول</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 xl:p-0">پرسشهای متداول</a>
                         </li>
-                        <li> <span class="h-4 border-r border-gray-200 hidden md:block"></span></li>
+                        <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block">تماس با ما</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 xl:p-0">تماس با ما</a>
                         </li>
                     </ul>
 
                 </nav>
 
-                <div class="lg:flex gap-3 items-center">
-                    <button type="button" class="flex items-center px-10 gap-4 group block" onclick="openOrderModal();">
-                        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600">
+                <div class="xl:flex gap-3 items-center">
+                    <button type="button" class="flex items-center px-5 py-2 w-full xl:w-auto xl:py-0 xl:px-10 gap-4 group block" onclick="openOrderModal();">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600 hidden xl:block">
                             <path
                                 d="m9 22c-2.479 0-4.873-1.04-6.57-2.854-1.721-1.839-2.576-4.239-2.409-6.759.313-4.703 4.389-8.387 9.279-8.387h11.2c.276 0 .5.224.5.5s-.224.5-.5.5h-11.2c-4.365 0-8.003 3.273-8.281 7.453-.149 2.24.611 4.374 2.142 6.009 1.508 1.613 3.637 2.538 5.839 2.538 4.411 0 8-3.589 8-8 0-.276.224-.5.5-.5s.5.224.5.5c0 4.963-4.037 9-9 9z" />
                             <path
@@ -200,10 +229,10 @@
                         </span>
                     </button>
 
-                    <span class="h-4 border-r border-gray-200 hidden md:block"></span>
+                    <span class="h-4 border-r border-gray-200 hidden xl:block"></span>
 
-                    <a href="#" class="flex items-center px-10 gap-4 group block">
-                        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600">
+                    <a href="#" class="flex items-center px-5 py-2 xl:py-0 xl:px-10 gap-4 group block">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600 hidden xl:block">
                             <path
                                 d="m12 24c-6.617 0-12-5.383-12-12s5.383-12 12-12 12 5.383 12 12-5.383 12-12 12zm0-23c-6.065 0-11 4.935-11 11s4.935 11 11 11 11-4.935 11-11-4.935-11-11-11z" />
                             </g>
@@ -223,11 +252,18 @@
             </div>
         </div>
 
-        <div id="categories_menu"
-            class="bg-white shadow-sm border-t-2 invisible opacity-0 mt-5 transition-all absolute left-0 right-0 top-full">
-            <div class="max-w-7xl mx-auto px-3 leading-4">
+        <div 
+            id="categories_menu"
+            class="bg-white shadow-sm border-t-2 invisible opacity-0 mt-5 transition-all fixed xl:absolute left-0 right-0 top-0 bottom-0 xl:bottom-auto overflow-auto xl:top-full"
+        >
+            <div class="max-w-7xl mx-auto xl:px-3 leading-4">
 
-                <ul class="gap-8 columns-5 pt-4 pb-8">
+                <div class="xl:hidden text-left">
+                    <button type="button" class="p-2" onclick="toggleCategories();">
+                        <svg viewBox="0 -960 960 960" class="inline-block w-7 h-7 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                    </button>
+                </div>
+                <ul class="gap-8 columns-1 md:columns-3 lg:columns-4 xl:columns-5 px-5 xl:px-0 xl:pt-4 xl:pb-8">
                     <li class="break-inside-avoid">
                         <a href="#" class="block text-white bg-neutral-700 hover:bg-neutral-600 px-4 py-1 font-semibold text-base rounded-md mb-2"> روغن ترمز </a>
                         <ul class="mb-10">
@@ -459,6 +495,7 @@
 
             </div>
         </div>
+
     </header>
 
     <main class="relative z-10">
@@ -646,10 +683,10 @@
     <footer class="bg-white">
 
         <div class="bg-neutral-150">
-            <div class="max-w-7xl mx-auto px-3 py-5 md:py-8">
+            <div class="max-w-7xl mx-auto px-3 py-10">
                 <div class="gap-4 flex items-center justify-between flex-col md:flex-row">
 
-                    <h5 class="flex items-center justify-center gap-4 text-base lg:text-2xl">
+                    <h5 class="hidden md:flex items-center justify-center gap-4 text-base lg:text-2xl">
                         <div class="flex flex-col justify-between w-4 gap-1">
                             <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                             <span class="bg-current h-0.75 opacity-40"></span>
@@ -660,7 +697,7 @@
                         </span>
                     </h5>
 
-                    <div class="flex items-center justify-center gap-4 md:gap-6">
+                    <div class="flex items-center justify-center gap-6">
                         <a href="#" title="telegram">
                             <img src="./src/images/icons/telegram.png" class="w-7 h-7" />
                         </a>
@@ -682,18 +719,18 @@
             </div>
         </div>
 
-        <div class="max-w-7xl mx-auto py-5 md:py-10">
+        <div class="max-w-7xl mx-auto md:py-10">
             <div class="md:flex md:gap-14">
-                <div class="rounded-xl bg-neutral-100 p-4 md:p-10 basis-5/12 shrink-0 grow-1 text-xs leading-6">
-                    <img src="./src/images/logo.png" class="w-24 sm:w-40 block mb-6" />
-                    <p class="text-justify text-neutral-400 mb-3">
+                <div class="md:rounded-xl md:bg-neutral-100 p-4 md:p-10 basis-5/12 shrink-0 grow-1 text-xs leading-6">
+                    <img src="./src/images/logo.png" class="w-40 block mb-4 md:mb-6 mx-auto py-7 md:py-0" />
+                    <p class="hidden md:block text-justify text-neutral-400 mb-3">
                         رادیس کار یک فروشگاه آنلاین لوازم یدکی خودروهای لوکس است که در زمینه فروش لوازم یدکی خودروهایی
                         مانند بنز و بی ام و فعالیت دارد. این فروشگاه اینترنتی لوازم یدکی در تهران انواع لوازم یدکی را از
                         برندهای معتبر و معروف دنیا تامین می کند. با خرید لوازم یدکی خودرو از رادیس کار می توانید از
                         قطعات یدکی اورجینال، با بهترین کیفیت و قیمت بهره مند شوید.
                     </p>
 
-                    <div class="flex gap-4 items-center mb-3">
+                    <div class="flex gap-2 sm:gap-4 items-center mb-3">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600">
                             <path
                                 d="m12 24c-.118 0-.236-.042-.331-.125-.354-.313-8.669-7.731-8.669-14.875 0-4.963 4.038-9 9-9s9 4.037 9 9c0 7.144-8.315 14.562-8.669 14.875-.095.083-.213.125-.331.125zm0-23c-4.411 0-8 3.589-8 8 0 5.918 6.451 12.358 8 13.819 1.549-1.461 8-7.901 8-13.819 0-4.411-3.589-8-8-8z" />
@@ -705,7 +742,7 @@
                         </span>
                     </div>
 
-                    <div class="flex gap-4 items-center mb-3">
+                    <div class="flex gap-2 sm:gap-4 items-center mb-3">
                         <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5">
                             <path
                                 d="m12 21c-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5zm0-14c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z" />
@@ -745,12 +782,12 @@
                         <span class="font-semibold" dir="ltr">
                             021 - 22264310
                         </span>
-                        <span class="text-neutral-400">
+                        <span class="xl:text-neutral-400">
                             شنبه تا چهارشنبه 9 الی 17
                         </span>
                     </div>
 
-                    <div class="flex gap-4 items-center">
+                    <div class="flex gap-2 sm:gap-4 items-center">
                         <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5">
                             <path
                                 d="m12 21c-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5zm0-14c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z" />
@@ -794,7 +831,7 @@
 
                 </div>
                 <div class="basis-7/12 grow-1">
-                    <div class="md:flex gap-8 text-sm pb-4">
+                    <div class="hidden md:flex gap-8 text-sm pb-4">
                         <div class="basis-7/12 grow-0">
                             <h6 class="text-2xl items-center flex gap-3 mb-4 md:mb-7 mt-6 md:mt-10 font-modam">
                                 <div class="flex flex-col justify-between w-4 gap-1">
@@ -870,7 +907,7 @@
                             </nav>
                         </div>
                     </div>
-                    <div class="flex gap-8">
+                    <div class="flex gap-2 md:gap-8 px-4 py-7 md:p-0 justify-center md:justify-start">
                         <a href="#"
                             class="block bg-neutral-100 hover:bg-neutral-200 transition-all rounded-xl w-20 h-20 md:w-28 md:h-28 flex justify-center items-center">
                             <img src="./src/images/enamad.png" class="w-12 h-12 md:w-16 md:h-16 object-contain" />
@@ -892,11 +929,11 @@
             </div>
         </div>
 
-        <div class="border-t-4 border-neutral-100">
-            <div class="max-w-7xl mx-auto py-4 md:py-8">
+        <div class="border-t md:border-t-4 border-neutral-100">
+            <div class="max-w-7xl mx-auto py-6 md:py-8">
                 <div
                     class="flex flex-col items-center md:flex-row gap-4 justify-between text-xs text-neutral-400 text-center">
-                    <p>
+                    <p class="hidden md:block">
                         تمام حقوق مادی و معنوی این فروشگاه متعلق به هلدینگ سودبر می باشد.
                     </p>
                     <a hfef="#" onclick="scrollToTop()"
@@ -916,9 +953,14 @@
     <!-- modal html -->
     <div class="fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center z-30 opacity-0 invisible transition-all" id="order_modal">
         <div onclick="closeOrderModal();" class="absolute left-0 right-0 top-0 bottom-0 bg-black/75 backdrop-blur"></div>
-        <div class="relative max-w-4xl mx-auto bg-white rounded-xl w-full">
-            <h2 class="font-bold p-5 bg-neutral-100 rounded-t-xl text-xl">
+        <div class="relative max-w-4xl mx-auto bg-white xl:rounded-xl w-full h-screen xl:h-auto max-h-screen overflow-auto">
+            <h2 class="font-bold p-5 bg-neutral-100 xl:rounded-t-xl text-xl flex justify-between items-center">
                 ثبت درخواست قطعه
+
+                <button type="button" class="p-2" onclick="closeOrderModal();">
+                    <svg viewBox="0 -960 960 960" class="inline-block w-7 h-7 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                </button>
+
             </h2>
             <form class="p-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -960,252 +1002,18 @@
                 </div>
                 
 
-              </form> 
+            </form> 
         </div>
     </div>
 
-    <!-- layout scripts -->
-    <script>
-
-        //toggleCategories
-        var categoriesMenu = document.getElementById('categories_menu');
-        var categoriesBtn = document.getElementById('categories_button');
-        function toggleCategories(){
-            if (categoriesMenu.classList.contains('opacity-0')){
-                categoriesMenu.classList.add('opacity-100','visible','mt-0');
-                categoriesMenu.classList.remove('opacity-0','invisible','mt-5');
-            }else{
-                categoriesMenu.classList.add('opacity-0','invisible','mt-5');
-                categoriesMenu.classList.remove('opacity-100','visible','mt-0');
-            }
-        }
-
-        document.addEventListener('click', event => {
-            const isClickOutsideCategoriesBtn = !categoriesBtn.contains(event.target);
-            const isClickOutsideCategoriesMenu = !categoriesMenu.contains(event.target);
-            if (isClickOutsideCategoriesBtn && isClickOutsideCategoriesMenu) {
-                categoriesMenu.classList.add('opacity-0','invisible','mt-5');
-                categoriesMenu.classList.remove('opacity-100','visible','mt-0');
-            }
-        })
-
-        var searchList = document.getElementById('search_list');
-        var searchListWrapper = document.getElementById('search_list_wrapper');
-
-        function search(value) {
-
-            if (value.length > 2) {
-
-                var autocompleteList = [
-                    {
-                        value: "tax_product_cat",
-                        type: "headline"
-                    },
-                    {
-                        term_id: "9668",
-                        taxonomy: "product_cat",
-                        value: "لنت ترمز",
-                        url: "https://www.radiscar.com/pcat/brake-system/brake-pad/",
-                        image_src: "",
-                        breadcrumbs: "سیستم ترمز",
-                        count: "270",
-                        type: "taxonomy",
-                        score: 21.333333333333332
-                    },
-                    {
-                        term_id: "9669",
-                        taxonomy: "product_cat",
-                        value: "دیسک ترمز",
-                        url: "https://www.radiscar.com/pcat/brake-system/brake-disc/",
-                        image_src: "",
-                        breadcrumbs: "سیستم ترمز",
-                        count: "92",
-                        type: "taxonomy",
-                        score: 19.753086419753085
-                    },
-                    {
-                        term_id: "9719",
-                        taxonomy: "product_cat",
-                        value: "کفشک ترمز",
-                        url: "https://www.radiscar.com/pcat/brake-system/brake-shoes/",
-                        image_src: "",
-                        breadcrumbs: "سیستم ترمز",
-                        count: "8",
-                        type: "taxonomy",
-                        score: 19.753086419753085
-                    },
-                    {
-                        value: "product",
-                        type: "headline"
-                    },
-                    {
-                        post_id: "19744",
-                        value: "لنت ترمز جلو 323 برند Textar کد 2127702",
-                        url: "https://www.radiscar.com/product/2127702/",
-                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/2127702F-1-64x64.jpg?v=1678562207\">",
-                        price: "",
-                        desc: "",
-                        sku: "2127702",
-                        on_sale: false,
-                        featured: false,
-                        type: "product"
-                    },
-                    {
-                        post_id: "19995",
-                        value: "روغن ترمز Dot4،250cc برند Textar کد 95002100",
-                        url: "https://www.radiscar.com/product/95002100/",
-                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/95002100-1-64x64.jpg?v=1679229437\">",
-                        price: "",
-                        desc: "",
-                        sku: "95002100",
-                        on_sale: false,
-                        featured: false,
-                        type: "product"
-                    },
-                    {
-                        post_id: "19851",
-                        value: "روغن ترمز Dot4LV،500cc برند Textar کد 95006100",
-                        url: "https://www.radiscar.com/product/95006100/",
-                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/95006100-64x64.jpg?v=1678613001\">",
-                        price: "",
-                        desc: "",
-                        sku: "95006100",
-                        on_sale: false,
-                        featured: false,
-                        type: "product"
-                    },
-                    {
-                        post_id: "19808",
-                        value: "لنت ترمز جلو پژو 206 برند Textar کد 2359701",
-                        url: "https://www.radiscar.com/product/2359701/",
-                        thumb_html: "<img class='w-6 h-6' src=\"https://www.radiscar.com/wp-content/uploads/2023/03/2359701-1-64x64.jpg?v=1678599454\">",
-                        price: "",
-                        desc: "",
-                        sku: "2359701",
-                        on_sale: false,
-                        featured: false,
-                        type: "product"
-                    },
-                    {
-                        total: 381,
-                        type: "more_products"
-                    }
-                ];
 
 
-                var list = '';
-
-                for (var i = 0; i < autocompleteList.length; i++) {
-                    
-                    var item = autocompleteList[i];
-
-                    switch(item.type){
-                        
-
-                        case "headline":
-                            var title = item.value;
-                
-                            if (item.value === 'tax_product_cat'){
-                                title = 'دسته ها'
-                            }
-                            if (item.value === 'product'){
-                                title = 'محصولات'
-                            }
-
-                            list += '<div class="pt-3 pb-1 border-b border-neutral-200 text-neutral-400" >'+ title +'</div>';
-                            break;
-
-                        case "taxonomy":
-                            list += '<a href="'+ item.url +'" class="p-2 pr-6 text-sm text-blue-600 hover:bg-neutral-100 cursor-pointer block" ><div>'+ item.value + '</div><div class="text-xs text-neutral-400"> در ' + item.breadcrumbs +'</div></a>';
-                            break;
-                        case "product":
-                            list += '<a href="'+ item.url +'" class="p-2 text-sm text-blue-600 hover:bg-neutral-100 cursor-pointer flex items-center gap-3" >'+item.thumb_html+'<span>'+item.value+'</span></a>';
-                            break;
-                        case "more_products":
-                        list += '<a href="/?s='+ value +'&post_type=product&dgwt_wcas=1" class="border-t border-neutral-200 p-2 pt-3 text-sm text-blue-600 cursor-pointer flex items-center gap-3" >مشاهده همه محصولات </a>';
-
-
-                        default:
-                            continue;
-
-                    }
-
-                }
-
-                searchList.innerHTML = list;
-                searchListWrapper.style.opacity = 1;
-                searchListWrapper.style.visibility = 'visible';
-                searchListWrapper.style.marginTop = '2px';
-
-            } else {
-
-                searchListWrapper.style.opacity = 0;
-                searchListWrapper.style.visibility = 'hidden';
-                searchListWrapper.style.marginTop = '';
-
-                searchList.innerHTML = '';
-            }
-
-        }
-        document.addEventListener("click", function (e) {
-
-            const target = e.target.closest("[data-autocomplete-list]");
-
-            if (target) {
-                document.getElementById('searchInput').value = target.getAttribute('data-autocomplete-list');
-            }
-
-            searchListWrapper.style.opacity = 0;
-            searchListWrapper.style.visibility = 'hidden';
-            searchListWrapper.style.marginTop = '';
-
-            searchList.innerHTML = '';
-        });
-
-
-        //footer scroll to top:
-        function scrollToTop() {
-            document.getElementsByTagName('body')[0].scrollIntoView({ behavior: "smooth" });
-        }        
-
-
-        function numberWithCommas(x) {
-            x = x.toString();
-            var pattern = /(-?\d+)(\d{3})/;
-            while (pattern.test(x))
-                x = x.replace(pattern, "$1,$2");
-            return x;
-        }
-
-        document.querySelectorAll('.price').forEach(element => {
-            var value = element.innerHTML;
-            element.innerHTML = numberWithCommas(value);
-        });
-
-
-
-        //display order modal:
-        function closeOrderModal(){
-            var modal = document.getElementById("order_modal");
-            modal.style.opacity = 0;
-            modal.style.visibility = 'hidden';
-
-        }
-
-        function openOrderModal(){
-            var modal = document.getElementById("order_modal");
-            modal.style.opacity = 1;
-            modal.style.visibility = 'visible';
-        }
-
-
-    </script>
+    <script src="./src/js/custom.js"></script>
 
 
     <!-- map script -->
     <script>
-        
-        
+                
         var map = L.map('map').setView([35.766225, 51.442329], 14);
 
         var myIcon = L.icon({
