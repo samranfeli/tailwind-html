@@ -62,14 +62,21 @@
         }
                  
         .map-wrapper{
-                height: 350px;
+                height: 360px;
         }
 
+        @media screen and (min-width:768px) {            
+            .map-wrapper{
+                height: 700px;
+            }
+        }
         @media screen and (min-width:1024px) {            
             .map-wrapper{
                 height: 850px;
             }
         }
+
+
 
     </style>
     
@@ -503,8 +510,8 @@
     </header>
 
     <main class="relative z-10">
-        <section>
-            <div class="max-w-7xl mx-auto p-3 md:py-7">
+        <section class="bg-white md:bg-transparent">
+            <div class="max-w-7xl mx-auto p-3 px-5 md:py-7">
                 <div class="flex gap-4 items-center text-xs text-neutral-400">
                     <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-neutral-400"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"/></svg>
                     <a href="/"> صفحه نخست </a>
@@ -515,14 +522,22 @@
         </section>
          
         <section>
-            <div class="max-w-7xl mx-auto px-3">                
-                <div class="py-4 pb-10 lg:pb-48">
-                    <div class="grid grid-cols-1 lg:grid-cols-11 gap-4 lg:gap-10">
+            <div class="max-w-7xl mx-auto px-5">                
+                <div class="py-5 pb-10 md:pb-32 lg:pb-48">
+                    <div class="grid grid-cols-1 md:grid-cols-11 gap-7 lg:gap-10">
 
-                        <div class="lg:col-span-4">
+                        <div class="md:col-span-6 md:col-start-6 xl:col-span-7 xl:col-start-5 md:row-start-1 relative z-10">
+                            <div class="bg-white p-5 md:p-3 lg:p-5 rounded-2xl md:absolute md:left-0 md:right-0">
+                                <div class="rounded-2xl map-wrapper" id="map" dir="ltr">
+                                    نقشه
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-5 md:col-start-1 xl:col-span-4 md:row-start-1 ">
                             
-                            <div class="py-2 lg:py-14">
-                                <h5 class="flex items-center gap-4 mb-6 text-base lg:text-2xl">
+                            <div class="py-2 md:py-10 lg:py-14">
+                                <h5 class="flex items-center gap-4 mb-5 text-xl lg:text-2xl">
                                     <div class="flex flex-col justify-between w-4 gap-1">
                                         <span class="bg-current h-0.75 w-2/5 opacity-20"></span>
                                         <span class="bg-current h-0.75 opacity-40"></span>
@@ -534,7 +549,7 @@
                                 </h5>
                                 
                                 <p class="leading-7 mb-4 text-sm">
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه است .
+                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه است
                                 </p>
                                 
                                 <button type="button" class="text-blue-600 bg-blue-100 hover:shadow-md rounded-lg transition-all px-8 h-14 text-lg font-bold">
@@ -546,37 +561,28 @@
     
                         </div>
 
-                        <div class="lg:col-span-7 relative z-10">
-                            <div class="bg-white p-5 rounded-2xl lg:absolute lg:left-0 lg:right-0">
-                                <div class="rounded-2xl map-wrapper" id="map" dir="ltr">
-                                    نقشه
-                                </div>
-                            </div>
-    
-                        </div>
-
-                        <div class="lg:col-span-7 relative z-20">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-2">
-                                <div class="bg-white rounded-2xl p-5">
+                        <div class="md:col-span-8 lg:col-span-7 md:col-start-1 md:row-start-2 relative z-20">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-2 text-sm md:text-xs lg:text-sm">
+                                <div class="bg-white rounded-2xl p-5 md:p-3 lg:p-5">
                                     <img src="./src/images/branch.png" alt="" class="rounded-2xl w-full block mb-6" />
                                     <h5 class="font-modam font-bold mb-2 text-base lg:text-xl">
                                         شعبه هروی
                                     </h5>
-                                    <p class="font-bold text-sm mb-4">
+                                    <p class="font-bold mb-4">
                                         شنبه تا چهارشنبه ساعت 10 صبح الی 09 شب
                                     </p>
-                                    <div class="flex gap-4 mb-3">
-                                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-blue-600">
+                                    <div class="flex gap-4 md:gap-2 lg:gap-4 mb-3">
+                                        <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 lg:w-6 lg:h-6 fill-blue-600 shrink-0">
                                             <path d="m12 24c-.118 0-.236-.042-.331-.125-.354-.313-8.669-7.731-8.669-14.875 0-4.963 4.038-9 9-9s9 4.037 9 9c0 7.144-8.315 14.562-8.669 14.875-.095.083-.213.125-.331.125zm0-23c-4.411 0-8 3.589-8 8 0 5.918 6.451 12.358 8 13.819 1.549-1.461 8-7.901 8-13.819 0-4.411-3.589-8-8-8z"></path>
                                             <path d="m12 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"></path>
                                         </svg>
-                                        <span class="text-sm">
+                                        <span>
                                             تهران، ميدان هروى، نبش خاوران شمالى، مجتمع تجارى تيدا سنتـر، طبقه اول، واحد 180
                                         </span>
                                     </div>
             
-                                    <div class="flex gap-4 items-center mb-3">
-                                        <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5">
+                                    <div class="flex gap-4 md:gap-2 lg:gap-4 items-center mb-3">
+                                        <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5">
                                             <path d="m12 21c-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5zm0-14c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"></path>
                                             <path d="m21.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.551-.999-2.898-2.485-3.352-.265-.08-.413-.36-.333-.624.081-.263.363-.414.624-.332 1.911.582 3.194 2.314 3.194 4.308v4c0 .276-.224.5-.5.5z"></path>
                                             <path d="m2.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.994 1.283-3.726 3.194-4.308.264-.083.543.068.624.332.08.264-.068.544-.333.624-1.486.454-2.485 1.801-2.485 3.352v4c0 .276-.224.5-.5.5z"></path>
@@ -597,32 +603,32 @@
                                             <ellipse cx="15.005" cy="16.505" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -7.276 15.445)"></ellipse>
                                             <ellipse cx="8.995" cy="10.495" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -4.786 9.434)"></ellipse>
                                         </svg>
-                                        <span dir="ltr" class="text-sm">
+                                        <span dir="ltr">
                                             021 - 22264310
                                         </span>
                                     </div>
             
                                 </div>
-                                <div class="bg-white rounded-2xl p-5">
+                                <div class="bg-white rounded-2xl p-5 md:p-3 lg:p-5">
                                     <img src="./src/images/branch-2.png" alt="" class="rounded-2xl w-full block mb-6" />
                                     <h5 class="font-modam font-bold mb-2 text-base lg:text-xl">
                                         شعبه شریعتی
                                     </h5>
-                                    <p class="font-bold text-sm mb-4">
+                                    <p class="font-bold mb-4">
                                         شنبه تا چهارشنبه ساعت 10 صبح الی 09 شب
                                     </p>
-                                    <div class="flex gap-4 mb-3">
-                                        <svg viewBox="0 0 24 24" class="w-6 h-6 fill-blue-600">
+                                    <div class="flex gap-4 md:gap-2 lg:gap-4 mb-3">
+                                        <svg viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 lg:w-6 lg:h-6 fill-blue-600 shrink-0">
                                             <path d="m12 24c-.118 0-.236-.042-.331-.125-.354-.313-8.669-7.731-8.669-14.875 0-4.963 4.038-9 9-9s9 4.037 9 9c0 7.144-8.315 14.562-8.669 14.875-.095.083-.213.125-.331.125zm0-23c-4.411 0-8 3.589-8 8 0 5.918 6.451 12.358 8 13.819 1.549-1.461 8-7.901 8-13.819 0-4.411-3.589-8-8-8z"></path>
                                             <path d="m12 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-9c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4z"></path>
                                         </svg>
-                                        <span class="text-sm">
+                                        <span>
                                             تهران، بلوار شریعتی، بلـوار شهید یونس مومنی طبقه همکف، واحد 28
                                         </span>
                                     </div>
             
-                                    <div class="flex gap-4 items-center mb-3">
-                                        <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5">
+                                    <div class="flex gap-4 md:gap-2 lg:gap-4 items-center mb-3">
+                                        <svg viewBox="0 0 24 24" class="fill-blue-600 w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5">
                                             <path d="m12 21c-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5-3.364 7.5-7.5 7.5zm0-14c-3.584 0-6.5 2.916-6.5 6.5s2.916 6.5 6.5 6.5 6.5-2.916 6.5-6.5-2.916-6.5-6.5-6.5z"></path>
                                             <path d="m21.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.551-.999-2.898-2.485-3.352-.265-.08-.413-.36-.333-.624.081-.263.363-.414.624-.332 1.911.582 3.194 2.314 3.194 4.308v4c0 .276-.224.5-.5.5z"></path>
                                             <path d="m2.5 24c-.276 0-.5-.224-.5-.5v-4c0-1.994 1.283-3.726 3.194-4.308.264-.083.543.068.624.332.08.264-.068.544-.333.624-1.486.454-2.485 1.801-2.485 3.352v4c0 .276-.224.5-.5.5z"></path>
@@ -643,7 +649,7 @@
                                             <ellipse cx="15.005" cy="16.505" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -7.276 15.445)"></ellipse>
                                             <ellipse cx="8.995" cy="10.495" rx=".75" ry=".75" transform="matrix(.707 -.707 .707 .707 -4.786 9.434)"></ellipse>
                                         </svg>
-                                        <span dir="ltr" class="text-sm">
+                                        <span dir="ltr">
                                             021 - 22264310
                                         </span>
                                     </div>
@@ -658,28 +664,6 @@
 
             </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </main>
