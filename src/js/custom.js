@@ -266,3 +266,58 @@ function openOrderModal() {
     lockBodyScroll();
 }
 // END ---- Display order modal
+
+
+
+//Accordion:
+var accordions = document.querySelectorAll('[data-accordion]');
+for(let i = 0 ; i < accordions.length ; i++){
+    var accordionHeader = accordions[i];
+    accordionHeader.addEventListener('click', (e) => {
+        
+        var accordionContent = e.target.closest('header').nextElementSibling;
+        var axpandIcon = e.target.closest('header').querySelector('svg');
+
+        if (accordionContent.classList.contains('max-h-0')){
+            accordionContent.classList.add('max-h-100','opacity-100');
+            accordionContent.classList.remove('max-h-0','opacity-0');
+            axpandIcon.classList.remove('rotate-180');
+        }else{
+            accordionContent.classList.add('max-h-0','opacity-0');
+            accordionContent.classList.remove('max-h-100','opacity-100');
+            axpandIcon.classList.add('rotate-180');
+        }
+
+    })
+}
+//Accordion:
+
+
+//Accordion2:
+var accordions = document.querySelectorAll('[data-accordion2]');
+for(let i = 0 ; i < accordions.length ; i++){
+    var accordionHeader = accordions[i];
+    accordionHeader.addEventListener('click', (e) => {
+
+        var header = e.target.closest('header');
+        var accordionContent = header.nextElementSibling;
+        var expandButton = header.querySelector('.expand-btn');
+        var collapseButton = header.querySelector('.collapse-btn');
+
+        if (accordionContent.classList.contains('max-h-0')){
+            accordionContent.classList.add('max-h-80');
+            accordionContent.classList.remove('max-h-0');
+            collapseButton.classList.remove('hidden');
+            expandButton.classList.add('hidden'); 
+            header.classList.add('text-blue-600');
+        }else{
+            accordionContent.classList.add('max-h-0');
+            accordionContent.classList.remove('max-h-80');
+            expandButton.classList.remove('hidden');
+            collapseButton.classList.add('hidden'); 
+            header.classList.remove('text-blue-600');          
+        }
+
+    })
+}
+//Accordion:
