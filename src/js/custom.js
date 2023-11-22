@@ -273,20 +273,21 @@ function openOrderModal() {
 var accordions = document.querySelectorAll('[data-accordion]');
 for(let i = 0 ; i < accordions.length ; i++){
     var accordionHeader = accordions[i];
+    
+    accordionHeader.nextElementSibling.style.maxHeight = accordionHeader.nextElementSibling.scrollHeight + "px";
+    
     accordionHeader.addEventListener('click', (e) => {
         
         var accordionContent = e.target.closest('header').nextElementSibling;
         var axpandIcon = e.target.closest('header').querySelector('svg');
 
-        if (accordionContent.classList.contains('max-h-0')){
-            accordionContent.classList.add('max-h-100','opacity-100');
-            accordionContent.classList.remove('max-h-0','opacity-0');
-            axpandIcon.classList.remove('rotate-180');
-        }else{
-            accordionContent.classList.add('max-h-0','opacity-0');
-            accordionContent.classList.remove('max-h-100','opacity-100');
+        if (accordionContent.style.maxHeight) {
+            accordionContent.style.maxHeight = null;
             axpandIcon.classList.add('rotate-180');
-        }
+          } else {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+            axpandIcon.classList.remove('rotate-180');
+          } 
 
     })
 }
@@ -304,19 +305,20 @@ for(let i = 0 ; i < accordions.length ; i++){
         var expandButton = header.querySelector('.expand-btn');
         var collapseButton = header.querySelector('.collapse-btn');
 
-        if (accordionContent.classList.contains('max-h-0')){
-            accordionContent.classList.add('max-h-80');
-            accordionContent.classList.remove('max-h-0');
+        if (accordionContent.style.maxHeight) {
+            accordionContent.style.maxHeight = null;
+            expandButton.classList.remove('hidden');
+            collapseButton.classList.add('hidden'); 
+            header.classList.remove('text-blue-600'); 
+
+          } else {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
             collapseButton.classList.remove('hidden');
             expandButton.classList.add('hidden'); 
             header.classList.add('text-blue-600');
-        }else{
-            accordionContent.classList.add('max-h-0');
-            accordionContent.classList.remove('max-h-80');
-            expandButton.classList.remove('hidden');
-            collapseButton.classList.add('hidden'); 
-            header.classList.remove('text-blue-600');          
-        }
+            
+          } 
+
 
     })
 }
@@ -336,23 +338,23 @@ for(let i = 0 ; i < accordions.length ; i++){
         var expandButton = header.querySelector('.expand-btn');
         var collapseButton = header.querySelector('.collapse-btn');
 
-        if (accordionContent.classList.contains('max-h-0')){
-            accordionContent.classList.add('max-h-80');
-            accordionContent.classList.remove('max-h-0');
-            collapseButton.classList.remove('hidden');
-            expandButton.classList.add('hidden'); 
-            header.classList.add('text-blue-600');
-            wrapper.classList.add('bg-white',"border-white");
-            wrapper.classList.remove("border-neutral-200");
-        }else{
-            accordionContent.classList.add('max-h-0');
-            accordionContent.classList.remove('max-h-80');
+        if (accordionContent.style.maxHeight) {
+            accordionContent.style.maxHeight = null;
             expandButton.classList.remove('hidden');
             collapseButton.classList.add('hidden'); 
             header.classList.remove('text-blue-600');  
             wrapper.classList.remove('bg-white',"border-white");
             wrapper.classList.add("border-neutral-200");
-        }
+
+          } else {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+            collapseButton.classList.remove('hidden');
+            expandButton.classList.add('hidden'); 
+            header.classList.add('text-blue-600');
+            wrapper.classList.add('bg-white',"border-white");
+            wrapper.classList.remove("border-neutral-200");
+            
+          } 
 
     })
 }
