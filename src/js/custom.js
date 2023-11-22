@@ -290,7 +290,7 @@ for(let i = 0 ; i < accordions.length ; i++){
 
     })
 }
-//Accordion:
+// END ---- Accordion:
 
 
 //Accordion2:
@@ -320,7 +320,7 @@ for(let i = 0 ; i < accordions.length ; i++){
 
     })
 }
-//Accordion:
+// END ---- Accordion2:
 
 
 
@@ -356,4 +356,54 @@ for(let i = 0 ; i < accordions.length ; i++){
 
     })
 }
-//Accordion:
+// END ---- Accordion3:
+
+
+//Toggle password visibility:
+var togglePasswordBtns = document.querySelectorAll('[data-toggle-password]');
+for(let i = 0 ; i < togglePasswordBtns.length ; i++){
+    var togglePasswordBtn = togglePasswordBtns[i];
+    togglePasswordBtn.addEventListener('click', (e) => {
+        
+        var toggleBtn = e.target.closest('[data-toggle-password]');
+        var toggleInput = toggleBtn.closest('.relative').querySelector('input');
+        var showPasswordIcon = toggleBtn.querySelector('.show-password');
+        var hidePasswordIcon = toggleBtn.querySelector('.hide-password');
+
+        if (toggleInput.getAttribute('type') === "password"){
+            toggleInput.setAttribute('type','text');
+            showPasswordIcon.classList.add('hidden');
+            hidePasswordIcon.classList.remove('hidden');
+        }else{
+            toggleInput.setAttribute('type','password');
+            hidePasswordIcon.classList.add('hidden');
+            showPasswordIcon.classList.remove('hidden');
+        }
+        toggleInput.focus();
+
+    })
+}
+// END ---- Toggle password visibility:
+
+
+
+
+//Reset input:
+var clearInputBtns = document.querySelectorAll('[data-clear-input]');
+for(let i = 0 ; i < clearInputBtns.length ; i++){
+    var clearInputBtn = clearInputBtns[i];
+    clearInputBtn.addEventListener('click', (e) => {
+        
+        var button = e.target.closest('[data-clear-input]');
+        var input = button.closest('.relative').querySelector('input');        
+
+        if (input.value){
+            input.value = "";
+        }
+
+        input.focus();
+    })
+}
+// END ---- Reset input:
+
+

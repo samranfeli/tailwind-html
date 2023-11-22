@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radis Car | Login</title>
+    <style>
+        @font-face {
+            font-family: 'Yekan';
+            src:url('./src/fonts/Yekan/YekanBakhFaNum-Light.woff2') format('woff2'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-Light.woff') format('woff'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-Light.ttf') format('truetype');
+            font-weight: 100;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Yekan';
+            src:url('./src/fonts/Yekan/YekanBakhFaNum-Regular.woff2') format('woff2'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-Regular.woff') format('woff'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Yekan';
+            src:url('./src/fonts/Yekan/YekanBakhFaNum-SemiBold.woff2') format('woff2'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-SemiBold.woff') format('woff'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-SemiBold.ttf') format('truetype');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Yekan';
+            src:url('./src/fonts/Yekan/YekanBakhFaNum-Bold.woff2') format('woff2'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-Bold.woff') format('woff'),
+                url('./src/fonts/Yekan/YekanBakhFaNum-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Modam';
+            src:url('./src/fonts/Modam/ModamFaNumWeb-Regular.woff2') format('woff2'),
+                url('./src/fonts/Modam/ModamFaNumWeb-Regular.woff') format('woff'),
+                url('./src/fonts/Modam/ModamFaNum-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Modam';
+            src:url('./src/fonts/Modam/ModamFaNumWeb-Bold.woff2') format('woff2'),
+                url('./src/fonts/Modam/ModamFaNumWeb-Bold.woff') format('woff'),
+                url('./src/fonts/Modam/ModamFaNum-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="./src/styles/tailwind.css" />
+</head>
+
+<body dir="rtl" class="font-yekan text-neutral-600 bg-neutral-100" id="body">
+
+    <main class="relative z-10">
+        <div class="md:grid grid-cols-2 bg-white min-w-screen">
+            <div class="h-screen flex justify-center items-center flex-col">
+                <form class="p-10 sm:max-w-lg w-full">
+                    
+                    <img src="./src/images/logo.png" class="h-12 mb-14 mx-auto block" />
+                    
+                    <div class="relative mb-7">
+                        <label class="absolute text-2xs text-neutral-400 right-5 px-5 bg-white top-0 -translate-y-1/2">
+                            شماره همراه یا پست الکترونیک
+                        </label>
+                        <input type="text" class="h-18 w-full border border-neutral-300 rounded-2xl pr-5 pl-14 outline-none focus:border-neutral-500" />
+                        <button data-clear-input type="button" class="absolute top-1/2 left-5 -translate-y-1/2">
+                            <svg viewBox="0 -960 960 960" class="fill-neutral-400 w-6 h-6"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                        </button>
+                    </div>
+                    
+                    <div class="relative mb-7">
+                        <label class="absolute text-2xs text-neutral-400 right-5 px-5 bg-white top-0 -translate-y-1/2">
+                            رمز عبور خود را وارد کنید
+                        </label>
+                        <input type="password" class="h-18 w-full border border-neutral-300 rounded-2xl pr-5 pl-14 outline-none focus:border-neutral-500" />
+                        <button data-toggle-password type="button" class="absolute top-1/2 left-5 -translate-y-1/2">
+                            <svg  class="show-password fill-neutral-400 w-6 h-6" viewBox="0 -960 960 960" ><path d="M480.118-330Q551-330 600.5-379.618q49.5-49.617 49.5-120.5Q650-571 600.382-620.5q-49.617-49.5-120.5-49.5Q409-670 359.5-620.382q-49.5 49.617-49.5 120.5Q310-429 359.618-379.5q49.617 49.5 120.5 49.5Zm-.353-58Q433-388 400.5-420.735q-32.5-32.736-32.5-79.5Q368-547 400.735-579.5q32.736-32.5 79.5-32.5Q527-612 559.5-579.265q32.5 32.736 32.5 79.5Q592-453 559.265-420.5q-32.736 32.5-79.5 32.5ZM480-200q-146 0-264-83T40-500q58-134 176-217t264-83q146 0 264 83t176 217q-58 134-176 217t-264 83Zm0-300Zm-.169 240Q601-260 702.5-325.5 804-391 857-500q-53-109-154.331-174.5-101.332-65.5-222.5-65.5Q359-740 257.5-674.5 156-609 102-500q54 109 155.331 174.5 101.332 65.5 222.5 65.5Z"/></svg>
+                            <svg class="hide-password hidden fill-neutral-400 w-6 h-6" viewBox="0 -960 960 960"><path d="m629-419-44-44q26-71-27-118t-115-24l-44-44q17-11 38-16t43-5q71 0 120.5 49.5T650-500q0 22-5.5 43.5T629-419Zm129 129-40-40q49-36 85.5-80.5T857-500q-50-111-150-175.5T490-740q-42 0-86 8t-69 19l-46-47q35-16 89.5-28T485-800q143 0 261.5 81.5T920-500q-26 64-67 117t-95 93Zm58 226L648-229q-35 14-79 21.5t-89 7.5q-146 0-265-81.5T40-500q20-52 55.5-101.5T182-696L56-822l42-43 757 757-39 44ZM223-654q-37 27-71.5 71T102-500q51 111 153.5 175.5T488-260q33 0 65-4t48-12l-64-64q-11 5-27 7.5t-30 2.5q-70 0-120-49t-50-121q0-15 2.5-30t7.5-27l-97-97Zm305 142Zm-116 58Z"/></svg>
+                        </button>
+                    </div>
+
+                    <div class="mb-7 flex justify-between items-center">
+
+                        <div class="relative flex gap-2 items-center text-sm font-semibold">
+                            <input type="checkbox" class="peer block absolute left-0 right-0 top-0 bottom-0 cursor-pointer z-10 opacity-0" /> 
+                            <span class="border border-neutral-300 w-5 h-5 rounded-sm flex items-center justify-center before:block before:w-2 before:h-2 before:bg-blue-500 before:rounded-full before:scale-0 before:transition-all peer-checked:before:scale-100"></span>
+                            <label> من را به خاطر بسپار   </label>
+                        </div>
+
+                        <a href="#" class=" flex gap-2 items-center text-sm hover:text-blue-600 font-semibold">
+                            <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-blue-500"><path d="M220-80q-24.75 0-42.375-17.625T160-140v-434q0-24.75 17.625-42.375T220-634h70v-96q0-78.85 55.606-134.425Q401.212-920 480.106-920T614.5-864.425Q670-808.85 670-730v96h70q24.75 0 42.375 17.625T800-574v434q0 24.75-17.625 42.375T740-80H220Zm0-60h520v-434H220v434Zm260.168-140Q512-280 534.5-302.031T557-355q0-30-22.668-54.5t-54.5-24.5Q448-434 425.5-409.5t-22.5 55q0 30.5 22.668 52.5t54.5 22ZM350-634h260v-96q0-54.167-37.882-92.083-37.883-37.917-92-37.917Q426-860 388-822.083 350-784.167 350-730v96ZM220-140v-434 434Z"/></svg>
+                            فراموشی کلمه عبور
+                        </a>
+
+                    </div>
+
+                    <button type="submit" class="bg-blue-50 h-18 text-center px-5 block rounded-2xl text-blue-600 w-full font-bold text-xl font-modam mb-14">
+                            ارسال کد تایید
+                    </button>
+
+                    <div class="mb-7 flex justify-between items-center">
+
+                        <a href="#" class="text-sm text-neutral-400 hover:text-blue-600 flex items-center gap-2 font-semibold">
+                            <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-current" ><path d="m600-200-42-42 208-208H80v-60h686L558-718l42-42 280 280-280 280Z"/></svg>
+                            بازگشت به صفحه قبل
+                        </a>
+                        <a href="#" class="text-sm hover:text-blue-600 font-semibold">
+                            ثبت نام کنید
+                        </a>
+
+                    </div>
+
+                </form>
+            </div>
+            <div class="hidden md:flex h-screen p-10 pr-0">
+                <img src="./src/images/login.png" class="w-full h-full block object-cover rounded-5xl" />
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./src/js/custom.js"></script>
+
+</body>
+
+</html>

@@ -35,7 +35,8 @@ module.exports = {
         "lg":'10px',
         '2xl': '15px',
         '3xl': '20px',
-        '4xl': '30px'
+        '4xl': '30px',
+        '5xl': '50px',
       },
       boxShadow: {
         'light': '0 0 20px 0 rgba(0, 0, 0, 0.07)',
