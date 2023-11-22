@@ -75,6 +75,9 @@ module.exports = {
           200:'#efefef',
           300:'#e6e6e6',
           350:'#dadada'
+        },
+        violet:{
+          500:'#6b4ded'
         }
       }
     }

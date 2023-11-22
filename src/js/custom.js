@@ -321,3 +321,39 @@ for(let i = 0 ; i < accordions.length ; i++){
     })
 }
 //Accordion:
+
+
+
+//Accordion3:
+var accordions = document.querySelectorAll('[data-accordion3]');
+for(let i = 0 ; i < accordions.length ; i++){
+    var accordionHeader = accordions[i];
+    accordionHeader.addEventListener('click', (e) => {
+
+        var header = e.target.closest('header');
+        var wrapper = e.target.closest('.accordion-wrapper');
+        var accordionContent = header.nextElementSibling;
+        var expandButton = header.querySelector('.expand-btn');
+        var collapseButton = header.querySelector('.collapse-btn');
+
+        if (accordionContent.classList.contains('max-h-0')){
+            accordionContent.classList.add('max-h-80');
+            accordionContent.classList.remove('max-h-0');
+            collapseButton.classList.remove('hidden');
+            expandButton.classList.add('hidden'); 
+            header.classList.add('text-blue-600');
+            wrapper.classList.add('bg-white',"border-white");
+            wrapper.classList.remove("border-neutral-200");
+        }else{
+            accordionContent.classList.add('max-h-0');
+            accordionContent.classList.remove('max-h-80');
+            expandButton.classList.remove('hidden');
+            collapseButton.classList.add('hidden'); 
+            header.classList.remove('text-blue-600');  
+            wrapper.classList.remove('bg-white',"border-white");
+            wrapper.classList.add("border-neutral-200");
+        }
+
+    })
+}
+//Accordion:
