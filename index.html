@@ -524,20 +524,42 @@
             <div class="max-w-6xl mx-auto px-5 lg:px-24">
 
                 <div class="md:w-1/2 md:pl-5 xl:pl-16 py-5 md:pb-0 xl:pt-16">
-                    <div class="bg-neutral-200 p-2 xl:p-6 rounded-2xl">
+                    <div class="bg-neutral-200 p-2 xl:p-6 rounded-2xl" id="home_filter">
 
-                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
-                            <label class="text-neutral-400 w-32 inline-block px-3"> نوع خودرو </label>
-                            <select
-                                onchange="changeCountry();"
-                                class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
-                                <option>انتخاب کنید</option>
-                                <option value=""> خودرو سواری آلمانی (1000)</option>
-                                <option value=""> خودرو سواری ژاپنی (161)</option>
-                                <option value=""> خودرو سواری کره ای (118)</option>
-                                <option value=""> خودرو سواری ایرانی (37)</option>
-                                <option value=""> خودرو سواری چینی (44)</option>
-                            </select>
+                        <div data-filter-target="brand" class="filter-item relative text-sm mb-2">
+                            <label class="text-neutral-400 w-32 inline-block pointer-events-none absolute top-1/2 -translate-y-1/2 right-5">
+                                 نوع خودرو 
+                            </label>
+                            <input
+                                type="text"
+                                placeholder="انتخاب کنید"
+                                readonly
+                                class="filter-input peer pr-28 disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-white"
+                            />
+                            <div class="invisible opacity-0 peer-focus:visible peer-focus:opacity-100 transition-all absolute top-full right-0 left-0 shadow-md border border-neutrl-400 p-3 z-10 bg-white rounded-2xl" >
+                                <div class="max-h-80 overflow-auto">
+
+                                    <div  data-option-value="german-car" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >
+                                        خودرو سواری آلمانی (1000)
+                                    </div>
+    
+                                    <div  data-option-value="jappanes-car" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >
+                                        خودرو سواری ژاپنی (161)
+                                    </div>
+    
+                                    <div  data-option-value="korean-car" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >
+                                        خودرو سواری کره ای (118)
+                                    </div>
+    
+                                    <div  data-option-value="iran-car" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >
+                                        خودرو سواری ایرانی (37)
+                                    </div>
+    
+                                    <div  data-option-value="china" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >
+                                        خودرو سواری چینی (44)
+                                    </div>
+                                </div>
+                            </div>
                             <svg viewBox="0 0 490.656 490.656"
                                 class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5">
                                 <path
@@ -545,15 +567,65 @@
                             </svg>
                         </div>
 
-                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
-                            <label class="text-neutral-400 w-32 inline-block px-3"> سازنده </label>
-                            <select 
-                                onchange="changeProducer()"
-                                id="producer_select"
-                                disabled
-                                class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
-                                <option>انتخاب کنید</option>
-                            </select>
+                        <div data-filter-target="model" class="filter-item relative text-sm mb-2">
+                            <label class="text-neutral-400 w-32 inline-block pointer-events-none absolute top-1/2 -translate-y-1/2 right-5">
+                                 سازنده
+                            </label>
+                            <input
+                                data-select-input="brand"
+                                type="text"
+                                placeholder="انتخاب کنید"
+                                readonly
+                                class="filter-input peer pr-28 disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-white"
+                            />
+                            <div class="invisible opacity-0 peer-focus:visible peer-focus:opacity-100 transition-all absolute top-full right-0 left-0 shadow-md border border-neutrl-400 p-3 z-10 bg-white rounded-2xl" >
+                                <div data-select-options="brand" class="max-h-80 overflow-auto">
+                                </div>
+                            </div>
+                            <svg viewBox="0 0 490.656 490.656"
+                                class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5">
+                                <path
+                                    d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z" />
+                            </svg>
+                        </div>
+                        
+                        <div data-filter-target="options" class="filter-item relative text-sm mb-2">
+                            <label class="text-neutral-400 w-32 inline-block pointer-events-none absolute top-1/2 -translate-y-1/2 right-5">
+                                 مدل
+                            </label>
+                            <input
+                                data-select-input="model"
+                                type="text"
+                                placeholder="انتخاب کنید"
+                                readonly
+                                class="filter-input peer pr-28 disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-white"
+                            />
+                            <div class="invisible opacity-0 peer-focus:visible peer-focus:opacity-100 transition-all absolute top-full right-0 left-0 shadow-md border border-neutrl-400 p-3 z-10 bg-white rounded-2xl" >
+                                <div data-select-options="model" class="max-h-80 overflow-auto">
+                                </div>
+                            </div>
+                            <svg viewBox="0 0 490.656 490.656"
+                                class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5">
+                                <path
+                                    d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z" />
+                            </svg>
+                        </div>
+                       
+                        <div data-filter-target="" class="filter-item relative text-sm mb-2">
+                            <label class="text-neutral-400 w-32 inline-block pointer-events-none absolute top-1/2 -translate-y-1/2 right-5">
+                                 مشخصات
+                            </label>
+                            <input
+                                data-select-input="options"
+                                type="text"
+                                placeholder="انتخاب کنید"
+                                readonly
+                                class="filter-input peer pr-28 disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-white"
+                            />
+                            <div class="invisible opacity-0 peer-focus:visible peer-focus:opacity-100 transition-all absolute top-full right-0 left-0 shadow-md border border-neutrl-400 p-3 z-10 bg-white rounded-2xl" >
+                                <div data-select-options="options" class="max-h-80 overflow-auto">
+                                </div>
+                            </div>
                             <svg viewBox="0 0 490.656 490.656"
                                 class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5">
                                 <path
@@ -561,23 +633,9 @@
                             </svg>
                         </div>
 
-                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
-                            <label class="text-neutral-400 w-32 inline-block px-3"> مدل </label>
-                            <select 
-                                onchange="changeModel();"
-                                disabled
-                                id="model_select"
-                                class="disabled:text-neutral-300 block h-18 w-full text-sm px-5 appearance-none rounded-2xl outline-0 cursor-pointer bg-transparent">
-                                <option>انتخاب کنید</option>
-                            </select>
-                            <svg viewBox="0 0 490.656 490.656"
-                                class="pointer-events-none fill-neutral-500 w-3 h-3 absolute top-1/2 -translate-y-1/2 left-5">
-                                <path
-                                    d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z" />
-                            </svg>
-                        </div>
 
-                        <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
+                        <!-- ---------------- -->
+                        <!-- <div class="relative text-sm flex items-center mb-2 bg-white rounded-2xl">
                             <label class="text-neutral-400 w-32 inline-block px-3"> مشخصات </label>
                             <select 
                                 disabled
@@ -590,7 +648,7 @@
                                 <path
                                     d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z" />
                             </svg>
-                        </div>
+                        </div> -->
 
                         <button class="bg-blue-600 text-white rounded-2xl p-3 h-18 block w-full cursor-pointer mx:mt-7">
                             فیلتر محصولات
@@ -2243,7 +2301,6 @@
 
     </main>
 
-
     <footer class="bg-white">
 
         <div class="bg-neutral-150">
@@ -2532,85 +2589,72 @@
                         class="inline-block w-full sm:w-52 bg-blue-600 text-white h-10 rounded cursor-pointer"
                     />
                 </div>
-                
+   
 
                 </form> 
         </div>
     </div>
 
-
-
     <script src="./src/js/custom.js"></script>
-
 
     <script>
 
-        // products filter form
-        function changeCountry(e) {
+        //Products filter form:
+        document.getElementById("home_filter").addEventListener('click', e => {
+            var option = e.target.closest('[data-option-value]');
+            if(option){
+                var optionValue = option.getAttribute('data-option-value');
+                var filterItemWrapper = e.target.closest('[data-filter-target]');
+                var filterTarget =  filterItemWrapper.getAttribute("data-filter-target");
+                var input = filterItemWrapper.querySelector('.filter-input');
+                input.value = option.innerText;
 
+                var url ="";
+                if(filterTarget === "brand"){
+                    url = 'fakeUrl.com/api/getBrands?country=' + optionValue;
+                }else if (filterTarget === "model"){
+                    url = 'fakeUrl.com/api/getBrands?brand=' + optionValue;
+                }else if (filterTarget === "options"){
+                    url = 'fakeUrl.com/api/getBrands?model=' + optionValue;
+                }
+
+                url="https://api.ganjoor.net/api/ganjoor/poets";
+                
+                fillSelectOptions(filterTarget , url);
+            }
+        });
+
+        function fillSelectOptions(target,url){
             const xhttp = new XMLHttpRequest();
-            var select = document.getElementById('producer_select');
 
-            select.innerHTML = '<option>در حال بارگذاری ... </option>';
-            select.removeAttribute('disabled');
-
+            var optionsWrapper = document.querySelector('[data-select-options="'+ target +'"]');
+            var input = document.querySelector('[data-select-input="'+ target +'"]');
+            
+            if(input){
+                input.value = 'در حال بارگذاری ...';
+            }
+            //%%% select.removeAttribute('disabled');
             xhttp.onload = function() {
-                console.log(this.responseText);
-
-
-                select.innerHTML = '<option>انتخاب کنید</option><option value=""> تویوتا (109)</option><option value=""> هیوندا (60)</option><option value=""> نیسان (53)</option><option value=""> مزدا (230)</option><option value=""> لکسوس (14)</option>';
-                select.removeAttribute('disabled');
-
+    
+                //based on response:
+                if(target === 'brand'){
+                    optionsWrapper.innerHTML = '<div data-option-value="toyota" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >تویوتا (109)</div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div>';
+                }else if (target === 'model'){
+                    optionsWrapper.innerHTML = '<div data-option-value="yaris" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >یاریس (109)</div><div data-option-value="prado" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >پرادو (60)</div><div data-option-value="ra4" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >رافور (53)</div>'
+                } else if (target === "options"){
+                    optionsWrapper.innerHTML = '<div data-option-value="GLI" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLI</div><div data-option-value="GLX" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLX</div>'                    
+                }
+                if(input){
+                    input.value="";
+                }
+                //%%% select.removeAttribute('disabled');
             }
 
-            xhttp.open("GET", "https://api.ganjoor.net/api/ganjoor/poets");
+            xhttp.open("GET", url);
             xhttp.send();
-            }
-
-        function changeProducer(e) {
-
-        const xhttp = new XMLHttpRequest();
-        var select = document.getElementById('model_select');
-
-        select.innerHTML = '<option>در حال بارگذاری ... </option>';
-        select.removeAttribute('disabled');
-
-        xhttp.onload = function() {
-            console.log(this.responseText);
-
-
-            select.innerHTML = '<option>انتخاب کنید</option><option value=""> تویوتا (109)</option><option value=""> هیوندا (60)</option><option value=""> نیسان (53)</option><option value=""> مزدا (230)</option><option value=""> لکسوس (14)</option>';
-            select.removeAttribute('disabled');
-
         }
 
-        xhttp.open("GET", "https://api.ganjoor.net/api/ganjoor/poets");
-        xhttp.send();
-        }
-
-        function changeModel(e) {
-
-        const xhttp = new XMLHttpRequest();
-        var select = document.getElementById('details_select');
-
-        select.innerHTML = '<option>در حال بارگذاری ... </option>';
-        select.removeAttribute('disabled');
-
-        xhttp.onload = function() {
-            console.log(this.responseText);
-
-
-            select.innerHTML = '<option>انتخاب کنید</option><option value=""> تویوتا (109)</option><option value=""> هیوندا (60)</option><option value=""> نیسان (53)</option><option value=""> مزدا (230)</option><option value=""> لکسوس (14)</option>';
-            select.removeAttribute('disabled');
-
-        }
-
-        xhttp.open("GET", "https://api.ganjoor.net/api/ganjoor/poets");
-        xhttp.send();
-    }
         // END ---- products filter form
-
-
 
         //Count-down        
         function countDown(t) {
