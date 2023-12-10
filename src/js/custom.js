@@ -15,12 +15,14 @@ function unlockBodyScroll() {
 var mobileMenu = document.getElementById('mobile_menu');
 var mobileMenuOverlay = document.getElementById('mobile_menu_overlay');
 function openMobileMenu() {
-    mobileMenu.classList.remove('-translate-x-full');
+    mobileMenu.classList.remove('-left-full');
+    mobileMenu.classList.add('left-0');
     mobileMenuOverlay.classList.remove('opacity-0', 'invisible');
     lockBodyScroll();
 }
 function closeMobileMenu() {
-    mobileMenu.classList.add('-translate-x-full');
+    mobileMenu.classList.add('-left-full');
+    mobileMenu.classList.remove('left-0');
     mobileMenuOverlay.classList.add('opacity-0', 'invisible');
     unlockBodyScroll();
 }
@@ -32,20 +34,25 @@ function closeMobileMenu() {
 var categoriesMenu = document.getElementById('categories_menu');
 var categoriesBtn = document.getElementById('categories_button');
 function toggleCategories() {
-    if (categoriesMenu.classList.contains('opacity-0')) {
-        categoriesMenu.classList.add('opacity-100', 'visible', 'mt-0');
-        categoriesMenu.classList.remove('opacity-0', 'invisible', 'mt-5');
-    } else {
-        categoriesMenu.classList.add('opacity-0', 'invisible', 'mt-5');
-        categoriesMenu.classList.remove('opacity-100', 'visible', 'mt-0');
+    debugger;
+    if (window.innerWidth < 1024){        
+        if (categoriesMenu.classList.contains('opacity-0')) {
+            categoriesMenu.classList.add('opacity-100', 'visible');
+            categoriesMenu.classList.remove('opacity-0', 'invisible');
+        } else {
+            categoriesMenu.classList.add('opacity-0', 'invisible');
+            categoriesMenu.classList.remove('opacity-100', 'visible');
+        }
     }
 }
 document.addEventListener('click', event => {
     const isClickOutsideCategoriesBtn = !categoriesBtn.contains(event.target);
     const isClickOutsideCategoriesMenu = !categoriesMenu.contains(event.target);
     if (isClickOutsideCategoriesBtn && isClickOutsideCategoriesMenu) {
-        categoriesMenu.classList.add('opacity-0', 'invisible', 'mt-5');
-        categoriesMenu.classList.remove('opacity-100', 'visible', 'mt-0');
+        if (window.innerWidth < 1024){
+            categoriesMenu.classList.add('opacity-0', 'invisible');
+            categoriesMenu.classList.remove('opacity-100', 'visible');
+        }
     }
 });
 // END ---- ToggleCategories
