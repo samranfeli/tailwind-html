@@ -1,3 +1,96 @@
+@font-face {
+    font-family: 'Yekan';
+    src: url('../fonts/Yekan/YekanBakhFaNum-Light.woff2') format('woff2'),
+        url('../fonts/Yekan/YekanBakhFaNum-Light.woff') format('woff'),
+        url('../fonts/Yekan/YekanBakhFaNum-Light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('../fonts/Yekan/YekanBakhFaNum-Regular.woff2') format('woff2'),
+        url('../fonts/Yekan/YekanBakhFaNum-Regular.woff') format('woff'),
+        url('../fonts/Yekan/YekanBakhFaNum-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('../fonts/Yekan/YekanBakhFaNum-SemiBold.woff2') format('woff2'),
+        url('../fonts/Yekan/YekanBakhFaNum-SemiBold.woff') format('woff'),
+        url('../fonts/Yekan/YekanBakhFaNum-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Yekan';
+    src: url('../fonts/Yekan/YekanBakhFaNum-Bold.woff2') format('woff2'),
+        url('../fonts/Yekan/YekanBakhFaNum-Bold.woff') format('woff'),
+        url('../fonts/Yekan/YekanBakhFaNum-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Modam';
+    src: url('../fonts/Modam/ModamFaNumWeb-Regular.woff2') format('woff2'),
+        url('../fonts/Modam/ModamFaNumWeb-Regular.woff') format('woff'),
+        url('../fonts/Modam/ModamFaNum-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Modam';
+    src: url('../fonts/Modam/ModamFaNumWeb-Bold.woff2') format('woff2'),
+        url('../fonts/Modam/ModamFaNumWeb-Bold.woff') format('woff'),
+        url('../fonts/Modam/ModamFaNum-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.product-category-splide .splide__pagination{
+    margin-top: 20px;
+}
+
+.product-category-splide .splide__pagination button {
+    width: 5px;
+    height: 5px;
+    background: #bbb;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    transition: all .2s linear;
+}
+
+.product-category-splide .splide__pagination button.is-active {
+    width: 20px;
+    background: #2d30f7;
+}
+
+
+
+.promotion-splide .splide__pagination li {
+    line-height: 5px;
+}
+
+.promotion-splide .splide__pagination button {
+    width: 5px;
+    height: 5px;
+    background: #bbb;
+    border-radius: 5px;
+    transition: all .2s linear;
+}
+
+.promotion-splide .splide__pagination button.is-active {
+    height: 20px;
+    background: #2d30f7;
+}

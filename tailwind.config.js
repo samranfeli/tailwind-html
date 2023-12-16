@@ -18,6 +18,7 @@ module.exports = {
       },
       spacing: {
         '18': '4.5rem',
+        '22':'5.5rem'
       },
       fontSize: {
         '2xs': '12px',
@@ -53,6 +54,7 @@ module.exports = {
       },
       maxHeight: {
         '100': '25rem',
+        '110': '30rem',
       },
       maxWidth: {
         '2xs': '12rem',

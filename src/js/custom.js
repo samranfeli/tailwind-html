@@ -29,35 +29,108 @@ function closeMobileMenu() {
 // END ---- Mobile menu:
 
 
+////////////////// START ----- CATEGORIES ///////////////////////
 
-//ToggleCategories
-var categoriesMenu = document.getElementById('categories_menu');
-var categoriesBtn = document.getElementById('categories_button');
-function toggleCategories() {
-    debugger;
-    if (window.innerWidth < 1024){        
-        if (categoriesMenu.classList.contains('opacity-0')) {
-            categoriesMenu.classList.add('opacity-100', 'visible');
-            categoriesMenu.classList.remove('opacity-0', 'invisible');
-        } else {
-            categoriesMenu.classList.add('opacity-0', 'invisible');
-            categoriesMenu.classList.remove('opacity-100', 'visible');
-        }
+// START ---- ToggleCategories
+function toggleCategoriesWrapper(){
+    
+    var categoriesMenu = document.getElementById('categories_menu');
+    categoriesMenu.classList.add('opacity-0', 'invisible');
+    categoriesMenu.classList.remove('opacity-100', 'visible');
+
+    var toggleCategoriesButtons = document.querySelectorAll('[data-categories-button]');
+    if (window.innerWidth < 1024){
+        for(let i = 0 ; i < toggleCategoriesButtons.length ; i++){  
+
+            toggleCategoriesButtons[i].addEventListener("click", (e) => {
+                if (categoriesMenu.classList.contains('opacity-0')) {
+                    categoriesMenu.classList.add('opacity-100', 'visible');
+                    categoriesMenu.classList.remove('opacity-0', 'invisible');
+                } else {
+                    categoriesMenu.classList.add('opacity-0', 'invisible');
+                    categoriesMenu.classList.remove('opacity-100', 'visible');
+                }
+            })
+        } 
     }
 }
-document.addEventListener('click', event => {
-    const isClickOutsideCategoriesBtn = !categoriesBtn.contains(event.target);
-    const isClickOutsideCategoriesMenu = !categoriesMenu.contains(event.target);
-    if (isClickOutsideCategoriesBtn && isClickOutsideCategoriesMenu) {
-        if (window.innerWidth < 1024){
-            categoriesMenu.classList.add('opacity-0', 'invisible');
-            categoriesMenu.classList.remove('opacity-100', 'visible');
-        }
-    }
-});
+toggleCategoriesWrapper();
 // END ---- ToggleCategories
 
+//START ---- categories submenu tab
+var categoryTabs = document.querySelectorAll('[data-category-link]');
+var categoryTabContents = document.querySelectorAll('[data-category-content]');
+function categoriesTabHandle(){
+    for(let i = 0 ; i < categoryTabs.length ; i++){
+    
+        let eventType = "mouseenter";
+        if (window.innerWidth < 1024){
+            eventType = "click";
+        }
+        
+        categoryTabs[i].addEventListener(eventType, (e) => {
+    
+            if (window.innerWidth < 1024){
+                e.preventDefault();
+            }
+    
+            var target = e.target;
+            var targetAttribute = target.getAttribute("data-category-link");
+    
+            for(let k = 0 ; k < categoryTabs.length ; k++){
+                categoryTabs[k]?.classList.remove("bg-white","text-red-600");            
+            }
+            target.classList.add("bg-white","text-red-600");
+    
+            for (let j = 0 ; j < categoryTabContents.length ; j++){
+                var contentItem = categoryTabContents[j];
+                if (contentItem){
+                    var contentDataValue = contentItem.getAttribute("data-category-content");
+                    if (contentDataValue === targetAttribute){
+                        contentItem.classList.remove("hidden");
+                    }else if (!contentItem.classList.contains("hidden")){
+                        contentItem.classList.add("hidden");
+                    }
+                }
+            }
+    
+        })
+    }
+}
+categoriesTabHandle();
+//END ---- categories submenu
 
+//START ----- subCategory mobile toggle
+function subCategoryHandle(){
+    var categorymobileToggles = document.querySelectorAll('[data-subCategory-mobile-toggle]');
+    for(let i = 0 ; i < categorymobileToggles.length ; i++){  
+        categorymobileToggles[i].addEventListener("click", (e) => {
+            if (window.innerWidth < 1024){
+                e.preventDefault();
+    
+                var contentWrapper = e.target.nextElementSibling;
+    
+                if(contentWrapper.classList.contains("hidden")){
+                    contentWrapper.classList.remove("hidden");
+                    contentWrapper.classList.add("flex");
+                }else{
+                    contentWrapper.classList.add("hidden");
+                    contentWrapper.classList.remove("flex");
+                }
+            }
+        })
+    }
+}
+subCategoryHandle();
+//END ----- subCategory mobile toggle
+
+window.addEventListener('resize', function() {
+    categoriesTabHandle();
+    subCategoryHandle();
+    toggleCategoriesWrapper();
+}, true);
+
+////////////////// END ----- CATEGORIES ///////////////////////
 
 //Search
 var searchList = document.getElementById('search_list');
@@ -280,20 +353,32 @@ function openOrderModal() {
 var accordions = document.querySelectorAll('[data-accordion]');
 for(let i = 0 ; i < accordions.length ; i++){
     var accordionHeader = accordions[i];
-    
-    accordionHeader.nextElementSibling.style.maxHeight = accordionHeader.nextElementSibling.scrollHeight + "px";
-    
-    accordionHeader.addEventListener('click', (e) => {
-        
-        var accordionContent = e.target.closest('header').nextElementSibling;
-        var axpandIcon = e.target.closest('header').querySelector('svg');
 
-        if (accordionContent.style.maxHeight) {
-            accordionContent.style.maxHeight = null;
+    var accordionInitialState = accordionHeader.getAttribute("data-accordion");
+    
+    if (accordionInitialState === "open"){
+        accordionHeader.nextElementSibling.style.maxHeight = "600px";
+        accordionHeader.nextElementSibling.classList.remove("overflow-hidden");
+    }else{
+        accordionHeader.nextElementSibling.style.maxHeight = 0;
+    }
+        
+    accordionHeader.addEventListener('click', (e) => {
+        var accordionButton = e.target.closest('header');
+        var state = accordionButton.getAttribute("data-accordion");
+        var accordionContent = accordionButton.nextElementSibling;
+        var axpandIcon = accordionButton.querySelector('svg');
+
+        if (state === "open") {
+            accordionContent.style.maxHeight = 0;
+            accordionContent.classList.add('overflow-hidden');
             axpandIcon.classList.add('rotate-180');
+            accordionButton.setAttribute("data-accordion","close");
           } else {
             accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
             axpandIcon.classList.remove('rotate-180');
+            accordionButton.setAttribute("data-accordion","open");
+            accordionContent.classList.remove('overflow-hidden');
           } 
 
     })
@@ -416,3 +501,61 @@ for(let i = 0 ; i < clearInputBtns.length ; i++){
 // END ---- Reset input:
 
 
+
+
+        //Products filter form:
+        document.getElementById("car_filter").addEventListener('click', e => {
+            var option = e.target.closest('[data-option-value]');
+            if(option){
+                var optionValue = option.getAttribute('data-option-value');
+                var filterItemWrapper = e.target.closest('[data-filter-target]');
+                var filterTarget =  filterItemWrapper.getAttribute("data-filter-target");
+                var input = filterItemWrapper.querySelector('.filter-input');
+                input.value = option.innerText;
+
+                var url ="";
+                if(filterTarget === "brand"){
+                    url = 'fakeUrl.com/api/getBrands?country=' + optionValue;
+                }else if (filterTarget === "model"){
+                    url = 'fakeUrl.com/api/getBrands?brand=' + optionValue;
+                }else if (filterTarget === "options"){
+                    url = 'fakeUrl.com/api/getBrands?model=' + optionValue;
+                }
+
+                url="https://api.ganjoor.net/api/ganjoor/poets";
+                
+                fillSelectOptions(filterTarget , url);
+            }
+        });
+
+        function fillSelectOptions(target,url){
+            const xhttp = new XMLHttpRequest();
+
+            var optionsWrapper = document.querySelector('[data-select-options="'+ target +'"]');
+            var input = document.querySelector('[data-select-input="'+ target +'"]');
+            
+            if(input){
+                input.value = 'در حال بارگذاری ...';
+            }
+            input.removeAttribute('disabled');
+            xhttp.onload = function() {
+    
+                //based on response:
+                if(target === 'brand'){
+                    optionsWrapper.innerHTML = '<div data-option-value="toyota" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >تویوتا (109)</div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div>';
+                }else if (target === 'model'){
+                    optionsWrapper.innerHTML = '<div data-option-value="yaris" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >یاریس (109)</div><div data-option-value="prado" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >پرادو (60)</div><div data-option-value="ra4" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >رافور (53)</div>'
+                } else if (target === "options"){
+                    optionsWrapper.innerHTML = '<div data-option-value="GLI" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLI</div><div data-option-value="GLX" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLX</div>'                    
+                }
+                if(input){
+                    input.value="";
+                }
+                //input.classList.remove('pointer-events-none','cursor-no-drop');
+            }
+
+            xhttp.open("GET", url);
+            xhttp.send();
+        }
+
+        // END ---- products filter form
