@@ -56,6 +56,9 @@ module.exports = {
         '100': '25rem',
         '110': '30rem',
       },
+      minHeight:{
+        'mobileCategories': 'calc(100vh - 3.5rem)'
+      },
       maxWidth: {
         '2xs': '12rem',
       },

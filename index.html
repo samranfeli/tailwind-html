@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radis Car</title>
+    <title>رادیس کار</title>
     <link rel="stylesheet" href="./src/styles/splide-core.min.css" />
-
     <link rel="stylesheet" href="./src/styles/tailwind.css" />
 </head>
 
 <body dir="rtl" class="font-yekan text-neutral-600 bg-neutral-100" id="body">
+    <!-- START PAGE LOADING  -->
+    <div class="fixed top-0 left-0 w-full h-full bg-white z-40 opacity-100 visible flex items-center justify-center transition-all delay-200" id="site-loading">
+        <span class="block w-10 h-10 border-4 border-transparent animate-spin border-t-neutral-300 rounded-full"></span>
+    </div>
+    <!-- END PAGE LOADING  -->
 
-    <header class="bg-white md:shadow-sm text-sm leading-7 relative z-20">
+    <!-- START HEADER -->
+    <header class="bg-white lg:shadow-sm text-sm leading-7 relative z-20">
 
         <div class="max-w-7xl mx-auto px-5 py-5 xl:py-10">
 
-            <div class="grid grid-cols-4 md:grid-cols-8 xl:grid-cols-7 gap-5 md:mb-7">
+            <div class="grid grid-cols-4 lg:grid-cols-8 xl:grid-cols-7 gap-5 lg:mb-7">
 
-                <div class="col-span-1 flex items-center md:hidden">
+                <div class="col-span-1 flex items-center lg:hidden">
                     <button type="button" class="flex items-center justify-center bg-[#f3f3ff] text-blue-600 rounded-2xl w-14 h-14" onclick="openMobileMenu();">
                         <div class="flex flex-col justify-between w-6 gap-0.5">
                             <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
@@ -28,14 +33,14 @@
                     </button>
                 </div>
 
-                <a href="#" class="flex items-center justify-center col-span-2 md:col-start-4 xl:col-span-1">
+                <a href="#" class="flex items-center justify-center col-span-2 lg:col-start-4 xl:col-span-1">
                     <img src="./src/images/logo.png" alt="radiscar" class="inline-block w-32 sm:w-40" />
                 </a>
 
-                <div class="col-span-1 md:col-start-6 xl:col-start-5 md:col-span-3 text-left lg:pr-5 xl:pr-20">
-                    <div class="inline-block md:flex md:gap-2 lg:gap-4 md:items-center md:justify-between text-right">
+                <div class="col-span-1 lg:col-start-6 xl:col-start-5 lg:col-span-3 text-left lg:pr-5 xl:pr-20">
+                    <div class="inline-block lg:flex lg:gap-2 lg:gap-4 lg:items-center lg:justify-between text-right">
 
-                        <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 md:p-1 md:pr-2 xl:pr-4 hidden md:w-full md:flex items-center justify-between gap-2 xl:gap-4 grow">
+                        <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 md:p-1 md:pr-2 xl:pr-4 hidden md:w-full lg:flex items-center justify-between gap-2 xl:gap-4 grow">
                             <svg viewBox="0 0 512 512" class="w-6 h-6 md:w-5 md:h-5 fill-blue-600">
                                 <path
                                     d="M421.184,384.96l-81.728-20.437l-6.955-27.819c21.867-21.653,36.843-51.371,41.28-81.899 c12.117-3.392,21.504-13.803,23.125-26.837l5.333-42.667c1.131-9.003-1.643-18.091-7.616-24.939    c-3.499-4.011-7.915-7.04-12.8-8.896l1.963-40.171l7.979-8c12.011-12.779,21.973-34.688,1.152-66.475    C376.917,12.395,349.739,0,312.107,0c-14.827,0-49.024,0-80.853,21.376C140.373,23.275,128,65.493,128,106.667    c0,9.579,2.325,31.147,3.861,44.16c-5.483,1.728-10.475,4.928-14.357,9.323c-6.059,6.891-8.896,16.043-7.765,25.131l5.333,42.667    c1.749,13.931,12.331,24.853,25.664,27.456c4.416,29.333,18.624,58.112,39.232,79.403l-7.424,29.717L90.816,384.96    C37.333,398.336,0,446.165,0,501.333C0,507.221,4.779,512,10.667,512h490.667c5.888,0,10.667-4.821,10.667-10.709    C512,446.165,474.667,398.336,421.184,384.96z M21.888,490.667c4.373-40.725,33.621-74.88,74.112-85.013l87.915-21.973    c3.819-0.96,6.805-3.947,7.787-7.765l10.453-41.835c0.96-3.755-0.235-7.723-3.051-10.368    c-21.547-20.203-35.797-49.835-38.144-79.232c-0.448-5.547-5.077-9.813-10.645-9.813h-3.477c-5.376,0-9.92-4.011-10.581-9.344    l-5.333-42.667c-0.384-3.093,0.533-6.059,2.581-8.384c2.048-2.325,4.885-3.605,8-3.605h2.197c3.072,0,5.995-1.323,8-3.605    c2.027-2.304,2.965-5.355,2.581-8.384c-1.365-10.944-4.949-41.579-4.949-52.011c0-33.28,6.528-63.211,85.44-64    c2.176-0.021,4.331-0.725,6.101-1.984c23.808-17.045,49.365-19.349,71.232-19.349c29.995,0,51.157,9.152,62.955,27.179    c14.165,21.653,8.064,32.853,1.387,39.957l-10.667,10.667c-1.877,1.877-2.987,4.373-3.115,7.019l-2.581,53.397    c-0.128,2.901,0.917,5.717,2.901,7.829s4.736,3.328,7.637,3.349c3.093,0.021,5.909,1.323,7.936,3.648    c2.027,2.304,2.923,5.227,2.539,8.277l-5.333,42.667c-0.661,5.333-5.227,9.344-11.627,9.344c-5.568,0-10.197,4.267-10.645,9.813    c-2.411,30.336-17.344,60.544-39.979,80.832c-2.944,2.624-4.181,6.677-3.221,10.517l10.027,40.085    c0.96,3.819,3.947,6.805,7.744,7.765L416,405.653c40.469,10.133,69.717,44.267,74.091,85.013H21.888z" />
@@ -46,9 +51,9 @@
                             </span>
                         </a>
 
-                        <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 md:p-1 md:pr-2 xl:pr-4 md:w-full flex items-center justify-center md:justify-between gap-2 xl:gap-4 h-14 w-14 md:h-auto md:w-auto grow">
+                        <a href="#" class="bg-[#f3f3ff] rounded-2xl p-3 lg:p-1 lg:pr-2 xl:pr-4 lg:w-full flex items-center justify-center lg:justify-between gap-2 xl:gap-4 h-14 w-14 lg:h-auto lg:w-auto lg:grow">
                             <span class="hidden xl:block w-2 h-2 rounded-full bg-blue-600"></span>
-                            <svg viewBox="0 0 490.666 490.666" class="w-6 h-6 md:w-5 md:h-5 fill-blue-600">
+                            <svg viewBox="0 0 490.666 490.666" class="w-6 h-6 lg:w-5 lg:h-5 fill-blue-600">
                                 <path
                                     d="M394.667,373.333c-29.397,0-53.333,23.936-53.333,53.333S365.269,480,394.667,480S448,456.064,448,426.666    S424.064,373.333,394.667,373.333z M394.667,458.666c-17.643,0-32-14.357-32-32c0-17.643,14.357-32,32-32    c17.643,0,32,14.357,32,32C426.667,444.309,412.309,458.666,394.667,458.666z" />
                                 <path
@@ -59,14 +64,14 @@
                                     d="M488,78.272c-2.027-2.283-4.928-3.605-8-3.605H96c-5.888,0-10.667,4.779-10.667,10.667S90.112,96,96,96h371.925    l-15.168,121.301c-2.005,15.979-15.659,28.032-31.765,28.032H128c-5.888,0-10.667,4.779-10.667,10.667    c0,5.888,4.779,10.667,10.667,10.667h292.992c26.837,0,49.6-20.075,52.928-46.72l16.661-133.291    C490.965,83.626,490.027,80.554,488,78.272z" />
                             </svg>
                             <span
-                                class="hidden md:block text-blue-600 bg-white rounded-2xl px-1 xl:px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all grow text-center">
+                                class="hidden lg:block text-blue-600 bg-white rounded-2xl px-1 xl:px-8 py-3 font-semibold text-sm leading-7 hover:bg-blue-600 hover:text-white transition-all grow text-center">
                                 سبد خرید
                             </span>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-span-4 md:row-start-1 md:col-start-1 md:col-span-3 lg:pl-5 xl:pl-20">
+                <div class="col-span-4 lg:row-start-1 lg:col-start-1 lg:col-span-3 lg:pl-5 xl:pl-20">
                     <form class="w-full bg-gray-100 p-1 rounded-2xl relative">
                         <input id="searchInput" type="text"
                             class="rounded-xl w-full text-xs lg:text-sm leading-7 py-3 pr-4 pl-12 placeholder:text-gray-400 outline-none focus:bg-gray-50 "
@@ -87,24 +92,25 @@
 
             </div>
 
-            <span id="mobile_menu_overlay" class=" bg-black/75 backdrop-blur fixed left-0 right-0 top-0 bottom-0 block md:hidden opacity-0 invisible transition-all duration-100" onclick="closeMobileMenu();"></span>
+            <span id="mobile_menu_overlay" class=" bg-black/75 backdrop-blur fixed left-0 right-0 top-0 bottom-0 block lg:hidden opacity-0 invisible transition-all duration-100" onclick="closeMobileMenu();"></span>
             <div 
                 id="mobile_menu" 
-                class="md:flex justify-between items-center fixed md:static overflow-auto md:overflow-visible shadow-md md:shadow-none bg-white top-0 w-3/4 md:w-full -left-full md:left-0 bottom-0 md:h-auto md:bottom-auto  transition-all duration-200 ease-in-out"
+                class="lg:flex justify-between items-center fixed lg:static overflow-auto lg:overflow-visible shadow-md lg:shadow-none bg-white top-0 w-3/4 lg:w-full -left-full lg:left-0 bottom-0 lg:h-auto lg:bottom-auto  transition-all duration-200 ease-in-out"
             >
-                <nav class="font-semibold md:text-xs lg:text-sm">
-                    <ul class="md:flex items-center gap-2 lg:gap-4">
-                        <li class="md:hidden text-left">
+                <nav class="font-semibold lg:text-sm">
+                    <ul class="lg:flex items-center gap-2 lg:gap-4">
+                        <li class="lg:hidden text-left">
                             <button type="button" class="p-2" onclick="closeMobileMenu();">
                                 <svg viewBox="0 -960 960 960" class="inline-block w-7 h-7 fill-neutral-400"><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
                             </button>
                         </li>
+
+                        <!-- START MENU CATEGORIES -->
                         <li class="group relative">
                             <button 
                                 type="button" 
-                                id="categories_button" 
                                 data-categories-button
-                                class="flex items-center gap-3 hover:text-blue-600 md:text-blue-600 block group px-5 py-2 md:p-0 block w-full md:ml-4"
+                                class="flex items-center gap-3 hover:text-blue-600 lg:text-blue-600 block group px-5 py-2 lg:p-0 block w-full lg:ml-4"
                             >
                                 <div class="hidden lg:flex flex-col justify-between w-6 gap-0.5">
                                     <span class="bg-current h-0.75 w-1/3 opacity-70"></span>
@@ -112,675 +118,347 @@
                                     <span class="bg-current h-0.75 opacity-20"></span>
                                 </div>
                                 <span>
-                                    دسته بندی <span class="md:hidden lg:inline"> سریع </span> <svg class="w-3 h-3 fill-current inline-block md:hidden mr-2" viewBox="0 0 490.651 490.651">
+                                    دسته بندی <span class="lg:hidden lg:inline"> سریع </span> <svg class="w-3 h-3 fill-current inline-block lg:hidden mr-2" viewBox="0 0 490.651 490.651">
                                         <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path>
                                     </svg>
                                 </span>
                             </button>
                             <div 
                                 id="categories_menu"
-                                class="                                
-                                invisible opacity-0 overflow-auto 
-                                lg:group-hover:opacity-100 lg:group-hover:visible lg:pt-10
-                                transition-all fixed md:absolute w-full md:w-auto right-0 top-0 bottom-0 md:bottom-auto md:top-full"
+                                class="invisible opacity-0 overflow-auto 
+                                    lg:group-hover:opacity-100 lg:group-hover:visible lg:pt-5 xl:pt-10
+                                    transition-all fixed lg:absolute w-full lg:w-auto right-0 top-0 bottom-14 lg:bottom-auto lg:top-full"
                             >
-                                <div class="bg-white md:shadow-sm border border-neutral-300 md:border-t-2">
-                                    <div class="flex">
-                                        <ul class="w-20 text-2xs md:text-sm md:w-60 shrink-0 bg-neutral-100 border-l border-neutral-300">
-                                            <li>
-                                                <a data-category-link="oil" href="/products/oil" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right text-red-600 bg-white">
-                                                    <svg class="fill-current w-5 h-5 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M160-120q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5h40v-270h-50q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5h50v-270h-40q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5h640q12.75 0 21.375 8.625T830-810q0 12-8.625 21T800-780h-40v270h50q12.75 0 21.375 8.625T840-480q0 12-8.625 21T810-450h-50v270h40q12.75 0 21.375 8.625T830-150q0 12-8.625 21T800-120H160Zm100-60h440v-270q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5v-270H260v270q12.75 0 21.375 8.625T290-480q0 12-8.625 21T260-450v270Zm220.118-153Q526-333 558-364.643q32-31.644 32-76.586Q590-477 569.5-502T480-607q-69 79-89.5 104.5T370-441.229q0 44.942 32.118 76.586 32.117 31.643 78 31.643ZM260-180v-600 600Z"/></svg>                                                    
-                                                    روغن و مکمل
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="break" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    سیستم ترمز
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="filters" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    فیلترها
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="mechanical" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    لوازم مکانیکی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="front" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    هدایت و جلوبندی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="gearbox" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    گیربکس و کلاچ
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="body" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    لوازم بدنه خودرو
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="ring" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    رینگ و لاستیک
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="accessories" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    اکسسوری و جانبی
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a data-category-link="electrical" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
-                                                    <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
-                                                    برقی و الکتریکی
-                                                </a>
-                                            </li>
-                                                                                        
-                                        </ul>
+                                <div class="bg-white lg:shadow-sm border border-neutral-300 lg:border-t-2 flex min-h-mobileCategories lg:min-h-0">
+                                    
+                                    <button type="button" class="absolute p-2 top-0 left-0 lg:hidden" onclick="closeCategiries()">
+                                        <svg viewBox="0 -960 960 960" class="w-7 h-7 fill-neutral-400" ><path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg>
+                                    </button>
 
-                                        <div class="w-auto leading-5 grow md:grow-0">
-                                            
-                                            <div data-category-content="oil" class="p-3">
-                                                <a href="/products/oil" class="text-sky-500 py-2 mb-4 text-2xs flex items-center gap-2">
-                                                        همه محصولات روغن و مکمل 
-                                                        <svg viewBox="0 0 490.651 490.651" class="w-3 h-3 fill-current">
-                                                            <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path>
-                                                        </svg>
-                                                    </a>
-                                                <ul class="gap-8 columns-1 md:columns-3">
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            روغن ماشین 
+                                    <ul class="w-20 text-2xs md:text-sm md:w-60 shrink-0 bg-neutral-100 border-l border-neutral-300">
+                                        <li>
+                                            <a data-category-link="oil" href="/products/oil" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right text-red-600 bg-white">
+                                                <svg class="fill-current w-5 h-5 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M160-120q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5h40v-270h-50q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5h50v-270h-40q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5h640q12.75 0 21.375 8.625T830-810q0 12-8.625 21T800-780h-40v270h50q12.75 0 21.375 8.625T840-480q0 12-8.625 21T810-450h-50v270h40q12.75 0 21.375 8.625T830-150q0 12-8.625 21T800-120H160Zm100-60h440v-270q-12 0-21-9t-9-21.5q0-12.5 9-21t21-8.5v-270H260v270q12.75 0 21.375 8.625T290-480q0 12-8.625 21T260-450v270Zm220.118-153Q526-333 558-364.643q32-31.644 32-76.586Q590-477 569.5-502T480-607q-69 79-89.5 104.5T370-441.229q0 44.942 32.118 76.586 32.117 31.643 78 31.643ZM260-180v-600 600Z"/></svg>                                                    
+                                                روغن و مکمل
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="break" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                سیستم ترمز
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="filters" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                فیلترها
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="mechanical" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                لوازم مکانیکی
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="front" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                هدایت و جلوبندی
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="gearbox" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                گیربکس و کلاچ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="body" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                لوازم بدنه خودرو
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="ring" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                رینگ و لاستیک
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="accessories" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                اکسسوری و جانبی
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-category-link="electrical" href="#" class="flex flex-col items-center md:flex-row gap-2 px-1 py-3 md:p-3 transition-all leading-5 text-center md:text-right">
+                                                <svg class="fill-current w-5 h-5 ml-2 block" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48"><path d="M159-243q-37-51-58-110.5T80-480q0-67 20.5-127T158-717l43 43q-29 42-45 91t-16 103q0 54 16.5 103.5T202-285l-43 42ZM480-80q-66 0-126.5-20.5T243-158l43-43q42 29 91 45t103 16q54 0 103-16t91-45l43 43q-50 37-110 57.5T480-80Zm322-162-43-43q29-42 45-91.5T820-480q0-54-16-103t-45-91l43-43q37 50 57.5 110T880-480q0 67-20.5 127T802-242ZM285-759l-43-43q51-37 111-57.5T480-880q67 0 127 21t111 58l-43 43q-42-29-91-45.5T480-820q-54 0-103.5 16T285-759Zm195 469q-79 0-134.5-55.5T290-480q0-79 55.5-134.5T480-670q79 0 134.5 55.5T670-480q0 79-55.5 134.5T480-290Z"/></svg>
+                                                برقی و الکتریکی
+                                            </a>
+                                        </li>
+                                                                                    
+                                    </ul>
 
-                                                            <!-- if has submenu add arrow -->
-                                                            <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90">
-                                                                <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
-                                                            </svg>
-
-                                                        </a>
-
-                                                        <!-- if has submenu add -->
-                                                        <!-- first item submenu do not has class 'hidden' -->
-                                                        <ul class="flex md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    روغن ترمز و گریس
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    روغن گیربکس
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    روغن موتور
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    روغن هیدرولیک
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            ضدیخ و آب رادیاتور 
-
-                                                            <!-- if has submenu add arrow -->
-                                                            <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90">
-                                                                <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
-                                                            </svg>
-
-                                                        </a>
-                                                        <ul class="hidden md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    شیشه شوی 
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    ضدیخ و ضدجوش 
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            مکمل سوخت 
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
-                                            </div>
-
-                                            <div data-category-content="break" class="p-3 hidden">
-                                                <a href="/products/oil" class="text-sky-500 py-2 mb-4 text-2xs flex items-center gap-2">
-                                                    همه محصولات سیستم ترمز
+                                    <div class="w-auto leading-5 grow md:grow-0 pt-9 lg:pt-0">
+                                        
+                                        <div data-category-content="oil" class="p-3">
+                                            <a href="/products/oil" class="text-sky-500 py-2 mb-4 text-2xs flex items-center gap-2">
+                                                    همه محصولات روغن و مکمل 
                                                     <svg viewBox="0 0 490.651 490.651" class="w-3 h-3 fill-current">
                                                         <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path>
                                                     </svg>
                                                 </a>
-                                                <ul class="gap-8 columns-1 md:columns-3">
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            دیسک ترمز 
+                                            <ul class="gap-8 columns-1 lg:columns-3">
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        روغن ماشین 
 
-                                                            <!-- if has submenu add arrow -->
-                                                            <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90">
-                                                                <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
-                                                            </svg>
+                                                        <!-- if has submenu add arrow -->
+                                                        <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90 pointer-events-none">
+                                                            <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
+                                                        </svg>
 
-                                                        </a>
-
-                                                        <!-- if has submenu add -->
-                                                        <!-- first item submenu do not has class 'hidden' -->
-                                                        <ul class="flex md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    روغن ترمز
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    دیسک ترمز
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            لنت ترمز
-
-                                                            <!-- if has submenu add arrow -->
-                                                            <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90">
-                                                                <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
-                                                            </svg>
-
-                                                        </a>
-                                                        <ul class="hidden md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    شیشه شوی 
-                                                                </a>
-                                                            </li>
-
-                                                            <li>
-                                                                <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
-                                                                    <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
-                                                                    ضدیخ و ضدجوش 
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            سنسور ترمز
-                                                        </a>
-                                                    </li>
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            کالیبر ترمز
-                                                        </a>
-                                                    </li>
-                                                    <li class="break-inside-avoid md:w-60 mb-5">
-                                                        <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
-                                                            کفشک ترمز
-                                                        </a>
-                                                    </li>
-
-                                                </ul>
-                                            
-                                            </div>
-                                            <div data-category-content="filters" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    فیلترها
-                                                </div>
-
-                                            </div>
-                                            <div data-category-content="mechanical" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    لوازم مکانیکی
-                                                </div>
-                                            </div>
-                                            <div data-category-content="front" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    هدایت و جلوبندی
-                                                </div>
-                                            </div>
-                                            <div data-category-content="gearbox" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    گیربکس و کلاچ
-                                                </div>
-                                            </div>
-                                            <div data-category-content="body" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    لوازم بدنه خودرو
-                                                </div>
-                                            </div>
-                                            <div data-category-content="ring" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    رینگ و لاستیک
-                                                </div>
-                                            </div>
-                                            <div data-category-content="accessories" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    اکسسوری و جانبی
-                                                </div>
-                                            </div>
-                                            <div data-category-content="electrical" class="hidden">
-
-                                                <!-- delete this div and add real submenus -->
-                                                <div class="md:w-60 p-5">
-                                                    برقی و الکتریکی
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-                                    <ul class="relative hidden">
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">روغن
-                                                و مکمل</a>
-                                            <ul
-                                                class="md:absolute bg-neutral-100 right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4 border-r border-neutral-200 bg-white">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">روغن
-                                                        ماشین </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                                                ترمز و گریس</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                                                گیربکس</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                                                موتور</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">روغن
-                                                                هیدرولیک</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> ضدیخ
-                                                        و آب رادیاتور </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                شیشه شوی </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                ضدیخ و ضدجوش </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> مکمل
-                                                        سوخت </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">سیستم
-                                                ترمز</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> دیسک
-                                                        ترمز </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> لنت
-                                                        ترمز </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سنسور
-                                                        ترمز </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">
-                                                        کالیبر ترمز </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> کفشک
-                                                        ترمز </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">فیلترها</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر
-                                                        هوا </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر
-                                                        کابین </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> فیلتر
-                                                        روغن </a>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> صافی
-                                                        بنزین </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">لوازم
-                                                مکانیکی</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> تسمه
                                                     </a>
-                                                    <ul>
+
+                                                    <!-- if has submenu add -->
+                                                    <!-- first item submenu do not has class 'hidden' -->
+                                                    <ul class="flex md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
                                                         <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                تسمه دینام </a>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                روغن ترمز و گریس
+                                                            </a>
                                                         </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سوخت
-                                                        رسانی و احتراق </a>
-                                                    <ul>
+
                                                         <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> پمپ
-                                                                بنزین </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> شمع
-                                                                ماشین </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                کویل </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سیستم
-                                                        خنک کننده موتور </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                ترموستات </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                رادیاتور آب </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                روغن سردکن </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                کمپرسور کولر </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                واتر پمپ </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات
-                                                        موتوری </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                دسته موتور </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> واشر
-                                                        و کاسه نمد </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                اورینگ </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">هدایت
-                                                و جلوبندی</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات
-                                                        جلوبندی و تعلیق </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                سیبک فرمان </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> طبق
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                روغن گیربکس
                                                             </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> کمک
-                                                                فنر </a>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                روغن موتور
+                                                            </a>
                                                         </li>
                                                         <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                گردگیر کمک فنر </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1"> میل
-                                                                موجگیر </a>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                روغن هیدرولیک
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">گیربکس
-                                                و کلاچ</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">
-                                                        گیربکس </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                دسته گیربکس </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                روغن گیربکس </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">لوازم
-                                                بدنه خودرو</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> برف
-                                                        پاک کن </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">رینگ
-                                                و لاستیک</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2">
-                                                        لاستیک </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">اکسسوری
-                                                و جانبی</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> نظافت
-                                                        داخل </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                اسپری داشبورد </a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="group">
-                                            <a href="#"
-                                                class="block w-60 text-neutral-500 group-hover:text-blue-600 group-hover:bg-neutral-100 px-3 py-2 font-semibold">برقی
-                                                و الکتریکی</a>
-                                            <ul
-                                                class="md:invisible md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 md:absolute border-r border-neutral-200 bg-white right-60 top-0 bottom-0 left-0 p-3 grid grid-cols-5 gap-4">
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> سنسور
+
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        ضدیخ و آب رادیاتور 
+
+                                                        <!-- if has submenu add arrow -->
+                                                        <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90 pointer-events-none">
+                                                            <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
+                                                        </svg>
+
                                                     </a>
-                                                    <ul>
+                                                    <ul class="hidden md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
                                                         <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                سنسور اکسیژن </a>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                شیشه شوی 
+                                                            </a>
+                                                        </li>
+
+                                                        <li>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                ضدیخ و ضدجوش 
+                                                            </a>
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li class="basis-1/6">
-                                                    <a href="#" class="font-semibold block text-neutral-500 hover:text-blue-600 mb-2"> قطعات
-                                                        برقی </a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#" class="text-xs block text-neutral-500 hover:text-blue-600 mb-1">
-                                                                استارت </a>
-                                                        </li>
-                                                    </ul>
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        مکمل سوخت 
+                                                    </a>
                                                 </li>
+
                                             </ul>
-                                        </li>
-                                    </ul>
+                                        </div>
 
+                                        <div data-category-content="break" class="p-3 hidden">
+                                            <a href="/products/oil" class="text-sky-500 py-2 mb-4 text-2xs flex items-center gap-2">
+                                                همه محصولات سیستم ترمز
+                                                <svg viewBox="0 0 490.651 490.651" class="w-3 h-3 fill-current">
+                                                    <path d="M143.085,245.317L370.2,18.203c4.16-4.16,4.16-10.923,0-15.083s-10.923-4.16-15.083,0L120.451,237.787    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136    c4.16-4.16,4.16-10.923,0-15.083L143.085,245.317z"></path>
+                                                </svg>
+                                            </a>
+                                            <ul class="gap-8 columns-1 lg:columns-3">
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        دیسک ترمز 
 
+                                                        <!-- if has submenu add arrow -->
+                                                        <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90 pointer-events-none">
+                                                            <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
+                                                        </svg>
 
+                                                    </a>
 
+                                                    <!-- if has submenu add -->
+                                                    <!-- first item submenu do not has class 'hidden' -->
+                                                    <ul class="flex md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
+                                                        <li>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                روغن ترمز
+                                                            </a>
+                                                        </li>
 
+                                                        <li>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                دیسک ترمز
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
 
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        لنت ترمز
 
+                                                        <!-- if has submenu add arrow -->
+                                                        <svg viewBox="0 0 490.656 490.656" class="fill-current w-3 h-3 transition-all md:rotate-90 pointer-events-none">
+                                                            <path d="M487.536,120.445c-4.16-4.16-10.923-4.16-15.083,0L245.339,347.581L18.203,120.467c-4.16-4.16-10.923-4.16-15.083,0    c-4.16,4.16-4.16,10.923,0,15.083l234.667,234.667c2.091,2.069,4.821,3.115,7.552,3.115s5.461-1.045,7.531-3.136l234.667-234.667    C491.696,131.368,491.696,124.605,487.536,120.445z"></path>
+                                                        </svg>
 
+                                                    </a>
+                                                    <ul class="hidden md:flex px-5 md:px-0 md:flex-col flex-wrap gap-2 text-2xs md:text-xs py-2 text-center">
+                                                        <li>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                شیشه شوی 
+                                                            </a>
+                                                        </li>
 
+                                                        <li>
+                                                            <a href="#" class="w-16 md:w-full flex flex-col gap-2 items-center md:items-start font-normal md:font-semibold text-neutral-400 hover:text-blue-600 mb-2">
+                                                                <img src="./src/images/icons/oil.png" class="w-14 h-14 rounded-full bg-neutral-200 p-3 md:hidden" />
+                                                                ضدیخ و ضدجوش 
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        سنسور ترمز
+                                                    </a>
+                                                </li>
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        کالیبر ترمز
+                                                    </a>
+                                                </li>
+                                                <li class="break-inside-avoid lg:w-48 xl:w-60 mb-5">
+                                                    <a href="#" data-subCategory-mobile-toggle class="font-semibold flex justify-between md:justify-start items-center gap-3 text-neutral-700 hover:text-blue-600 mb-4 md:border-r-4 md:pr-2 md:border-red-600">
+                                                        کفشک ترمز
+                                                    </a>
+                                                </li>
 
+                                            </ul>
+                                        
+                                        </div>
+                                        <div data-category-content="filters" class="hidden">
 
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                فیلترها
+                                            </div>
 
+                                        </div>
+                                        <div data-category-content="mechanical" class="hidden">
 
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                لوازم مکانیکی
+                                            </div>
+                                        </div>
+                                        <div data-category-content="front" class="hidden">
 
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                هدایت و جلوبندی
+                                            </div>
+                                        </div>
+                                        <div data-category-content="gearbox" class="hidden">
 
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                گیربکس و کلاچ
+                                            </div>
+                                        </div>
+                                        <div data-category-content="body" class="hidden">
 
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                لوازم بدنه خودرو
+                                            </div>
+                                        </div>
+                                        <div data-category-content="ring" class="hidden">
+
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                رینگ و لاستیک
+                                            </div>
+                                        </div>
+                                        <div data-category-content="accessories" class="hidden">
+
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                اکسسوری و جانبی
+                                            </div>
+                                        </div>
+                                        <div data-category-content="electrical" class="hidden">
+
+                                            <!-- delete this div and add real submenus -->
+                                            <div class="lg:w-48 xl:w-60 p-5">
+                                                برقی و الکتریکی
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>                        
 
                         </li>
+                        <!-- END MENU CATEGORIES -->
+
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 md:p-0">صفحه نخست</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 lg:p-0">صفحه نخست</a>
                         </li>
                         <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 md:p-0">درباره رادیسکار</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 lg:p-0">درباره رادیسکار</a>
                         </li>
                         <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 md:p-0">راهنمای خرید</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 lg:p-0">راهنمای خرید</a>
                         </li>
                         <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 md:p-0">پرسشهای متداول</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 lg:p-0">پرسشهای متداول</a>
                         </li>
                         <li> <span class="h-4 border-r border-gray-200 hidden xl:block"></span></li>
                         <li>
-                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 md:p-0">تماس با ما</a>
+                            <a href="#" class="hover:text-blue-600 transition-all block px-5 py-2 lg:p-0">تماس با ما</a>
                         </li>
                     </ul>
 
                 </nav>
 
-                <div class="md:flex gap-3 items-center  md:text-xs lg:text-sm">
-                    <button type="button" class="flex items-center px-5 py-2 w-full md:w-auto md:py-0 md:px-2 xl:px-10 gap-4 group block" onclick="openOrderModal();">
+                <div class="lg:flex gap-3 items-center  lg:text-sm">
+                    <button type="button" class="flex items-center px-5 py-2 w-full lg:w-auto lg:py-0 lg:px-2 xl:px-10 gap-4 group block" onclick="openOrderModal();">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600 hidden xl:block">
                             <path
                                 d="m9 22c-2.479 0-4.873-1.04-6.57-2.854-1.721-1.839-2.576-4.239-2.409-6.759.313-4.703 4.389-8.387 9.279-8.387h11.2c.276 0 .5.224.5.5s-.224.5-.5.5h-11.2c-4.365 0-8.003 3.273-8.281 7.453-.149 2.24.611 4.374 2.142 6.009 1.508 1.613 3.637 2.538 5.839 2.538 4.411 0 8-3.589 8-8 0-.276.224-.5.5-.5s.5.224.5.5c0 4.963-4.037 9-9 9z" />
@@ -800,7 +478,7 @@
 
                     <span class="h-4 border-r border-gray-200 hidden xl:block"></span>
 
-                    <a href="#" class="flex items-center px-5 py-2 md:py-0 md:px-2 xl:px-10 gap-4 group block">
+                    <a href="#" class="flex items-center px-5 py-2 lg:py-0 lg:px-2 xl:px-10 gap-4 group block">
                         <svg viewBox="0 0 24 24" class="w-5 h-5 fill-blue-600 hidden xl:block">
                             <path
                                 d="m12 24c-6.617 0-12-5.383-12-12s5.383-12 12-12 12 5.383 12 12-5.383 12-12 12zm0-23c-6.065 0-11 4.935-11 11s4.935 11 11 11 11-4.935 11-11-4.935-11-11-11z" />
@@ -820,12 +498,32 @@
                 </div>
             </div>
         </div>
+        
+        <nav class="fixed bottom-0 left-0 right-0 lg:hidden flex justify-between z-20 bg-white px-5 shadow-light leading-4 h-14">
+            <a href="/" class="flex flex-col justify-center items-center text-2xs p-2 font-semibold text-blue-700" data-mobile-bottom-nav="home" >
+                <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-current"><path d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"></path></svg>
+                خانه
+            </a>  
+            <button type="button" class="flex flex-col justify-center items-center text-2xs p-2 font-semibold" data-mobile-bottom-nav="categories" >
+                <svg viewBox="0 -960 960 960"  class="w-6 h-6 fill-current"><path d="m261-526 220-354 220 354H261ZM706-80q-74 0-124-50t-50-124q0-74 50-124t124-50q74 0 124 50t50 124q0 74-50 124T706-80Zm-586-25v-304h304v304H120Zm586.085-35Q754-140 787-173.085q33-33.084 33-81Q820-302 786.916-335q-33.085-33-81.001-33Q658-368 625-334.915q-33 33.084-33 81Q592-206 625.084-173q33.085 33 81.001 33ZM180-165h184v-184H180v184Zm189-421h224L481-767 369-586Zm112 0ZM364-349Zm342 95Z"/></svg>
+                دسته بندی
+            </button>  
+            <a href="/cart" class="flex flex-col justify-center items-center text-2xs p-2 font-semibold" data-mobile-bottom-nav="cart" >
+                <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-current" ><path d="M286.788-81Q257-81 236-102.212q-21-21.213-21-51Q215-183 236.212-204q21.213-21 51-21Q317-225 338-203.788q21 21.213 21 51Q359-123 337.788-102q-21.213 21-51 21Zm400 0Q657-81 636-102.212q-21-21.213-21-51Q615-183 636.212-204q21.213-21 51-21Q717-225 738-203.788q21 21.213 21 51Q759-123 737.788-102q-21.213 21-51 21ZM235-741l110 228h288l125-228H235Zm-30-60h589.074q22.964 0 34.945 21Q841-759 829-738L694-495q-11 19-28.559 30.5Q647.881-453 627-453H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg>
+                سبد خرید
+            </a>
+            <a href="/logon" class="flex flex-col justify-center items-center text-2xs p-2 font-semibold" data-mobile-bottom-nav="account" >
+                <svg viewBox="0 -960 960 960" class="w-6 h-6 fill-current"><path d="M480-481q-66 0-108-42t-42-108q0-66 42-108t108-42q66 0 108 42t42 108q0 66-42 108t-108 42ZM160-160v-94q0-38 19-65t49-41q67-30 128.5-45T480-420q62 0 123 15.5t127.921 44.694q31.301 14.126 50.19 40.966Q800-292 800-254v94H160Zm60-60h520v-34q0-16-9.5-30.5T707-306q-64-31-117-42.5T480-360q-57 0-111 11.5T252-306q-14 7-23 21.5t-9 30.5v34Zm260-321q39 0 64.5-25.5T570-631q0-39-25.5-64.5T480-721q-39 0-64.5 25.5T390-631q0 39 25.5 64.5T480-541Zm0-90Zm0 411Z"/></svg>
+                حساب کاربری
+            </a>
+        </nav>
 
     </header>
+    <!-- END HEADER -->
 
     <main class="relative z-10">
 
-        <!-- start home filter section -->
+        <!-- START home filter section -->
         <section class="relative">
             <div class="max-w-7xl mx-auto">
 
@@ -979,9 +677,9 @@
 
             </div>
         </section>
-        <!-- end home filter section -->
+        <!-- END home filter section -->
 
-        <!-- start home car brand category section -->
+        <!-- START home car brand category section -->
         <section>           
 
             <div class="max-w-6xl mx-auto md:px-24 pt-10 pb-7">
@@ -1087,8 +785,9 @@
             </div>
 
         </section>
-        <!-- start home car brand category section -->
+        <!-- END home car brand category section -->
 
+        <!-- START Advantages of buying from Radiscar -->
         <section class="hidden md:block">
             <div class="max-w-6xl mx-auto px-5 md:px-24 py-3 md:py-6 ">
                 <div
@@ -1167,7 +866,9 @@
                 </div>
             </div>
         </section>
+        <!-- END Advantages of buying from Radiscar -->
 
+        <!-- START   Products Categories Section -->
         <section>
             <div class="max-w-6xl mx-auto px-5 md:px-24 pb-14 lg:pt-6 ">
 
@@ -1715,7 +1416,9 @@
 
             </div>
         </section>
+        <!-- END   Products Categories Section -->
 
+        <!-- START Promotion Section -->
         <section>
             <div class="max-w-6xl mx-auto md:px-24 lg:py-6" dir="ltr">
                 <div class="promotion-splide splide">
@@ -1818,7 +1521,9 @@
                 </div>
             </div>
         </section>
+        <!-- END Promotion Section -->
 
+        <!-- START New Products Section -->
         <section>
             <div class="max-w-6xl mx-auto md:px-24 pt-10 pb-7">
                 
@@ -2073,7 +1778,9 @@
                 </div>
             </div>
         </section>
+        <!-- END New Products Section -->
 
+        <!-- START Sabt e darkhast e ghete -->
         <section>
             <div class="max-w-6xl mx-auto p-5 md:px-24 pb-10">
                 <div
@@ -2104,7 +1811,9 @@
                 </div>
             </div>
         </section>
+        <!-- END Sabt e darkhast e ghete -->
 
+        <!-- START Top Brands section -->
         <section>
             <div class="max-w-6xl mx-auto md:px-24 py-3 md:py-6">
                 <div class="flex justify-between items-center mb-8 px-5 md:px-0">
@@ -2248,7 +1957,9 @@
                 </div>
             </div>
         </section>
+        <!-- END Top Brands section -->
 
+        <!-- START 2 small banner section -->
         <section>
             <div class="max-w-6xl mx-auto px-5 md:px-24 py-5 lg:py-12">
                 <div class="flex flex-col md:flex-row gap-2 overflow-hidden rounded-bl-2xl">
@@ -2287,7 +1998,9 @@
                 </div>
             </div>
         </section>
+        <!-- END 2 small banner section -->
 
+        <!-- START Blog section -->
         <section>
             <div class="max-w-6xl mx-auto md:px-24 pt-6 pb-14 md:pb-20">
                 <div class="flex justify-between items-center mb-8 px-5 md:px-0">
@@ -2626,9 +2339,11 @@
                 </div>
             </div>
         </section>
+        <!-- END Blog section -->
 
     </main>
 
+    <!-- START FOOTER -->
     <footer class="bg-white">
 
         <div class="bg-neutral-150">
@@ -2866,8 +2581,9 @@
         </div>
 
     </footer>
+    <!-- END FOOTER -->
 
-    <!-- modal html -->
+    <!--START modal html -->
     <div class="fixed left-0 right-0 top-0 bottom-0 flex justify-center items-center z-30 opacity-0 invisible transition-all" id="order_modal">
         <div onclick="closeOrderModal();" class="absolute left-0 right-0 top-0 bottom-0 bg-black/75 backdrop-blur"></div>
         <div class="relative max-w-4xl mx-auto bg-white xl:rounded-xl w-full h-screen xl:h-auto max-h-screen overflow-auto">
@@ -2922,311 +2638,12 @@
                 </form> 
         </div>
     </div>
-
-    <script src="./src/js/custom.js"></script>
-
-    <script>
+    <!--START modal html -->
 
 
-        //Count-down        
-        function countDown(t) {
-
-            var minute = 60;
-            var hour = 60 * minute;
-            var day = 24 * hour;
-
-            var number = t;
-            var days = Math.floor(number / day);
-            number = number % day;
-            var hours = Math.floor(number / hour);
-            number = number % hour;
-            var minutes = Math.floor(number / minute);
-            var seconds = number % minute;
-
-            function createTimeItem(value, unit) {
-                function padNumber(n) {
-                    if (!n) {
-                        return "00";
-                    }
-                    return n.toString().padStart(2, '0');
-                }
-                return ('<span class="bg-blue-800/25 text-white rounded-2xl h-11 py-2 pt-3 px-2 sm:px-3 block text-2xs lg:text-base"><span class="w-6 inline-block text-center font-semibold align-middle"> ' + padNumber(value) + ' </span> <span class="text-xs font-light text-white/75 inline-block align-middle"> ' + unit + ' </span></span>')
-            }
-
-            return (createTimeItem(days, 'روز') + createTimeItem(hours, 'ساعت') + createTimeItem(minutes, 'دقیقه') + createTimeItem(seconds, 'ثانیه'));
-            }
-
-            document.querySelectorAll('.count-down').forEach(element => {
-
-            var value = +element.getAttribute('data-timer');
-            
-            element.innerHTML = countDown(value);
-
-            var timer = setInterval(() => {
-                value--;
-
-                element.innerHTML = countDown(value);
-
-                if (value < 1) {
-                    clearInterval(timer);
-                }
-            }, 1000);
-
-        });
-        // END ---- Count-down
-
-
-
-        // Brands Accordion
-        var brandsToggleBtn = document.getElementById("brand_toggle-btn");
-        var brandsToggleBtnIcon = brandsToggleBtn.querySelector("svg");
-        var brandsToggleContent = document.getElementById("brand_toggle-content");
-        
-        function ShowOnlyFirstBrandsRow (){
-            var brandsToggleItem = brandsToggleContent.querySelector(".brands-accordion-item");
-            brandsToggleContent.style.maxHeight = brandsToggleItem.offsetHeight + "px";
-            brandsToggleContent.classList.remove("active");
-            brandsToggleBtnIcon.style.transform = "rotate(0)";
-        }
-        function ShowAllBrands (){
-            brandsToggleContent.classList.add("active");
-                brandsToggleContent.style.maxHeight = brandsToggleContent.scrollHeight + "px";
-                brandsToggleBtnIcon.style.transform = "rotate(180deg)";
-        }
-        
-        window.onresize = ShowOnlyFirstBrandsRow;
-        window.onload = ShowOnlyFirstBrandsRow;
-
-        brandsToggleBtn.addEventListener('click', (e) => {
-            if (brandsToggleContent.classList.contains("active")) {
-                ShowOnlyFirstBrandsRow();
-            } else {
-                ShowAllBrands()
-            } 
-        });
-        // END ---- Brands Accordion
-
-
-        // START ----- car type tab;
-        var carTypeTabs = document.querySelectorAll('[data-car-type-tab]');
-        for(var i = 0 ; i < carTypeTabs.length ; i++){  
-            carTypeTabs[i].addEventListener("click", e => {
-                var targetAttributeValue = e.target.closest("button").getAttribute('data-car-type-tab');
-                var carTypeTabContent = document.querySelector('[data-car-type-content]');
-                
-                for(var j = 0 ; j < carTypeTabs.length ; j++){
-                    var item = carTypeTabs[j];
-                    if (item.getAttribute('data-car-type-tab') === targetAttributeValue){
-                        
-                        item.classList.remove("bg-white","text-blue-600");
-                        item.classList.add("text-white","bg-blue-600");
-                    }else{
-                        item.classList.add("bg-white","text-blue-600");
-                        item.classList.remove("text-white","bg-blue-600");
-                    }
-                }
-
-                if (!carTypeTabContent){
-                    debugger;
-                    return;
-                }
-
-                var data = [];
-                var content = "";
-
-                if(targetAttributeValue === "savari"){
-                    
-                    //fetchData
-                    data = [
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"},
-                        {url:"#",logo:"./src/images/brands/logo(4).png",alt:"nissan"}
-                    ]
-
-                }else if(targetAttributeValue === "sangin"){
-                    
-                    // fetchData
-                    data = [
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                        {url:"#",logo:"./src/images/brands/daf.png",alt:"DAF"},
-                    ]
-
-                }
-
-                for(var k=0; k < data?.length ; k++){
-                    content += '<a href="'+data[k].url+'" class="brands-accordion-item w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-white rounded-xl p-3 flex justify-center items-center aspect-square group"><img src="'+data[k].logo+'" alt="'+data[k].alt+'" class="w-10 h-10 md:w-14 md:h-14 object-center object-contain group-hover:scale-105 transition-all" /></a>'
-                }
-
-                carTypeTabContent.innerHTML = content;
-                
-            })
-        }
-        // END ----- car type tab;
-        
-    </script>
-
+    <script src="./src/js/custom.js" defer></script>
     <script src="./src/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            var promotionSplide = new Splide('.promotion-splide', {
-                direction: 'ttb',
-                gap: '2rem',
-                arrows: false,
-                height: '370px',
-                wheel: true,
-                breakpoints: {
-                    767: {
-                        height: 'auto',
-                        pagination: false
-                    },
-                    1023:{
-                        height: '330px',
-                        gap: '.5rem'
-                    }
-                },
-            });
-            promotionSplide.mount();
-
-
-            var productsSplide = new Splide('.producrs-splide', {
-                pagination: false,
-                perPage: 4,
-                type: 'loop',
-                breakpoints: {
-                    550: {
-                        perPage: 1,
-                        padding: { left: '30%'}
-                    },
-                    767:{
-                        arrows: false,
-                    },
-                    1023:{
-                        perPage: 2
-                    },
-                    1279:{
-                        perPage: 3,
-                        gap: '10px'
-                    }
-
-                },
-                direction: 'rtl',
-                perMove: 1,
-                gap: '1.5rem'
-            });
-            productsSplide.mount();
-
-
-            var topBrandsSplide = new Splide('.top-brands-splide', {
-                pagination: false,
-                type: 'loop',
-                perPage: 4,
-                breakpoints: {
-                    450: {
-                        perPage: 2,
-                        padding: { left: '60px'}
-                    },
-                    600: {
-                        perPage: 3,
-                        padding: { left: '60px'}
-                    },
-                    767:{
-                        perPage: 3,
-                        arrows: false,
-                        padding: { left: '50px'}
-                    },
-                    1279:{
-                        perPage: 3,
-                        gap: '10px'
-                    }
-                },
-                direction: 'rtl',
-                perMove: 1,
-                gap: '1.5rem'
-            });
-            topBrandsSplide.mount();
-
-
-            var newsSplide = new Splide('.news-splide', {
-                pagination: false,
-                perPage: 3,
-                type: 'loop',
-                breakpoints: {
-                    600: {
-                        perPage: 1,
-                        padding: { left: 30},
-                        arrows: false
-                    },
-                    767:{
-                        padding: { left: 40},
-                        gap: '10px',
-                        arrows: false
-                    },
-                    1200: {
-                        perPage: 2
-                    },
-                },
-                direction: 'rtl',
-                perMove: 1,
-                gap: '1.5rem'
-            });
-            newsSplide.mount();
-
-            var productCategorySplide = new Splide ('.product-category-splide',{
-                pagination: true,
-                perPage: 2,
-                direction: 'rtl',
-                perMove: 1,
-                gap: '10px',
-                arrows:false,
-                autoplay: 'play',
-                interval:2000,
-                type: 'loop',
-                breakpoints: {
-                    639: {
-                        perPage: 1
-                    }
-                }
-            });
-            productCategorySplide.mount();
-
-
-        });
-    </script>
+    <script src="./src/js/homepage.js"></script>
 
 </body>
 

@@ -29,30 +29,93 @@ function closeMobileMenu() {
 // END ---- Mobile menu:
 
 
+// START MOBILE BOTTOM NAV
+var mobileBottomNavLinks = document.querySelectorAll('[data-mobile-bottom-nav]');
+for(var i = 0 ; i < mobileBottomNavLinks.length ; i++){
+    mobileBottomNavLinks[i].addEventListener('click', e => {
+        
+        var button = e.target.closest("[data-mobile-bottom-nav]");
+        var buttonAttributeValue = button.getAttribute("data-mobile-bottom-nav");
+
+        for(var j=0; j < mobileBottomNavLinks.length ; j++ ){
+            var itemAttributeValue = mobileBottomNavLinks[j].getAttribute("data-mobile-bottom-nav");
+            if (itemAttributeValue === buttonAttributeValue){
+                mobileBottomNavLinks[j].classList.add("text-blue-700");
+            }else{
+                mobileBottomNavLinks[j].classList.remove("text-blue-700");
+            }
+        }
+
+        if (buttonAttributeValue === "categories"){
+            openCategiries();
+        }
+    });
+}
+
+function openCategiries(){
+    var categoriesMenu = document.getElementById('categories_menu');
+    
+    if(!categoriesMenu){ return }
+    
+    categoriesMenu.classList.add('opacity-100', 'visible');
+    categoriesMenu.classList.remove('opacity-0', 'invisible');
+}
+
+
+function closeCategiries(){
+    var categoriesMenu = document.getElementById('categories_menu');
+    
+    if(!categoriesMenu){ return }
+    
+    categoriesMenu.classList.remove('opacity-100', 'visible');
+    categoriesMenu.classList.add('opacity-0', 'invisible');
+    unlockBodyScroll();
+}
+
+// END MOBILE BOTTOM NAV
+
+
 ////////////////// START ----- CATEGORIES ///////////////////////
 
 // START ---- ToggleCategories
 function toggleCategoriesWrapper(){
     
     var categoriesMenu = document.getElementById('categories_menu');
+    if (!categoriesMenu) return;
+
     categoriesMenu.classList.add('opacity-0', 'invisible');
     categoriesMenu.classList.remove('opacity-100', 'visible');
 
     var toggleCategoriesButtons = document.querySelectorAll('[data-categories-button]');
+    var openCategoriesButtons = document.querySelectorAll('[data-categories-open-button]');
+    var closeCategoriesButtons = document.querySelectorAll('[data-categories-close-button]');
+    
     if (window.innerWidth < 1024){
-        for(let i = 0 ; i < toggleCategoriesButtons.length ; i++){  
 
+        for(let i = 0 ; i < toggleCategoriesButtons.length ; i++){  
             toggleCategoriesButtons[i].addEventListener("click", (e) => {
-                if (categoriesMenu.classList.contains('opacity-0')) {
-                    categoriesMenu.classList.add('opacity-100', 'visible');
-                    categoriesMenu.classList.remove('opacity-0', 'invisible');
-                } else {
-                    categoriesMenu.classList.add('opacity-0', 'invisible');
-                    categoriesMenu.classList.remove('opacity-100', 'visible');
-                }
-            })
+                categoriesMenu.classList.add('opacity-100', 'visible');
+                categoriesMenu.classList.remove('opacity-0', 'invisible');
+            });
+        } 
+
+        for(let i = 0 ; i < openCategoriesButtons.length ; i++){              
+            openCategoriesButtons[i].addEventListener("click", () => {
+                categoriesMenu.classList.add('opacity-100', 'visible');
+                categoriesMenu.classList.remove('opacity-0', 'invisible');
+            });
+        } 
+
+        for(let i = 0 ; i < closeCategoriesButtons.length ; i++){
+            closeCategoriesButtons[i].addEventListener("click", () => {
+                categoriesMenu.classList.remove('opacity-100', 'visible');
+                categoriesMenu.classList.add('opacity-0', 'invisible');
+                unlockBodyScroll();
+            });
+
         } 
     }
+    
 }
 toggleCategoriesWrapper();
 // END ---- ToggleCategories
@@ -503,59 +566,70 @@ for(let i = 0 ; i < clearInputBtns.length ; i++){
 
 
 
-        //Products filter form:
-        document.getElementById("car_filter").addEventListener('click', e => {
-            var option = e.target.closest('[data-option-value]');
-            if(option){
-                var optionValue = option.getAttribute('data-option-value');
-                var filterItemWrapper = e.target.closest('[data-filter-target]');
-                var filterTarget =  filterItemWrapper.getAttribute("data-filter-target");
-                var input = filterItemWrapper.querySelector('.filter-input');
-                input.value = option.innerText;
+//Products filter form:
+document.getElementById("car_filter")?.addEventListener('click', e => {
+    var option = e.target.closest('[data-option-value]');
+    if(option){
+        var optionValue = option.getAttribute('data-option-value');
+        var filterItemWrapper = e.target.closest('[data-filter-target]');
+        var filterTarget =  filterItemWrapper.getAttribute("data-filter-target");
+        var input = filterItemWrapper.querySelector('.filter-input');
+        input.value = option.innerText;
 
-                var url ="";
-                if(filterTarget === "brand"){
-                    url = 'fakeUrl.com/api/getBrands?country=' + optionValue;
-                }else if (filterTarget === "model"){
-                    url = 'fakeUrl.com/api/getBrands?brand=' + optionValue;
-                }else if (filterTarget === "options"){
-                    url = 'fakeUrl.com/api/getBrands?model=' + optionValue;
-                }
-
-                url="https://api.ganjoor.net/api/ganjoor/poets";
-                
-                fillSelectOptions(filterTarget , url);
-            }
-        });
-
-        function fillSelectOptions(target,url){
-            const xhttp = new XMLHttpRequest();
-
-            var optionsWrapper = document.querySelector('[data-select-options="'+ target +'"]');
-            var input = document.querySelector('[data-select-input="'+ target +'"]');
-            
-            if(input){
-                input.value = 'در حال بارگذاری ...';
-            }
-            input.removeAttribute('disabled');
-            xhttp.onload = function() {
-    
-                //based on response:
-                if(target === 'brand'){
-                    optionsWrapper.innerHTML = '<div data-option-value="toyota" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >تویوتا (109)</div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div>';
-                }else if (target === 'model'){
-                    optionsWrapper.innerHTML = '<div data-option-value="yaris" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >یاریس (109)</div><div data-option-value="prado" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >پرادو (60)</div><div data-option-value="ra4" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >رافور (53)</div>'
-                } else if (target === "options"){
-                    optionsWrapper.innerHTML = '<div data-option-value="GLI" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLI</div><div data-option-value="GLX" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLX</div>'                    
-                }
-                if(input){
-                    input.value="";
-                }
-                //input.classList.remove('pointer-events-none','cursor-no-drop');
-            }
-
-            xhttp.open("GET", url);
-            xhttp.send();
+        var url ="";
+        if(filterTarget === "brand"){
+            url = 'fakeUrl.com/api/getBrands?country=' + optionValue;
+        }else if (filterTarget === "model"){
+            url = 'fakeUrl.com/api/getBrands?brand=' + optionValue;
+        }else if (filterTarget === "options"){
+            url = 'fakeUrl.com/api/getBrands?model=' + optionValue;
         }
 
-        // END ---- products filter form
+        url="https://api.ganjoor.net/api/ganjoor/poets";
+        
+        fillSelectOptions(filterTarget , url);
+    }
+});
+
+function fillSelectOptions(target,url){
+    const xhttp = new XMLHttpRequest();
+
+    var optionsWrapper = document.querySelector('[data-select-options="'+ target +'"]');
+    var input = document.querySelector('[data-select-input="'+ target +'"]');
+    
+    if(input){
+        input.value = 'در حال بارگذاری ...';
+        input.removeAttribute('disabled');
+    }
+    xhttp.onload = function() {
+
+        //based on response:
+        if(target === 'brand'){
+            optionsWrapper.innerHTML = '<div data-option-value="toyota" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >تویوتا (109)</div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div><div data-option-value="hundai" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >هیوندا (60) </div><div data-option-value="nissan" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >نیسان (53) </div><div data-option-value="mazda" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >مزدا (230) </div>';
+        }else if (target === 'model'){
+            optionsWrapper.innerHTML = '<div data-option-value="yaris" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >یاریس (109)</div><div data-option-value="prado" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >پرادو (60)</div><div data-option-value="ra4" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >رافور (53)</div>'
+        } else if (target === "options"){
+            optionsWrapper.innerHTML = '<div data-option-value="GLI" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLI</div><div data-option-value="GLX" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >GLX</div>'                    
+        }
+        if(input){
+            input.value="";
+        }
+        //input.classList.remove('pointer-events-none','cursor-no-drop');
+    }
+
+    xhttp.open("GET", url);
+    xhttp.send();
+}
+
+// END ---- products filter form
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var loading = document.getElementById('site-loading');
+    
+    if (!loading) return;
+
+    loading.classList.add("invisible","opacity-0");
+    loading.classList.remove("visible","opacity-100");
+})
