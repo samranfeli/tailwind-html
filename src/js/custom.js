@@ -1,3 +1,56 @@
+function closeAddVehicleModal() {
+    var modal = document.getElementById("add_vehicle_modal");
+    modal.style.opacity = 0;
+    modal.style.visibility = 'hidden';
+
+    unlockBodyScroll();
+
+}
+
+function openAddVehicleModal() {
+    var modal = document.getElementById("add_vehicle_modal");
+    modal.style.opacity = 1;
+    modal.style.visibility = 'visible';
+
+    lockBodyScroll();
+}
+
+//start general tabs:
+var tabButtons = document.querySelectorAll('[data-tab-href]');
+for(var i = 0 ; i < tabButtons.length ; i++){
+    tabButtons[i].addEventListener('click', e => {
+        
+        var button = e.target.closest("[data-tab-href]");
+
+        var buttonAttributeValue = button.getAttribute("data-tab-href");
+
+        for(var j=0; j < tabButtons.length ; j++ ){
+            var itemAttributeValue = tabButtons[j].getAttribute("data-tab-href");
+            if (itemAttributeValue === buttonAttributeValue){
+                tabButtons[j].classList.add("border-orange-600");
+                tabButtons[j].classList.remove("border-transparent");
+            }else{
+                tabButtons[j].classList.remove("border-orange-600");
+                tabButtons[j].classList.add("border-transparent");
+            }
+        }
+
+        var tabContents = e.target.closest('[data-tabs-holder]')?.querySelectorAll('[data-tab-id]');
+        if (tabContents && tabContents.length){
+            for(var j=0; j < tabContents.length ; j++ ){
+                var itemAttributeValue = tabContents[j].getAttribute("data-tab-id");
+                if (itemAttributeValue === buttonAttributeValue){
+                    tabContents[j].classList.remove("hidden");
+                }else{
+                    tabContents[j].classList.add("hidden");
+                }
+            } 
+        }
+
+    });
+}
+
+//end general tabs:
 
 //Lock body scrollabilty:
 var body = document.getElementById('body');
