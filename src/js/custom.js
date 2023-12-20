@@ -1,3 +1,36 @@
+//set as current vehicle when click on saved vehicle:
+document.getElementById("saved_vehicles_wrapper")?.addEventListener("click", e => {
+    var savedVehicleItem = e.target.closest("[data-saved-vehicle-id]");
+    if (savedVehicleItem){
+        var id = savedVehicleItem.getAttribute("data-saved-vehicle-id");
+        var title = savedVehicleItem.getAttribute("data-saved-vehicle-title");
+        
+        //update current vehicle in cookie
+        var newItem = {id:id, title:title};
+        document.cookie = "currentVehicle=" + JSON.stringify(newItem);
+        //add current vehicle to modal:
+        var currentVehicleWrapper = document.getElementById("current_vehicle_wrapper");
+        if (title && currentVehicleWrapper){
+            currentVehicleWrapper.innerHTML = '<h5 class="font-semibold mb-4 text-sm">در حال خرید برای</h5><div class="shadow flex gap-4 items-center rounded-md border-s-4 border-orange-600 p-4"><div class="relative grow-0 shrink-0 flex items-center justify-center"><svg class="w-8 h-8 fill-neutral-600" viewBox="0 -960 960 960"><path d="M200-204v54q0 12.75-8.625 21.375T170-120h-20q-12.75 0-21.375-8.625T120-150v-324l85-256q5-14 16.5-22t26.5-8h464q15 0 26.5 8t16.5 22l85 256v324q0 12.75-8.625 21.375T810-120h-21q-12.75 0-21.375-8.625T759-150v-54H200Zm3-330h554l-55-166H258l-55 166Zm82.765 220Q309-314 324.5-329.75T340-368q0-23.333-15.75-39.667Q308.5-424 286-424q-23.333 0-39.667 16.265Q230-391.471 230-368.235 230-345 246.265-329.5q16.264 15.5 39.5 15.5ZM675-314q23.333 0 39.667-15.75Q731-345.5 731-368q0-23.333-16.265-39.667Q698.471-424 675.235-424 652-424 636.5-407.735q-15.5 16.264-15.5 39.5Q621-345 636.75-329.5T675-314Z"/></svg><svg class="fill-green-600 w-5 h-5 absolute -top-2 -right-1" viewBox="0 -960 960 960"><path d="m421-298 283-283-46-45-237 237-120-120-45 45 165 166Zm59 218q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Z"/></svg></div><div>'
+            + title +
+            '</div></div><div><button type="button" class="text-xs my-4 text-blue-600" onclick="cancelCurrentVehicle();">خرید مستقل از خودرو</button></div>';
+
+            //remove this item from saved vehicle list in modal:
+            savedVehicleItem.parentNode.removeChild( savedVehicleItem );
+        }        
+    }
+});
+
+
+function cancelCurrentVehicle(){
+    document.cookie = "currentVehicle=";
+    var wrapper = document.getElementById("current_vehicle_wrapper");
+    if(wrapper){
+        wrapper.innerHTML = "";
+    } 
+}
+
+
 function closeAddVehicleModal() {
     var modal = document.getElementById("add_vehicle_modal");
     modal.style.opacity = 0;
@@ -8,12 +41,237 @@ function closeAddVehicleModal() {
 }
 
 function openAddVehicleModal() {
+    //start add selected vehicle and saved vehicles:
+    //current vehicle:
+    var currentVehicle = document.cookie.split("currentVehicle=")[1]?.split(";")[0];
+    var currentVehicleWrapper = document.getElementById("current_vehicle_wrapper");
+    var currentVehicleTitle;
+    if (currentVehicle && currentVehicleWrapper){
+        currentVehicleTitle = JSON.parse(currentVehicle)?.title;
+        currentVehicleWrapper.innerHTML = '<h5 class="font-semibold mb-4 text-sm">در حال خرید برای</h5><div class="shadow flex gap-4 items-center rounded-md border-s-4 border-orange-600 p-4"><div class="relative grow-0 shrink-0 flex items-center justify-center"><svg class="w-8 h-8 fill-neutral-600" viewBox="0 -960 960 960"><path d="M200-204v54q0 12.75-8.625 21.375T170-120h-20q-12.75 0-21.375-8.625T120-150v-324l85-256q5-14 16.5-22t26.5-8h464q15 0 26.5 8t16.5 22l85 256v324q0 12.75-8.625 21.375T810-120h-21q-12.75 0-21.375-8.625T759-150v-54H200Zm3-330h554l-55-166H258l-55 166Zm82.765 220Q309-314 324.5-329.75T340-368q0-23.333-15.75-39.667Q308.5-424 286-424q-23.333 0-39.667 16.265Q230-391.471 230-368.235 230-345 246.265-329.5q16.264 15.5 39.5 15.5ZM675-314q23.333 0 39.667-15.75Q731-345.5 731-368q0-23.333-16.265-39.667Q698.471-424 675.235-424 652-424 636.5-407.735q-15.5 16.264-15.5 39.5Q621-345 636.75-329.5T675-314Z"/></svg><svg class="fill-green-600 w-5 h-5 absolute -top-2 -right-1" viewBox="0 -960 960 960"><path d="m421-298 283-283-46-45-237 237-120-120-45 45 165 166Zm59 218q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Z"/></svg></div><div>'
+        + currentVehicleTitle +
+        '</div></div><div><button type="button" class="text-xs my-4 text-blue-600" onclick="cancelCurrentVehicle();">خرید مستقل از خودرو</button></div>';
+    }
+
+    //saved vehicles:
+    var savedItemsCookie = document.cookie.split("savedVehicle=")[1]?.split(";")[0];
+    if (savedItemsCookie){
+        var cookieItems = JSON.parse(savedItemsCookie)?.filter(item => !currentVehicleTitle || item.title !== currentVehicleTitle );
+        var savedVehiclesElement ="";
+        for (var i=0; i<cookieItems.length ; i++ ){
+            savedVehiclesElement += '<div data-saved-vehicle-id="'
+            + cookieItems[i].id +
+            '" data-saved-vehicle-title="'
+            + cookieItems[i].title +
+            '" class="cursor-pointer transition-all hover:shadow-md hover:bg-neutral-100 shadow flex gap-4 items-center rounded-md border-s-4 border-neutral-300 p-4 mb-4"><div class="relative grow-0 shrink-0 flex items-center justify-center"><svg class="w-8 h-8 fill-neutral-600" viewBox="0 -960 960 960"><path d="M200-204v54q0 12.75-8.625 21.375T170-120h-20q-12.75 0-21.375-8.625T120-150v-324l85-256q5-14 16.5-22t26.5-8h464q15 0 26.5 8t16.5 22l85 256v324q0 12.75-8.625 21.375T810-120h-21q-12.75 0-21.375-8.625T759-150v-54H200Zm3-330h554l-55-166H258l-55 166Zm82.765 220Q309-314 324.5-329.75T340-368q0-23.333-15.75-39.667Q308.5-424 286-424q-23.333 0-39.667 16.265Q230-391.471 230-368.235 230-345 246.265-329.5q16.264 15.5 39.5 15.5ZM675-314q23.333 0 39.667-15.75Q731-345.5 731-368q0-23.333-16.265-39.667Q698.471-424 675.235-424 652-424 636.5-407.735q-15.5 16.264-15.5 39.5Q621-345 636.75-329.5T675-314Z"/></svg></div><div>' 
+            + cookieItems[i].title +
+            '</div></div>';
+        }
+        if (savedVehiclesElement){
+            savedVehiclesElement = '<h5 class="font-semibold mb-4 text-sm"> خودروهای ذخیره شده شما </h5>' + savedVehiclesElement ;
+            var savedItemsWrapper = document.getElementById("saved_vehicles_wrapper");
+            if (savedItemsWrapper){
+                savedItemsWrapper.innerHTML = savedVehiclesElement;
+            }
+        }
+    }
+    //end add selected vehicle and saved vehicles:
+
+    //open modal
     var modal = document.getElementById("add_vehicle_modal");
     modal.style.opacity = 1;
     modal.style.visibility = 'visible';
 
     lockBodyScroll();
 }
+
+//add years options:
+document.addEventListener('DOMContentLoaded', function () {
+    var yearOptionsWrapper = document.querySelector('[data-select-options="add-vehicle-year"]');
+    var minYear = 1930;
+    var maxYear = new Date().getFullYear();
+    var optionsHtml ="";
+    for (var i=maxYear; i >= minYear ; i--){
+        optionsHtml += "<div  data-option-value='" + i + "' class='p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px' > "+ i + "</div>"
+    }
+    yearOptionsWrapper.innerHTML = optionsHtml;    
+});
+
+//add select options action:
+document.getElementById("add_vehicle")?.addEventListener('click', async(e) => {
+    var optionValue = e.target.getAttribute("data-option-value");
+    var select = e.target.closest("[data-addVehicle-Select]");
+    var selectType = select.getAttribute("data-addVehicle-Select");
+    var input = select?.querySelector(".add-vehicle-input");
+    if (optionValue && input){
+        var optionText = e.target.innerText;
+        input.value = optionText;
+
+        function clearSelect(wrapper){
+            var selectInput = wrapper.querySelector(".add-vehicle-input");
+            var selectOptionsWrapper = wrapper.querySelector("[data-select-options]");
+
+            if(selectInput && selectOptionsWrapper){
+                selectInput.value = "";
+                selectInput.disabled = true;
+                selectOptionsWrapper.innerHTML = "";        
+            } 
+        }
+
+        function fillOptionsAndEnable(wrapper,type){
+            var optionElement = ""
+            var selectInput = wrapper.querySelector(".add-vehicle-input");
+            var selectOptionsWrapper = wrapper.querySelector("[data-select-options]");
+            var data = [];
+
+            if (select && selectOptionsWrapper){
+
+                //fetch ajax data based on type:
+                switch (type){
+                    case "make":
+                        //fetch data make:
+                        data = [
+                            {value:"toyota",title:"تویوتا (109)"},
+                            {value:"hundai",title:"هیوندا (60) "},
+                            {value:"nissan",title:"نیسان (53) "},
+                            {value:"mazda",title:"مزدا (230) "},
+                            {value:"hundai",title:"هیوندا (60) "},
+                            {value:"nissan",title:"نیسان (53) "},
+                            {value:"mazda",title:"مزدا (230) "},
+                            {value:"hundai",title:"هیوندا (60) "},
+                            {value:"nissan",title:"نیسان (53) "},
+                            {value:"mazda",title:"مزدا (230) "}
+                        ];    
+                        break;
+                    case "model":
+                        //fetch data model:
+                        data = [
+                            {value:"model1",title:"model 1"},
+                            {value:"model2",title:"model 2"},
+                            {value:"model3",title:"model 3"},
+                            {value:"model4",title:"model 4"},
+                            {value:"model5",title:"model 5"},
+                            {value:"model6",title:"model 6"},
+                            {value:"model7",title:"model 7"},
+                        ];
+                        break;
+                    case "engine":
+                        //fetch data engine:
+                        data = [
+                            {value:"engine1",title:"engine 1"},
+                            {value:"engine2",title:"engine 2"},
+                            {value:"engine3",title:"engine 3"},
+                            {value:"engine4",title:"engine 4"},
+                            {value:"engine5",title:"engine 5"}
+                        ];
+                        break;
+                    default:
+                }
+
+                for(var k=0; k < data.length ; k++){
+                    optionElement += '<div data-option-value="'+ data[k].value + '" class="p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px" >'+ data[k].title + '</div>';
+                }
+
+                selectOptionsWrapper.innerHTML = optionElement;
+                selectInput.disabled = false;
+            }
+
+        }
+
+        var makeSelectWrapper = document.querySelector("[data-addVehicle-Select='add-vehicle-make']");        
+        var modelSelectWrapper = document.querySelector("[data-addVehicle-Select='add-vehicle-model']");
+        var enginSelectWrapper = document.querySelector("[data-addVehicle-Select='add-vehicle-engine']");
+
+        switch(selectType){
+            
+            case "add-vehicle-year":
+
+                clearSelect(makeSelectWrapper);
+                clearSelect(modelSelectWrapper);
+                clearSelect(enginSelectWrapper);
+
+                fillOptionsAndEnable(makeSelectWrapper, "make");
+
+                break;
+
+            case "add-vehicle-make":
+
+                clearSelect(modelSelectWrapper);
+                clearSelect(enginSelectWrapper);
+
+                fillOptionsAndEnable(modelSelectWrapper, "model");
+                
+                break;
+
+            case "add-vehicle-model":
+
+                clearSelect(enginSelectWrapper);
+
+                fillOptionsAndEnable(enginSelectWrapper, "engine");
+
+                break;
+            case "add-vehicle-engine":
+
+                clearSelect(makeSelectWrapper);
+                clearSelect(modelSelectWrapper);
+                clearSelect(enginSelectWrapper);
+                document.getElementById("add_vehicle_year").value="";
+                
+                //update current vehicle in cookie
+                var newItem = {id:optionValue, title:optionText};
+                document.cookie = "currentVehicle=" + JSON.stringify(newItem);
+                //add current vehicle to modal:
+                var currentVehicleWrapper = document.getElementById("current_vehicle_wrapper");
+                if (optionText && currentVehicleWrapper){
+                    currentVehicleWrapper.innerHTML = '<h5 class="font-semibold mb-4 text-sm">در حال خرید برای</h5><div class="shadow flex gap-4 items-center rounded-md border-s-4 border-orange-600 p-4"><div class="relative grow-0 shrink-0 flex items-center justify-center"><svg class="w-8 h-8 fill-neutral-600" viewBox="0 -960 960 960"><path d="M200-204v54q0 12.75-8.625 21.375T170-120h-20q-12.75 0-21.375-8.625T120-150v-324l85-256q5-14 16.5-22t26.5-8h464q15 0 26.5 8t16.5 22l85 256v324q0 12.75-8.625 21.375T810-120h-21q-12.75 0-21.375-8.625T759-150v-54H200Zm3-330h554l-55-166H258l-55 166Zm82.765 220Q309-314 324.5-329.75T340-368q0-23.333-15.75-39.667Q308.5-424 286-424q-23.333 0-39.667 16.265Q230-391.471 230-368.235 230-345 246.265-329.5q16.264 15.5 39.5 15.5ZM675-314q23.333 0 39.667-15.75Q731-345.5 731-368q0-23.333-16.265-39.667Q698.471-424 675.235-424 652-424 636.5-407.735q-15.5 16.264-15.5 39.5Q621-345 636.75-329.5T675-314Z"/></svg><svg class="fill-green-600 w-5 h-5 absolute -top-2 -right-1" viewBox="0 -960 960 960"><path d="m421-298 283-283-46-45-237 237-120-120-45 45 165 166Zm59 218q-82 0-155-31.5t-127.5-86Q143-252 111.5-325T80-480q0-83 31.5-156t86-127Q252-817 325-848.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 82-31.5 155T763-197.5q-54 54.5-127 86T480-80Z"/></svg></div><div>'
+                    + optionText +
+                    '</div></div><div><button type="button" class="text-xs my-4 text-blue-600" onclick="cancelCurrentVehicle();">خرید مستقل از خودرو</button></div>';
+                }
+            
+
+                //saved vehicles:
+                var savedItemsCookie = document.cookie.split("savedVehicle=")[1]?.split(";")[0];
+                if (savedItemsCookie){
+                    var currntItems = JSON.parse(savedItemsCookie);
+
+                    if (!currntItems.find(x => x.title === optionText)){
+                        currntItems.unshift(newItem);
+                    }
+                    
+                    //update saved vehicles in cookie
+                    document.cookie = "savedVehicle=" + JSON.stringify(currntItems);
+                    //add saved vehicles to modal:
+                    var updatedCookieItems = currntItems.filter(item => item.title !== optionText );
+                    var savedVehiclesElement ="";
+                    for (var i=0; i<updatedCookieItems.length ; i++ ){
+                        savedVehiclesElement += '<div data-saved-vehicle-id="'
+                        + updatedCookieItems[i].id +
+                        '" data-saved-vehicle-title="'
+                        + updatedCookieItems[i].title +
+                        '" class="cursor-pointer transition-all hover:shadow-md hover:bg-neutral-100 shadow flex gap-4 items-center rounded-md border-s-4 border-neutral-300 p-4 mb-4"><div class="relative grow-0 shrink-0 flex items-center justify-center"><svg class="w-8 h-8 fill-neutral-600" viewBox="0 -960 960 960"><path d="M200-204v54q0 12.75-8.625 21.375T170-120h-20q-12.75 0-21.375-8.625T120-150v-324l85-256q5-14 16.5-22t26.5-8h464q15 0 26.5 8t16.5 22l85 256v324q0 12.75-8.625 21.375T810-120h-21q-12.75 0-21.375-8.625T759-150v-54H200Zm3-330h554l-55-166H258l-55 166Zm82.765 220Q309-314 324.5-329.75T340-368q0-23.333-15.75-39.667Q308.5-424 286-424q-23.333 0-39.667 16.265Q230-391.471 230-368.235 230-345 246.265-329.5q16.264 15.5 39.5 15.5ZM675-314q23.333 0 39.667-15.75Q731-345.5 731-368q0-23.333-16.265-39.667Q698.471-424 675.235-424 652-424 636.5-407.735q-15.5 16.264-15.5 39.5Q621-345 636.75-329.5T675-314Z"/></svg></div><div>' 
+                        + updatedCookieItems[i].title +
+                        '</div></div>';
+                    }
+                    if (savedVehiclesElement){
+                        savedVehiclesElement = '<h5 class="font-semibold mb-4 text-sm"> خودروهای ذخیره شده شما </h5>' + savedVehiclesElement ;
+                        var savedItemsWrapper = document.getElementById("saved_vehicles_wrapper");
+                        if (savedItemsWrapper){
+                            savedItemsWrapper.innerHTML = savedVehiclesElement;
+                        }
+                    }
+                }else{
+                    //update saved vehicles in cookie
+                    document.cookie = "savedVehicle=" + JSON.stringify([newItem]);
+                }
+
+                break;
+            default:
+                console.log("default")
+        }
+    }
+
+});
+
 
 //start general tabs:
 var tabButtons = document.querySelectorAll('[data-tab-href]');
