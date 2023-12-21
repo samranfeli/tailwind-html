@@ -935,7 +935,6 @@ function fillSelectOptions(target,url){
 // END ---- products filter form
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     var loading = document.getElementById('site-loading');
     
@@ -944,3 +943,60 @@ document.addEventListener('DOMContentLoaded', function () {
     loading.classList.add("invisible","opacity-0");
     loading.classList.remove("visible","opacity-100");
 })
+
+
+//Sides Effect
+
+var asideRef = document.querySelector("[data-side-block]");
+var mainRef = document.querySelector("[data-main-block]");
+var wrapperRef = document.querySelector("[data-sides-wrapper]");
+
+const setStickyPosition = (elem, position, width, top, left) => {
+    if (elem){
+        elem.style.position = position;
+        elem.style.width = width;
+        elem.style.top = top;
+        elem.style.left = left;
+    }
+}
+
+const makeSticky = () => {
+
+    if (!asideRef || !mainRef || !wrapperRef){
+        return;
+    }
+
+    const asideHeight = asideRef.offsetHeight;
+    const mainHeight = mainRef.offsetHeight;
+
+    let stickySideRef, heightDiff;
+    if (asideHeight < mainHeight) {
+        stickySideRef = asideRef;
+        heightDiff = mainHeight - asideHeight;
+    } else {
+        stickySideRef = mainRef;
+        heightDiff = asideHeight - mainHeight;
+    }
+
+    const wrapperTop = wrapperRef.getBoundingClientRect().top;
+
+    if ( !wrapperTop || wrapperTop > 0 || heightDiff === 0 || window.innerWidth < 1100) {
+
+        setStickyPosition(stickySideRef, "static", "", "", "");
+
+    } else {
+
+        const stickySideParent = stickySideRef.parentElement;
+        const stickySideParentWidth = stickySideParent.offsetWidth;
+        const stickySideParentLeft = stickySideParent.getBoundingClientRect().left;
+
+        if (-wrapperTop < heightDiff) {
+            setStickyPosition(stickySideRef, "fixed", (stickySideParentWidth + "px"), 0, (stickySideParentLeft + "px"));
+        } else {
+            setStickyPosition(stickySideRef, "fixed", (stickySideParentWidth + "px"), (heightDiff + wrapperTop + "px"), (stickySideParentLeft + "px"));
+        }
+    }
+}
+
+document.addEventListener('scroll', makeSticky);
+window.addEventListener("resize", makeSticky);
