@@ -7,7 +7,7 @@ document.getElementById("saved_vehicles_wrapper")?.addEventListener("click", e =
         
         //update current vehicle in cookie
         var newItem = {id:id, title:title};
-        document.cookie = "currentVehicle=" + JSON.stringify(newItem);
+        document.cookie = "currentVehicle=" + JSON.stringify(newItem)+"; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
         //add current vehicle to modal:
         var currentVehicleWrapper = document.getElementById("current_vehicle_wrapper");
         if (title && currentVehicleWrapper){
@@ -219,7 +219,7 @@ document.getElementById("add_vehicle")?.addEventListener('click', async(e) => {
                 
                 //update current vehicle in cookie
                 var newItem = {id:optionValue, title:optionText};
-                document.cookie = "currentVehicle=" + JSON.stringify(newItem);
+                document.cookie = "currentVehicle=" + JSON.stringify(newItem) +"; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
                 //add current vehicle to modal:
                 var currentVehicleWrapper = document.getElementById("current_vehicle_wrapper");
                 if (optionText && currentVehicleWrapper){
@@ -239,7 +239,7 @@ document.getElementById("add_vehicle")?.addEventListener('click', async(e) => {
                     }
                     
                     //update saved vehicles in cookie
-                    document.cookie = "savedVehicle=" + JSON.stringify(currntItems);
+                    document.cookie = "savedVehicle=" + JSON.stringify(currntItems) +"; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
                     //add saved vehicles to modal:
                     var updatedCookieItems = currntItems.filter(item => item.title !== optionText );
                     var savedVehiclesElement ="";
@@ -261,7 +261,7 @@ document.getElementById("add_vehicle")?.addEventListener('click', async(e) => {
                     }
                 }else{
                     //update saved vehicles in cookie
-                    document.cookie = "savedVehicle=" + JSON.stringify([newItem]);
+                    document.cookie = "savedVehicle=" + JSON.stringify([newItem]) +"; expires=Fri, 31 Dec 9999 23:59:59 GMT;";
                 }
 
                 break;
