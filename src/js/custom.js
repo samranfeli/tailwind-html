@@ -94,7 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
     for (var i=maxYear; i >= minYear ; i--){
         optionsHtml += "<div  data-option-value='" + i + "' class='p-2 cursor-pointer rounded-md hover:bg-neutral-50 mb-px' > "+ i + "</div>"
     }
-    yearOptionsWrapper.innerHTML = optionsHtml;    
+    if(yearOptionsWrapper){
+        yearOptionsWrapper.innerHTML = optionsHtml;    
+    }
 });
 
 //add select options action:
@@ -966,6 +968,8 @@ const makeSticky = () => {
         return;
     }
 
+    var activationSize = wrapperRef.getAttribute("data-sides-wrapper");
+
     const asideHeight = asideRef.offsetHeight;
     const mainHeight = mainRef.offsetHeight;
 
@@ -980,7 +984,7 @@ const makeSticky = () => {
 
     const wrapperTop = wrapperRef.getBoundingClientRect().top;
 
-    if ( !wrapperTop || wrapperTop > 0 || heightDiff === 0 || window.innerWidth < 1100) {
+    if ( !wrapperTop || wrapperTop > 0 || heightDiff === 0 || window.innerWidth < +activationSize) {
 
         setStickyPosition(stickySideRef, "static", "", "", "");
 

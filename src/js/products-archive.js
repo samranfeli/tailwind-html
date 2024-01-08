@@ -156,3 +156,58 @@ for(var i = 0 ; i < carTypeTabs.length ; i++){
     })
 }
 // END ----- car type tab;
+
+//Start responsive sidebar filter:
+function openSideBar(){
+    var sideBar = document.getElementById("sideBarWrapper");
+    var sideBarBackdrop = document.getElementById("sidebarBackDrop");
+    var mainContent = document.getElementById("main_content");
+    
+    if(!sideBar || !sideBarBackdrop || !mainContent ){
+        return;
+    }
+        
+    if (window.innerWidth < 768){
+        
+        lockBodyScroll();
+        
+        sideBar.classList.remove("max-md:translate-x-full");
+        sideBarBackdrop.classList.remove("hidden");
+        if (mainContent.classList.contains("z-10")){
+            mainContent.classList.remove("z-10");
+        }
+        if (!mainContent.classList.contains("z-20")){
+            mainContent.classList.add("z-20");
+        }
+    }
+}
+
+function closeSideBar() {
+    var sideBar = document.getElementById("sideBarWrapper");
+    var sideBarBackdrop = document.getElementById("sidebarBackDrop");
+    var mainContent = document.getElementById("main_content");
+    
+    if(!sideBar || !sideBarBackdrop || !mainContent ){
+        return;
+    }
+    
+    if (window.innerWidth < 768){
+
+        unlockBodyScroll();
+        
+        if(!sideBar.classList.contains("max-md:translate-x-full")){
+            sideBar.classList.add("max-md:translate-x-full");
+        }
+        if(!sideBarBackdrop.classList.contains("hidden")){
+            sideBarBackdrop.classList.add("hidden");
+        }
+
+        if (!mainContent.classList.contains("z-10")){
+            mainContent.classList.add("z-10");
+        }
+        if (mainContent.classList.contains("z-20")){
+            mainContent.classList.remove("z-20");
+        }
+    }
+}
+//End responsive sidebar filter:
