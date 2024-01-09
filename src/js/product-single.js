@@ -75,25 +75,31 @@ document.addEventListener('DOMContentLoaded', function () {
     thumbnails.mount();
 
 
-    var producrsSplide = new Splide('.producrs-splide', {
+    var productsSplide = new Splide('.producrs-splide', {
         pagination: false,
-        perPage: 5,
+        perPage: 4,
         type: 'loop',
         breakpoints: {
-            600: {
+            550: {
                 perPage: 1,
+                padding: { left: '30%'}
             },
-            900: {
+            767:{
+                arrows: false,
+            },
+            1023:{
+                perPage: 2
+            },
+            1279:{
                 perPage: 3,
-            },
-            1200: {
-                perPage: 4,
-            },
+                gap: '10px'
+            }
+
         },
         direction: 'rtl',
         perMove: 1,
         gap: '1.5rem'
     });
-    producrsSplide.mount();
+    productsSplide.mount();
 
 });

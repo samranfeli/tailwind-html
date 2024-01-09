@@ -171,3 +171,12 @@
     filter: grayscale(.4);
 }
 /* end contact styles */
+
+
+/* start product single style */
+@media screen and (max-width:767px) {
+    .thumbnail-carousel {
+        max-width: calc(100vw - 65px);
+    }
+}
+/* end product single style */
